@@ -1,4 +1,5 @@
-## 001. A secure tracking system for GPS-enabled mobile phones
+## 001. A secure tracking system for GPS-enabled mobile phones (2011)
+Hasan Tahsin Bilgic, Ali Ziya Alkar.
 
 In this paper we are describing a secure location tracking system formed of a web interface and a client software. 
 
