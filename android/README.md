@@ -1,92 +1,92 @@
-# Android Security & Loss Response
+# Keamanan Android & Respons Kehilangan
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Overview
+## Ikhtisar
 
-This section covers Android-specific security features, configurations, and loss response procedures. Android is the world's most widely deployed mobile operating system, running on devices from Google, Samsung, Motorola, OnePlus, and hundreds of other manufacturers.
+Bagian ini mencakup fitur keamanan khusus Android, konfigurasi, dan prosedur respons kehilangan. Android adalah sistem operasi mobile yang paling banyak digunakan di dunia, berjalan pada perangkat dari Google, Samsung, Motorola, OnePlus, dan ratusan produsen lainnya.
 
 ---
 
-## Android Security Architecture
+## Arsitektur Keamanan Android
 
-Android's security model is built around several interlocking layers:
+Model keamanan Android dibangun di atas beberapa lapisan yang saling terhubung:
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│                    USER DATA LAYER                       │
-│        Apps, Files, Credentials, Backups                 │
+│                  LAPISAN DATA PENGGUNA                   │
+│        Aplikasi, File, Kredensial, Cadangan              │
 ├──────────────────────────────────────────────────────────┤
-│                  APPLICATION LAYER                       │
-│       Play Store, Sideloaded Apps, MDM Apps              │
+│                  LAPISAN APLIKASI                        │
+│       Play Store, Aplikasi Sideload, Aplikasi MDM        │
 ├──────────────────────────────────────────────────────────┤
-│                GOOGLE SERVICES LAYER                     │
-│    Play Protect, Find Hub, Google Account, Identity Check│
+│                LAPISAN LAYANAN GOOGLE                    │
+│    Play Protect, Find Hub, Akun Google, Identity Check   │
 ├──────────────────────────────────────────────────────────┤
-│               ANDROID OS LAYER                           │
-│   SELinux, Verified Boot, Encryption, Keystore           │
+│               LAPISAN SISTEM OPERASI ANDROID             │
+│   SELinux, Verified Boot, Enkripsi, Keystore             │
 ├──────────────────────────────────────────────────────────┤
-│                HARDWARE LAYER                            │
+│                LAPISAN PERANGKAT KERAS                   │
 │   Titan M / StrongBox, Secure Enclave, TrustZone        │
 └──────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Section Contents
+## Isi Bagian Ini
 
-| Document | Description |
+| Dokumen | Deskripsi |
 |---|---|
-| [Find Hub (formerly Find My Device)](find-my-device.md) | Tracking, locking, and remotely wiping your Android device |
-| [Factory Reset Protection (FRP)](factory-reset-protection.md) | How FRP prevents thieves from wiping and reusing your device |
-| [Google Account Security](google-account-security.md) | Securing the Google Account that controls your device |
-| [Play Protect](play-protect.md) | Google's on-device malware scanning service |
-| [Identity Check](identity-check.md) | Android 15+ biometric lock for sensitive settings outside trusted locations |
+| [Find Hub (sebelumnya Find My Device)](find-my-device.md) | Melacak, mengunci, dan menghapus perangkat Android dari jarak jauh |
+| [Perlindungan Reset Pabrik (FRP)](factory-reset-protection.md) | Bagaimana FRP mencegah pencuri menghapus dan menggunakan kembali perangkat Anda |
+| [Keamanan Akun Google](google-account-security.md) | Mengamankan Akun Google yang mengendalikan perangkat Anda |
+| [Play Protect](play-protect.md) | Layanan pemindaian malware bawaan Google |
+| [Pemeriksaan Identitas](identity-check.md) | Fitur Android 15+ berupa kunci biometrik untuk pengaturan sensitif di luar lokasi tepercaya |
 
 ---
 
-## Anti-Theft Features at a Glance (Android 10–15+)
+## Fitur Anti-Pencurian Sekilas (Android 10–15+)
 
-| Feature | Android Version | Description |
+| Fitur | Versi Android | Deskripsi |
 |---|---|---|
-| Factory Reset Protection | 5.1+ | Requires Google account after unauthorized reset |
-| Find Hub (Find My Device) | All (via Play Services) | Remote tracking, lock, and wipe |
-| Smart Lock | 5.0+ | Trusted places/devices relax screen lock |
-| Theft Detection Lock | 10+ | AI detects snatch theft, auto-locks screen |
-| Offline Device Lock | 10+ | Auto-locks if device goes offline after theft |
-| Remote Lock (without internet) | 10+ | Lock via SMS or cached credentials |
-| Identity Check | 15+ (Pixel, Samsung) | Biometric-only access to settings away from trusted location |
+| Perlindungan Reset Pabrik | 5.1+ | Memerlukan akun Google setelah reset tidak sah |
+| Find Hub (Find My Device) | Semua (melalui Play Services) | Pelacakan, kunci, dan hapus jarak jauh |
+| Smart Lock | 5.0+ | Lokasi/perangkat tepercaya melonggarkan kunci layar |
+| Kunci Deteksi Pencurian | 10+ | AI mendeteksi pencurian sambaran, layar otomatis terkunci |
+| Kunci Perangkat Offline | 10+ | Otomatis mengunci jika perangkat offline setelah dicuri |
+| Kunci Jarak Jauh (tanpa internet) | 10+ | Kunci melalui SMS atau kredensial tersimpan |
+| Pemeriksaan Identitas | 15+ (Pixel, Samsung) | Akses hanya biometrik ke pengaturan di luar lokasi tepercaya |
 
 ---
 
-## Version Support Notes
+## Catatan Dukungan Versi
 
-> **⚠️ WARNING:** Devices running Android 9 or earlier no longer receive security updates from Google. If your device cannot be updated to at least Android 12, consider replacing it. Without security updates, vulnerabilities remain unpatched indefinitely.
+> **⚠️ PERINGATAN:** Perangkat yang menjalankan Android 9 atau lebih lama tidak lagi menerima pembaruan keamanan dari Google. Jika perangkat Anda tidak dapat diperbarui ke setidaknya Android 12, pertimbangkan untuk menggantinya. Tanpa pembaruan keamanan, kerentanan tetap tidak ditambal selamanya.
 
-- **Android 15+**: Identity Check, enhanced theft protection
-- **Android 12+**: Approximate location permissions, Privacy Dashboard
-- **Android 10+**: Scoped Storage, enhanced permissions, Theft Detection Lock
-- **Android 9 (Pie)**: End of Google security support
-
----
-
-## Quick Actions for Lost Android Device
-
-1. Go to **https://myaccount.google.com/find-your-phone** or use Find Hub app on another device
-2. Select your device
-3. Choose **Secure Device** to lock with PIN and display message
-4. If recovery is unlikely: choose **Erase Device**
-
-For step-by-step instructions, see [First 5 Minutes](../incident-response/first-5-minutes.md).
+- **Android 15+**: Pemeriksaan Identitas, perlindungan pencurian yang ditingkatkan
+- **Android 12+**: Izin lokasi perkiraan, Dasbor Privasi
+- **Android 10+**: Penyimpanan Terbatas, izin ditingkatkan, Kunci Deteksi Pencurian
+- **Android 9 (Pie)**: Akhir dukungan keamanan Google
 
 ---
 
-## Related Sections
+## Tindakan Cepat untuk Perangkat Android yang Hilang
 
-- [Android Hardening Guide](../hardening/android-hardening.md)
-- [Android Hardening Checklist](../checklists/android-hardening-checklist.md)
-- [SIM Security](../hardening/sim-security.md)
+1. Buka **https://myaccount.google.com/find-your-phone** atau gunakan aplikasi Find Hub di perangkat lain
+2. Pilih perangkat Anda
+3. Pilih **Amankan Perangkat** untuk mengunci dengan PIN dan menampilkan pesan
+4. Jika pemulihan tidak mungkin: pilih **Hapus Perangkat**
+
+Untuk instruksi langkah demi langkah, lihat [5 Menit Pertama](../incident-response/first-5-minutes.md).
 
 ---
 
-*Last Updated: 2026-06-01 | References: https://support.google.com/android, https://security.googleblog.com*
+## Bagian Terkait
+
+- [Panduan Penguatan Android](../hardening/android-hardening.md)
+- [Daftar Periksa Penguatan Android](../checklists/android-hardening-checklist.md)
+- [Keamanan SIM](../hardening/sim-security.md)
+
+---
+
+*Terakhir Diperbarui: 2026-06-01 | Referensi: https://support.google.com/android, https://security.googleblog.com*

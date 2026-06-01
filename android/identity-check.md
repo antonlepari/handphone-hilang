@@ -1,153 +1,153 @@
-# Identity Check — Android
+# Pemeriksaan Identitas — Android
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Overview
+## Ikhtisar
 
-**Identity Check** is an Android security feature that requires **biometric authentication** (fingerprint or face scan) — with no passcode or PIN fallback — to access sensitive device settings and data when the device is **outside of trusted locations** (such as your home or office).
+**Pemeriksaan Identitas** adalah fitur keamanan Android yang memerlukan **autentikasi biometrik** (sidik jari atau pemindaian wajah) — tanpa fallback kode sandi atau PIN — untuk mengakses pengaturan dan data perangkat yang sensitif ketika perangkat berada **di luar lokasi tepercaya** (seperti rumah atau kantor Anda).
 
-Identity Check was introduced by Google in January 2025 and initially rolled out to **Pixel devices running Android 15** and **Samsung Galaxy devices running One UI 7**. Broader Android availability was announced for later in 2025.
+Pemeriksaan Identitas diperkenalkan oleh Google pada Januari 2025 dan awalnya diluncurkan ke **perangkat Pixel yang menjalankan Android 15** dan **perangkat Samsung Galaxy yang menjalankan One UI 7**. Ketersediaan Android yang lebih luas diumumkan untuk akhir 2025.
 
-> **ℹ️ NOTE:** Identity Check is conceptually similar to Apple's Stolen Device Protection (iOS 17.3+). Both features prevent thieves who have stolen a device along with the observed passcode from making critical security changes.
+> **ℹ️ CATATAN:** Pemeriksaan Identitas secara konseptual mirip dengan Perlindungan Perangkat Dicuri Apple (iOS 17.3+). Kedua fitur mencegah pencuri yang telah mencuri perangkat beserta kode sandi yang diamati untuk melakukan perubahan keamanan kritis.
 
-*Reference: https://support.google.com/pixelphone/answer/9463625*
-
----
-
-## Why Identity Check Matters
-
-### The Passcode Theft Attack Chain
-
-Before Identity Check, the following attack was possible:
-
-1. Attacker observes victim entering PIN in public (shoulder surfing)
-2. Attacker steals the unlocked or locked device
-3. Attacker uses the observed PIN to unlock the device
-4. Attacker navigates to Settings and changes biometrics to their own face/fingerprint
-5. Attacker disables Find My Device
-6. Attacker accesses Google Password Manager and exports all credentials
-7. Attacker uses credentials to take over email, banking, and other accounts
-
-**Identity Check breaks step 4 and steps 6-7**: outside of trusted locations, the PIN is no longer sufficient — biometrics are required with no fallback. A thief who has the PIN but not the owner's fingerprint or face cannot change security settings or access passwords.
+*Referensi: https://support.google.com/pixelphone/answer/9463625*
 
 ---
 
-## How Identity Check Works
+## Mengapa Pemeriksaan Identitas Penting
 
-### Trusted Locations
+### Rantai Serangan Pencurian Kode Sandi
 
-Identity Check uses the device's location to determine context:
+Sebelum Pemeriksaan Identitas, serangan berikut memungkinkan:
 
-- **Trusted locations** (defined by the user): Home, office, or other familiar places where the user regularly uses the device. Relaxed security applies — PIN can be used as normal.
-- **Untrusted/unfamiliar locations** (everywhere else): Enhanced security applies — biometrics required for sensitive actions, no passcode fallback.
+1. Penyerang mengamati korban memasukkan PIN di tempat umum (shoulder surfing)
+2. Penyerang mencuri perangkat yang terkunci atau terbuka
+3. Penyerang menggunakan PIN yang diamati untuk membuka kunci perangkat
+4. Penyerang membuka Pengaturan dan mengubah biometrik ke wajah/sidik jarinya sendiri
+5. Penyerang menonaktifkan Find My Device
+6. Penyerang mengakses Google Password Manager dan mengekspor semua kredensial
+7. Penyerang menggunakan kredensial untuk mengambil alih email, perbankan, dan akun lainnya
 
-### What Requires Biometrics Away from Trusted Locations
+**Pemeriksaan Identitas memutus langkah 4 dan langkah 6-7**: di luar lokasi tepercaya, PIN tidak lagi cukup — biometrik diperlukan tanpa fallback. Pencuri yang memiliki PIN tetapi tidak memiliki sidik jari atau wajah pemilik tidak dapat mengubah pengaturan keamanan atau mengakses kata sandi.
 
-When Identity Check is enabled and the device is outside trusted locations, **explicit biometric authentication** is required for:
+---
 
-| Protected Action | Details |
+## Cara Kerja Pemeriksaan Identitas
+
+### Lokasi Tepercaya
+
+Pemeriksaan Identitas menggunakan lokasi perangkat untuk menentukan konteks:
+
+- **Lokasi tepercaya** (ditentukan oleh pengguna): Rumah, kantor, atau tempat familiar lainnya di mana pengguna secara teratur menggunakan perangkat. Keamanan yang dilonggarkan berlaku — PIN dapat digunakan seperti biasa.
+- **Lokasi tidak tepercaya/tidak familiar** (semua tempat lain): Keamanan yang ditingkatkan berlaku — biometrik diperlukan untuk tindakan sensitif, tanpa fallback kode sandi.
+
+### Apa yang Memerlukan Biometrik di Luar Lokasi Tepercaya
+
+Ketika Pemeriksaan Identitas diaktifkan dan perangkat berada di luar lokasi tepercaya, **autentikasi biometrik eksplisit** diperlukan untuk:
+
+| Tindakan yang Dilindungi | Detail |
 |---|---|
-| Access saved passwords and passkeys | Google Password Manager content |
-| Autofill passwords in apps | From Google Password Manager (except Chrome) |
-| Change screen lock PIN or password | Prevents PIN change by attacker |
-| Change biometrics (fingerprint/face) | Prevents attacker from enrolling their biometrics |
-| Factory reset | Prevents data destruction or bypass attempt |
-| Turn off Find My Device | Prevents disabling location tracking |
-| Turn off any theft protection features | Includes Identity Check itself |
+| Akses kata sandi dan passkey yang tersimpan | Konten Google Password Manager |
+| Isi otomatis kata sandi di aplikasi | Dari Google Password Manager (kecuali Chrome) |
+| Ubah PIN atau kata sandi kunci layar | Mencegah perubahan PIN oleh penyerang |
+| Ubah biometrik (sidik jari/wajah) | Mencegah penyerang mendaftarkan biometrik mereka |
+| Reset pabrik | Mencegah penghancuran data atau upaya bypass |
+| Matikan Find My Device | Mencegah penonaktifan pelacakan lokasi |
+| Matikan fitur perlindungan pencurian | Termasuk Pemeriksaan Identitas itu sendiri |
 
-*Source: The Hacker News, January 2025 — https://thehackernews.com/2025/01/androids-new-identity-check-feature.html*
-
----
-
-## Requirements
-
-To enable Identity Check:
-
-- [ ] Device: Google Pixel running **Android 15** or Samsung Galaxy running **One UI 7** (broader Android availability in 2025)
-- [ ] Play Services: Latest stable version installed
-- [ ] Biometrics: Face unlock or fingerprint scanner enrolled on the device
-- [ ] Screen lock: PIN, password, or pattern configured
-- [ ] Location: Location Services enabled (for trusted location detection)
-- [ ] Find My Device: Must be enabled
+*Sumber: The Hacker News, Januari 2025 — https://thehackernews.com/2025/01/androids-new-identity-check-feature.html*
 
 ---
 
-## How to Enable Identity Check (Pixel)
+## Persyaratan
 
-1. Open **Settings**
-2. Tap **Security & privacy** or **Security**
-3. Tap **More security & privacy**
-4. Tap **Identity Check**
-5. Toggle **Identity Check** to **On**
-6. Follow the prompts to confirm your biometric authentication
-7. Optionally: Add trusted locations
+Untuk mengaktifkan Pemeriksaan Identitas:
 
-### Adding Trusted Locations
-
-1. In the Identity Check settings, tap **Add trusted location**
-2. The device will use your current location (ensure GPS is accurate)
-3. Name the location (e.g., "Home," "Office")
-4. Confirm
-
-> **💡 TIP:** Only add locations where you genuinely use the device regularly and where you have a reasonable expectation of security. Adding too many trusted locations reduces the protection value of the feature.
+- [ ] Perangkat: Google Pixel yang menjalankan **Android 15** atau Samsung Galaxy yang menjalankan **One UI 7**
+- [ ] Play Services: Versi stabil terbaru terinstal
+- [ ] Biometrik: Buka kunci wajah atau pemindai sidik jari terdaftar di perangkat
+- [ ] Kunci layar: PIN, kata sandi, atau pola dikonfigurasi
+- [ ] Lokasi: Layanan Lokasi diaktifkan (untuk deteksi lokasi tepercaya)
+- [ ] Find My Device: Harus diaktifkan
 
 ---
 
-## How to Enable Identity Check (Samsung Galaxy)
+## Cara Mengaktifkan Pemeriksaan Identitas (Pixel)
 
-Samsung Galaxy devices running **One UI 7** have Identity Check under a slightly different path:
+1. Buka **Pengaturan**
+2. Ketuk **Keamanan & privasi** atau **Keamanan**
+3. Ketuk **Keamanan & privasi lainnya**
+4. Ketuk **Pemeriksaan Identitas**
+5. Aktifkan **Pemeriksaan Identitas** ke **Aktif**
+6. Ikuti petunjuk untuk mengonfirmasi autentikasi biometrik Anda
+7. Opsional: Tambahkan lokasi tepercaya
 
-1. Go to **Settings**
-2. Tap **Security and privacy**
-3. Tap **More security settings**
-4. Tap **Identity Check**
-5. Enable the feature and confirm biometrics
+### Menambahkan Lokasi Tepercaya
 
-*Reference: Samsung Knox security documentation — https://security.samsungmobile.com*
+1. Dalam pengaturan Pemeriksaan Identitas, ketuk **Tambah lokasi tepercaya**
+2. Perangkat akan menggunakan lokasi Anda saat ini (pastikan GPS akurat)
+3. Beri nama lokasi (mis., "Rumah," "Kantor")
+4. Konfirmasi
+
+> **💡 TIPS:** Hanya tambahkan lokasi di mana Anda benar-benar menggunakan perangkat secara teratur dan di mana Anda memiliki ekspektasi keamanan yang wajar. Menambahkan terlalu banyak lokasi tepercaya mengurangi nilai perlindungan fitur ini.
 
 ---
 
-## Android 16 Additions
+## Cara Mengaktifkan Pemeriksaan Identitas (Samsung Galaxy)
 
-Devices running **Android 16** gain an additional control:
+Perangkat Samsung Galaxy yang menjalankan **One UI 7** memiliki Pemeriksaan Identitas di jalur yang sedikit berbeda:
 
-**Failed Authentication Lock**: The device automatically locks after several failed authentication attempts. A dedicated toggle in Settings allows users to control this behavior. This complements Identity Check by preventing brute-force PIN attempts.
+1. Buka **Pengaturan**
+2. Ketuk **Keamanan dan privasi**
+3. Ketuk **Pengaturan keamanan lainnya**
+4. Ketuk **Pemeriksaan Identitas**
+5. Aktifkan fitur dan konfirmasi biometrik
+
+*Referensi: Dokumentasi keamanan Samsung Knox — https://security.samsungmobile.com*
 
 ---
 
-## Comparison: Identity Check vs. Stolen Device Protection
+## Tambahan Android 16
 
-| Feature | Identity Check (Android 15+) | Stolen Device Protection (iOS 17.3+) |
+Perangkat yang menjalankan **Android 16** mendapatkan kontrol tambahan:
+
+**Kunci Autentikasi Gagal**: Perangkat secara otomatis terkunci setelah beberapa upaya autentikasi yang gagal. Sakelar khusus di Pengaturan memungkinkan pengguna mengontrol perilaku ini. Ini melengkapi Pemeriksaan Identitas dengan mencegah upaya PIN brute-force.
+
+---
+
+## Perbandingan: Pemeriksaan Identitas vs. Perlindungan Perangkat Dicuri
+
+| Fitur | Pemeriksaan Identitas (Android 15+) | Perlindungan Perangkat Dicuri (iOS 17.3+) |
 |---|---|---|
-| Platform | Android (Pixel, Samsung, later broader) | iOS 17.3+ |
-| Trigger condition | Outside trusted locations | Away from familiar locations |
-| Biometric-only actions | Yes — no passcode fallback | Yes — no passcode fallback |
-| Delayed security actions | No (as of 2025) | Yes — 1-hour delay for critical changes |
-| Required setup | Biometrics, Location, Find My Device | 2FA, Face/Touch ID, Significant Locations, Find My |
-| Blocks biometric changes? | Yes | Yes |
-| Blocks Find My Device disable? | Yes | Yes (via delay) |
+| Platform | Android (Pixel, Samsung, kemudian lebih luas) | iOS 17.3+ |
+| Kondisi pemicu | Di luar lokasi tepercaya | Jauh dari lokasi familiar |
+| Tindakan hanya biometrik | Ya — tanpa fallback kode sandi | Ya — tanpa fallback kode sandi |
+| Tindakan keamanan yang ditunda | Tidak (per 2025) | Ya — penundaan 1 jam untuk perubahan kritis |
+| Pengaturan yang diperlukan | Biometrik, Lokasi, Find My Device | 2FA, Face/Touch ID, Lokasi Signifikan, Find My |
+| Memblokir perubahan biometrik? | Ya | Ya |
+| Memblokir penonaktifan Find My Device? | Ya | Ya (melalui penundaan) |
 
 ---
 
-## Limitations and Considerations
+## Batasan dan Pertimbangan
 
-| Consideration | Details |
+| Pertimbangan | Detail |
 |---|---|
-| **Biometric spoofing** | Advanced biometric spoofing attacks could theoretically bypass; keep device updated |
-| **Location accuracy** | GPS/Wi-Fi location must be accurate; imprecise location may trigger in wrong context |
-| **Emergency access** | Emergency calls and services remain accessible regardless of Identity Check state |
-| **Trusted location registration** | Must be done while at the trusted location with accurate GPS |
-| **Battery and location drain** | Continuously monitoring location for Identity Check context has minimal but non-zero battery impact |
+| **Spoofing biometrik** | Serangan spoofing biometrik tingkat lanjut secara teoritis dapat melewati; selalu perbarui perangkat |
+| **Akurasi lokasi** | Lokasi GPS/Wi-Fi harus akurat; lokasi yang tidak tepat dapat memicu dalam konteks yang salah |
+| **Akses darurat** | Panggilan darurat dan layanan tetap dapat diakses terlepas dari status Pemeriksaan Identitas |
+| **Pendaftaran lokasi tepercaya** | Harus dilakukan saat berada di lokasi tepercaya dengan GPS yang akurat |
+| **Dampak baterai dan lokasi** | Memantau lokasi secara terus-menerus untuk konteks Pemeriksaan Identitas memiliki dampak baterai minimal tetapi tidak nol |
 
 ---
 
-## Related Documents
+## Dokumen Terkait
 
-- [Android Hardening Guide](../hardening/android-hardening.md)
-- [Google Account Security](google-account-security.md)
+- [Panduan Penguatan Android](../hardening/android-hardening.md)
+- [Keamanan Akun Google](google-account-security.md)
 - [Find Hub](find-my-device.md)
-- [iOS Stolen Device Protection (comparison)](../ios/stolen-device-protection.md)
+- [Perlindungan Perangkat Dicuri iOS (perbandingan)](../ios/stolen-device-protection.md)
 
 ---
 
-*Last Updated: 2026-06-01 | Source: https://support.google.com/pixelphone/answer/9463625 | https://thehackernews.com/2025/01/androids-new-identity-check-feature.html*
+*Terakhir Diperbarui: 2026-06-01 | Sumber: https://support.google.com/pixelphone/answer/9463625 | https://thehackernews.com/2025/01/androids-new-identity-check-feature.html*

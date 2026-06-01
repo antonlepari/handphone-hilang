@@ -1,190 +1,190 @@
-# Factory Reset Protection (FRP) — Android
+# Perlindungan Reset Pabrik (FRP) — Android
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Overview
+## Ikhtisar
 
-**Factory Reset Protection (FRP)** is an Android security feature introduced in Android 5.1 (Lollipop) that prevents a factory-reset device from being set up without the original owner's Google Account credentials. It is specifically designed to deter device theft by making stolen phones unusable unless the thief can authenticate with the original Google Account.
+**Perlindungan Reset Pabrik (Factory Reset Protection / FRP)** adalah fitur keamanan Android yang diperkenalkan pada Android 5.1 (Lollipop) yang mencegah perangkat yang telah direset pabrik diatur ulang tanpa kredensial Akun Google pemilik aslinya. Fitur ini dirancang khusus untuk mencegah pencurian perangkat dengan membuat ponsel yang dicuri tidak dapat digunakan kecuali pencuri dapat mengautentikasi dengan Akun Google asli.
 
-*Reference: https://support.google.com/android/answer/6088432*
+*Referensi: https://support.google.com/android/answer/6088432*
 
 ---
 
-## How FRP Works
+## Cara Kerja FRP
 
-### The Protection Mechanism
+### Mekanisme Perlindungan
 
-FRP ties the device to the Google Account that was active on it. When a factory reset is performed through **unauthorized methods** — such as:
+FRP mengikat perangkat ke Akun Google yang aktif di dalamnya. Ketika reset pabrik dilakukan melalui **metode tidak sah** — seperti:
 
-- Recovery mode (Volume + Power button combination)
-- ADB commands
-- Fastboot commands
-- Hardware button combinations
+- Mode pemulihan (kombinasi tombol Volume + Daya)
+- Perintah ADB
+- Perintah Fastboot
+- Kombinasi tombol perangkat keras
 
-...the device will require the original Google Account email and password during the setup wizard before it can be used.
+...perangkat akan memerlukan alamat email dan kata sandi Akun Google asli selama wizard penyiapan sebelum dapat digunakan.
 
-### Normal vs. Unauthorized Reset
+### Reset Normal vs. Reset Tidak Sah
 
 ```
-AUTHORIZED RESET (via Settings menu):
-  Settings > General Management > Reset > Factory Data Reset
-  → User is authenticated (logged in) when initiating
-  → Google Account is properly removed during reset
-  → FRP does NOT trigger
-  → Device can be set up with any account after reset
+RESET YANG DISAHKAN (melalui menu Pengaturan):
+  Pengaturan > Manajemen Umum > Reset > Reset Data Pabrik
+  → Pengguna terautentikasi (masuk) saat memulai
+  → Akun Google dihapus dengan benar selama reset
+  → FRP TIDAK aktif
+  → Perangkat dapat diatur dengan akun apa pun setelah reset
 
-UNAUTHORIZED RESET (via recovery mode or hardware):
-  → Device is reset without authenticated session
-  → Google Account information is retained in protected storage
-  → FRP TRIGGERS on next setup
-  → Device requires original Google Account credentials
+RESET TIDAK SAH (melalui mode pemulihan atau perangkat keras):
+  → Perangkat direset tanpa sesi terautentikasi
+  → Informasi Akun Google disimpan di partisi yang dilindungi
+  → FRP AKTIF pada penyiapan berikutnya
+  → Perangkat memerlukan kredensial Akun Google asli
 ```
 
-### Technical Implementation
+### Implementasi Teknis
 
-FRP stores Google Account information in a protected partition that survives a factory reset initiated through unauthorized methods. This partition is only cleared when the user performs a factory reset through the authenticated Settings menu (which first removes the associated Google Account).
-
----
-
-## Why FRP Matters
-
-Without FRP:
-1. A thief steals a device
-2. Performs a factory reset using hardware buttons
-3. Sets up the device with their own account
-4. Sells or uses the device
-
-With FRP:
-1. A thief steals a device
-2. Attempts factory reset using hardware buttons
-3. Device reaches the Google Account verification screen
-4. Thief cannot proceed without the original credentials
-5. Device remains locked, significantly reducing resale value and incentive for theft
-
-> **ℹ️ NOTE:** FRP is one of the most effective anti-theft features on Android. It directly reduces the economic incentive for device theft by making stolen devices difficult to resell or reuse.
+FRP menyimpan informasi Akun Google di partisi yang dilindungi yang bertahan dari reset pabrik yang dimulai melalui metode tidak sah. Partisi ini hanya dibersihkan ketika pengguna melakukan reset pabrik melalui menu Pengaturan yang terautentikasi (yang terlebih dahulu menghapus Akun Google terkait).
 
 ---
 
-## Configuration
+## Mengapa FRP Penting
 
-### Verifying FRP Is Active
+Tanpa FRP:
+1. Pencuri mencuri perangkat
+2. Melakukan reset pabrik menggunakan tombol perangkat keras
+3. Mengatur perangkat dengan akun mereka sendiri
+4. Menjual atau menggunakan perangkat
 
-FRP is **automatically active** when:
-- A Google Account is signed in to the device
-- Android version is 5.1 or higher
+Dengan FRP:
+1. Pencuri mencuri perangkat
+2. Mencoba reset pabrik menggunakan tombol perangkat keras
+3. Perangkat mencapai layar verifikasi Akun Google
+4. Pencuri tidak dapat melanjutkan tanpa kredensial asli
+5. Perangkat tetap terkunci, secara signifikan mengurangi nilai jual kembali dan insentif pencurian
 
-No manual configuration is required. To verify:
-
-1. Go to **Settings > Accounts > Google**
-2. If a Google Account is listed, FRP is active for that account
-
-### Configuring FRP Before Selling or Giving Away a Device
-
-> **⚠️ WARNING:** If you perform a factory reset through recovery mode without first removing your Google Account, FRP will lock the device for the new owner. Always reset via the Settings menu.
-
-**Correct process before transferring a device:**
-1. Go to **Settings > Accounts > Google**
-2. Tap your Google Account
-3. Tap **Remove account**
-4. Then perform factory reset via **Settings > General Management > Reset > Factory Data Reset**
-
-Or simply:
-1. Go to **Settings > General Management > Reset > Factory Data Reset**
-2. This automatically handles account removal in the authenticated session
+> **ℹ️ CATATAN:** FRP adalah salah satu fitur anti-pencurian paling efektif di Android. Ini secara langsung mengurangi insentif ekonomi pencurian perangkat dengan membuat perangkat yang dicuri sulit dijual kembali atau digunakan ulang.
 
 ---
 
-## Enhanced FRP: The 72-Hour Rule
+## Konfigurasi
 
-Some Android manufacturers (including Samsung) implement an enhanced FRP rule: if a Google Account was added to a device within the **last 72 hours** before a factory reset was initiated, the device may apply additional lockout restrictions. This prevents a thief from:
-1. Stealing a device
-2. Quickly adding a new Google Account
-3. Immediately performing a factory reset to "clear" FRP
+### Memverifikasi FRP Aktif
+
+FRP **otomatis aktif** ketika:
+- Akun Google masuk ke perangkat
+- Versi Android adalah 5.1 atau lebih tinggi
+
+Tidak diperlukan konfigurasi manual. Untuk memverifikasi:
+
+1. Buka **Pengaturan > Akun > Google**
+2. Jika Akun Google terdaftar, FRP aktif untuk akun tersebut
+
+### Mengonfigurasi FRP Sebelum Menjual atau Memberikan Perangkat
+
+> **⚠️ PERINGATAN:** Jika Anda melakukan reset pabrik melalui mode pemulihan tanpa terlebih dahulu menghapus Akun Google, FRP akan mengunci perangkat untuk pemilik baru. Selalu reset melalui menu Pengaturan.
+
+**Proses yang benar sebelum mentransfer perangkat:**
+1. Buka **Pengaturan > Akun > Google**
+2. Ketuk Akun Google Anda
+3. Ketuk **Hapus akun**
+4. Kemudian lakukan reset pabrik melalui **Pengaturan > Manajemen Umum > Reset > Reset Data Pabrik**
+
+Atau cukup:
+1. Buka **Pengaturan > Manajemen Umum > Reset > Reset Data Pabrik**
+2. Ini secara otomatis menangani penghapusan akun dalam sesi yang terautentikasi
 
 ---
 
-## Enterprise FRP (eFRP)
+## FRP yang Ditingkatkan: Aturan 72 Jam
 
-For enterprise deployments, **Enterprise Factory Reset Protection (eFRP)** extends standard FRP with organizational control:
-
-- IT administrators can specify **which Google Accounts** (or zero accounts) can reactivate a device after reset
-- In fully managed (MDM) environments, resets performed through Settings can still be protected
-- Useful for corporate-owned devices to prevent unauthorized reuse after employee departure
-
-*Reference: https://support.google.com/work/android/answer/7596562*
+Beberapa produsen Android (termasuk Samsung) menerapkan aturan FRP yang ditingkatkan: jika Akun Google ditambahkan ke perangkat dalam **72 jam terakhir** sebelum reset pabrik dimulai, perangkat dapat menerapkan pembatasan kunci tambahan. Ini mencegah pencuri:
+1. Mencuri perangkat
+2. Dengan cepat menambahkan Akun Google baru
+3. Segera melakukan reset pabrik untuk "menghapus" FRP
 
 ---
 
-## FRP Bypass Attempts (Attacker Perspective)
+## FRP Enterprise (eFRP)
 
-Understanding bypass attempts helps configure defenses:
+Untuk penerapan enterprise, **Perlindungan Reset Pabrik Enterprise (eFRP)** memperluas FRP standar dengan kontrol organisasi:
 
-### Common Bypass Methods
+- Administrator IT dapat menentukan **Akun Google mana** (atau tidak ada akun) yang dapat mengaktifkan ulang perangkat setelah reset
+- Dalam lingkungan yang dikelola sepenuhnya (MDM), reset yang dilakukan melalui Pengaturan tetap dapat dilindungi
+- Berguna untuk perangkat milik perusahaan untuk mencegah penggunaan ulang yang tidak sah setelah karyawan keluar
 
-| Method | Description | Effectiveness |
+*Referensi: https://support.google.com/work/android/answer/7596562*
+
+---
+
+## Upaya Bypass FRP (Perspektif Penyerang)
+
+Memahami upaya bypass membantu mengonfigurasi pertahanan:
+
+### Metode Bypass Umum
+
+| Metode | Deskripsi | Efektivitas |
 |---|---|---|
-| Social Engineering Google | Convincing Google support to remove FRP | Very Low — Google requires identity verification |
-| Firmware Flashing | Flashing unsigned firmware to clear FRP partition | Varies by device; most current devices have Verified Boot |
-| ADB Bypass Tools | Third-party tools claiming to bypass FRP | Often malware; actual effectiveness varies and decreases with updates |
-| Hardware Service Tools | Commercial tools used by repair shops | Limited effectiveness on current Android versions |
+| Social Engineering Google | Meyakinkan dukungan Google untuk menghapus FRP | Sangat Rendah — Google memerlukan verifikasi identitas |
+| Flashing Firmware | Mem-flash firmware tidak ditandatangani untuk menghapus partisi FRP | Bervariasi per perangkat; sebagian besar perangkat saat ini memiliki Verified Boot |
+| Alat Bypass ADB | Alat pihak ketiga yang mengklaim bypass FRP | Sering berupa malware; efektivitas aktual bervariasi dan berkurang dengan pembaruan |
+| Alat Layanan Perangkat Keras | Alat komersial yang digunakan oleh toko reparasi | Efektivitas terbatas pada versi Android saat ini |
 
-> **⚠️ WARNING:** The vast majority of "FRP bypass tools" found online are malware, adware, or scams targeting device owners who have locked themselves out. Do not use them.
+> **⚠️ PERINGATAN:** Sebagian besar "alat bypass FRP" yang ditemukan online adalah malware, adware, atau penipuan yang menargetkan pemilik perangkat yang terkunci sendiri. Jangan gunakan mereka.
 
-### FRP Resistance on Modern Devices
+### Ketahanan FRP pada Perangkat Modern
 
-Devices with **Verified Boot** (Android 8+) and **Google Titan M** (Pixel 3+) or equivalent secure elements make FRP significantly more resistant to bypass:
+Perangkat dengan **Verified Boot** (Android 8+) dan **Google Titan M** (Pixel 3+) atau elemen aman yang setara membuat FRP jauh lebih tahan terhadap bypass:
 
-- The secure element stores FRP information in tamper-resistant hardware
-- Verified Boot prevents unsigned firmware from running that could clear FRP partitions
-- Repeated failed bypass attempts may trigger permanent device lock
-
----
-
-## FRP and Samsung Knox
-
-Samsung Galaxy devices running **Samsung Knox** implement FRP through a dual-layer system:
-
-1. **Standard Android FRP** — as described above
-2. **Samsung Reactivation Lock** — additional layer tied to Samsung Account (separate from Google Account)
-
-To fully protect a Samsung device:
-- Enable FRP via Google Account (automatic)
-- Enable Samsung Reactivation Lock via **Settings > Biometrics and security > Find My Mobile > Reactivation lock**
-
-*Reference: https://www.samsungknox.com/en/blog/what-is-factory-reset-protection*
+- Elemen aman menyimpan informasi FRP di perangkat keras yang tahan gangguan
+- Verified Boot mencegah firmware tidak ditandatangani berjalan yang dapat menghapus partisi FRP
+- Upaya bypass yang gagal berulang kali dapat memicu kunci perangkat permanen
 
 ---
 
-## What FRP Does NOT Protect Against
+## FRP dan Samsung Knox
 
-FRP is designed to prevent **unauthorized reuse** of the device, not necessarily protect data. Understand these limitations:
+Perangkat Samsung Galaxy yang menjalankan **Samsung Knox** menerapkan FRP melalui sistem dua lapis:
 
-| Threat | FRP Protection? | Additional Mitigation Needed |
+1. **FRP Android Standar** — seperti yang dijelaskan di atas
+2. **Kunci Reaktivasi Samsung** — lapisan tambahan yang terikat dengan Akun Samsung (terpisah dari Akun Google)
+
+Untuk melindungi perangkat Samsung sepenuhnya:
+- Aktifkan FRP melalui Akun Google (otomatis)
+- Aktifkan Kunci Reaktivasi Samsung melalui **Pengaturan > Biometrik dan keamanan > Find My Mobile > Kunci reaktivasi**
+
+*Referensi: https://www.samsungknox.com/en/blog/what-is-factory-reset-protection*
+
+---
+
+## Apa yang TIDAK Dilindungi FRP
+
+FRP dirancang untuk mencegah **penggunaan ulang yang tidak sah** pada perangkat, bukan melindungi data. Pahami batasan ini:
+
+| Ancaman | Perlindungan FRP? | Mitigasi Tambahan yang Dibutuhkan |
 |---|---|---|
-| Data extraction before reset | No | Use strong device encryption + PIN |
-| SIM removal and use | No | Enable SIM PIN |
-| Reading SD card data | No | Encrypt SD card; avoid storing sensitive data there |
-| Physical access to unlocked device | No | Strong PIN, screen timeout, Identity Check |
-| Cloud data access via stolen credentials | No | 2FA on Google Account |
+| Ekstraksi data sebelum reset | Tidak | Gunakan enkripsi perangkat kuat + PIN |
+| Pelepasan dan penggunaan SIM | Tidak | Aktifkan PIN SIM |
+| Membaca data kartu SD | Tidak | Enkripsi kartu SD; hindari menyimpan data sensitif di sana |
+| Akses fisik ke perangkat yang terbuka | Tidak | PIN kuat, batas waktu layar, Pemeriksaan Identitas |
+| Akses data cloud melalui kredensial yang dicuri | Tidak | 2FA pada Akun Google |
 
 ---
 
-## Checklist: FRP Best Practices
+## Daftar Periksa: Praktik Terbaik FRP
 
-- [ ] Google Account is signed in on the device (FRP automatically active)
-- [ ] Google Account has strong password and 2FA enabled
-- [ ] If selling/giving away device: factory reset via Settings menu, not recovery mode
-- [ ] For Samsung: enable Samsung Reactivation Lock as additional layer
-- [ ] For enterprise: configure eFRP policy via MDM
+- [ ] Akun Google masuk di perangkat (FRP otomatis aktif)
+- [ ] Akun Google memiliki kata sandi kuat dan 2FA diaktifkan
+- [ ] Jika menjual/memberikan perangkat: reset pabrik melalui menu Pengaturan, bukan mode pemulihan
+- [ ] Untuk Samsung: aktifkan Kunci Reaktivasi Samsung sebagai lapisan tambahan
+- [ ] Untuk enterprise: konfigurasikan kebijakan eFRP melalui MDM
 
 ---
 
-## Related Documents
+## Dokumen Terkait
 
-- [Google Account Security](google-account-security.md)
-- [Android Hardening Guide](../hardening/android-hardening.md)
+- [Keamanan Akun Google](google-account-security.md)
+- [Panduan Penguatan Android](../hardening/android-hardening.md)
 - [MDM Enterprise](../hardening/mdm-enterprise.md)
 
 ---
 
-*Last Updated: 2026-06-01 | Source: https://support.google.com/android | https://www.samsungknox.com*
+*Terakhir Diperbarui: 2026-06-01 | Sumber: https://support.google.com/android | https://www.samsungknox.com*

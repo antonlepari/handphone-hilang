@@ -1,231 +1,231 @@
-# Android Hardening Checklist
+# Daftar Periksa Penguatan Android
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-This checklist covers 40+ configuration items for hardening an Android device against loss, theft, and unauthorized access. Items are organized by category. Applicable Android version is noted where behavior differs.
-
----
-
-## Lock Screen and Authentication
-
-- [ ] **Set screen lock type to PIN (6+ digits), password, or alphanumeric passphrase**
-  - Settings > Security > Screen lock
-  - Avoid: Swipe, Pattern (easily observed), Face unlock alone on lower-security devices
-
-- [ ] **Set screen lock timeout to 30 seconds**
-  - Settings > Display > Screen timeout (or Lock screen > Screen lock timeout)
-
-- [ ] **Disable "Show notifications when locked"** for sensitive apps
-  - Settings > Notifications > [App] > On Lock Screen > Don't show notifications
-
-- [ ] **Disable "Show notification content on lock screen"** globally
-  - Settings > Notifications > Notification privacy > Hide notification content
-
-- [ ] **Enable "Lock network and security" on lock** (prevents Wi-Fi/Bluetooth changes from lock screen)
-  - Settings > Security > More security settings > Network security
-
-- [ ] **Disable smart lock features** unless absolutely needed
-  - Smart Lock (trusted devices, trusted places) reduces security; disable if not required
-  - Settings > Security > More security settings > Smart Lock
-
-- [ ] **Enable "Erase data after failed attempts"**
-  - Android: Settings > Security > Automatically lock OR check manufacturer-specific setting
+Daftar periksa ini mencakup 40+ item konfigurasi untuk memperkuat perangkat Android terhadap kehilangan, pencurian, dan akses tidak sah. Item diorganisir berdasarkan kategori. Versi Android yang berlaku dicatat di mana perilaku berbeda.
 
 ---
 
-## Biometrics
+## Kunci Layar dan Autentikasi
 
-- [ ] **Enroll fingerprint authentication**
-  - Settings > Security > Fingerprint
+- [ ] **Atur jenis kunci layar ke PIN (6+ digit), kata sandi, atau frasa sandi alfanumerik**
+  - Pengaturan > Keamanan > Kunci layar
+  - Hindari: Geser, Pola (mudah diamati), Buka kunci wajah saja di perangkat keamanan rendah
 
-- [ ] **Review and understand biometric fallback**
-  - Biometrics fall back to PIN — ensure PIN is strong (see above)
-  - Enable Identity Check (Android 15+) to block passcode fallback away from home
+- [ ] **Atur batas waktu kunci layar ke 30 detik**
+  - Pengaturan > Layar > Batas waktu layar (atau Layar kunci > Batas waktu kunci layar)
 
-- [ ] **Disable "Wake up screen" for face unlock** on low-security devices
-  - Face recognition on Android without a secure sensor (IR + depth) can be spoofed with a photo
+- [ ] **Nonaktifkan "Tampilkan notifikasi saat terkunci"** untuk aplikasi sensitif
+  - Pengaturan > Notifikasi > [Aplikasi] > Di Layar Kunci > Jangan tampilkan notifikasi
 
-- [ ] **Re-enroll biometrics after a new OS update** if prompted (ensures calibration accuracy)
+- [ ] **Nonaktifkan "Tampilkan konten notifikasi di layar kunci"** secara global
+  - Pengaturan > Notifikasi > Privasi notifikasi > Sembunyikan konten notifikasi
 
----
+- [ ] **Aktifkan "Kunci jaringan dan keamanan" saat kunci** (mencegah perubahan Wi-Fi/Bluetooth dari layar kunci)
+  - Pengaturan > Keamanan > Pengaturan keamanan lainnya > Keamanan jaringan
 
-## Find Hub and Anti-Theft
+- [ ] **Nonaktifkan fitur smart lock** kecuali benar-benar diperlukan
+  - Smart Lock (perangkat tepercaya, tempat tepercaya) mengurangi keamanan; nonaktifkan jika tidak diperlukan
+  - Pengaturan > Keamanan > Pengaturan keamanan lainnya > Smart Lock
 
-- [ ] **Enable Find My Device / Find Hub**
-  - Settings > Security > Find My Device > Enable
-  - Or: Settings > Google > Find My Device
-
-- [ ] **Verify Find Hub works**: log in at https://android.com/find from another device
-
-- [ ] **Enable Offline Device Finding** in Find Hub app
-  - Find Hub > Device settings > Store location > With network in all areas
-
-- [ ] **Enable Theft Detection Lock** (Android 10+)
-  - Settings > Security > Theft protection > Theft Detection Lock
-
-- [ ] **Enable Offline Device Lock** (Android 10+)
-  - Settings > Security > Theft protection > Offline Device Lock
-
-- [ ] **Enable Remote Lock** (Android 10+)
-  - Settings > Security > Theft protection > Remote Lock
-
-- [ ] **Enable Identity Check** (Android 15+, Pixel and Samsung Galaxy)
-  - Settings > Security & privacy > More security & privacy > Identity Check
+- [ ] **Aktifkan "Hapus data setelah upaya gagal"**
+  - Android: Pengaturan > Keamanan > Kunci otomatis ATAU periksa pengaturan khusus produsen
 
 ---
 
-## Google Account Security
+## Biometrik
 
-- [ ] **Enable 2-Step Verification on Google Account**
-  - https://myaccount.google.com/security > 2-Step Verification > Turn On
+- [ ] **Daftarkan autentikasi sidik jari**
+  - Pengaturan > Keamanan > Sidik Jari
 
-- [ ] **Use authenticator app or Google Prompt for 2FA** (not SMS)
+- [ ] **Tinjau dan pahami fallback biometrik**
+  - Biometrik kembali ke PIN — pastikan PIN kuat (lihat di atas)
+  - Aktifkan Pemeriksaan Identitas (Android 15+) untuk memblokir fallback kode sandi di luar rumah
 
-- [ ] **Review and remove unknown trusted devices**
+- [ ] **Nonaktifkan "Bangunkan layar" untuk buka kunci wajah** di perangkat keamanan rendah
+  - Pengenalan wajah di Android tanpa sensor aman (IR + kedalaman) dapat ditipu dengan foto
+
+- [ ] **Daftarkan ulang biometrik setelah pembaruan OS baru** jika diminta (memastikan akurasi kalibrasi)
+
+---
+
+## Find Hub dan Anti-Pencurian
+
+- [ ] **Aktifkan Find My Device / Find Hub**
+  - Pengaturan > Keamanan > Find My Device > Aktifkan
+  - Atau: Pengaturan > Google > Find My Device
+
+- [ ] **Verifikasi Find Hub berfungsi**: masuk di https://android.com/find dari perangkat lain
+
+- [ ] **Aktifkan Pencarian Perangkat Offline** di aplikasi Find Hub
+  - Find Hub > Pengaturan perangkat > Simpan lokasi > Dengan jaringan di semua area
+
+- [ ] **Aktifkan Kunci Deteksi Pencurian** (Android 10+)
+  - Pengaturan > Keamanan > Perlindungan pencurian > Kunci Deteksi Pencurian
+
+- [ ] **Aktifkan Kunci Perangkat Offline** (Android 10+)
+  - Pengaturan > Keamanan > Perlindungan pencurian > Kunci Perangkat Offline
+
+- [ ] **Aktifkan Kunci Jarak Jauh** (Android 10+)
+  - Pengaturan > Keamanan > Perlindungan pencurian > Kunci Jarak Jauh
+
+- [ ] **Aktifkan Pemeriksaan Identitas** (Android 15+, Pixel dan Samsung Galaxy)
+  - Pengaturan > Keamanan & privasi > Keamanan & privasi lainnya > Pemeriksaan Identitas
+
+---
+
+## Keamanan Akun Google
+
+- [ ] **Aktifkan Verifikasi 2 Langkah di Akun Google**
+  - https://myaccount.google.com/security > Verifikasi 2 Langkah > Aktifkan
+
+- [ ] **Gunakan aplikasi autentikator atau Google Prompt untuk 2FA** (bukan SMS)
+
+- [ ] **Tinjau dan hapus perangkat tepercaya yang tidak dikenal**
   - https://myaccount.google.com/device-activity
 
-- [ ] **Download and store backup codes offline**
+- [ ] **Unduh dan simpan kode cadangan secara offline**
   - https://myaccount.google.com/two-step-verification/backup-codes
 
-- [ ] **Set a recovery email that uses a different provider and has its own 2FA**
+- [ ] **Atur email pemulihan yang menggunakan penyedia berbeda dan memiliki 2FA-nya sendiri**
 
-- [ ] **Complete Google Security Checkup**
+- [ ] **Selesaikan Pemeriksaan Keamanan Google**
   - https://myaccount.google.com/security-checkup
 
 ---
 
-## App Permissions Management
+## Manajemen Izin Aplikasi
 
-- [ ] **Audit location permissions for all apps**
-  - Settings > Privacy > Permission manager > Location
-  - Change all non-essential apps from "Always" to "Only while using" or "Deny"
+- [ ] **Audit izin lokasi untuk semua aplikasi**
+  - Pengaturan > Privasi > Manajer izin > Lokasi
+  - Ubah semua aplikasi non-esensial dari "Selalu" ke "Hanya saat menggunakan" atau "Tolak"
 
-- [ ] **Revoke microphone access for apps that don't need it**
-  - Settings > Privacy > Permission manager > Microphone
+- [ ] **Cabut akses mikrofon untuk aplikasi yang tidak membutuhkannya**
+  - Pengaturan > Privasi > Manajer izin > Mikrofon
 
-- [ ] **Revoke camera access for apps that don't need it**
-  - Settings > Privacy > Permission manager > Camera
+- [ ] **Cabut akses kamera untuk aplikasi yang tidak membutuhkannya**
+  - Pengaturan > Privasi > Manajer izin > Kamera
 
-- [ ] **Revoke Contacts access for apps that don't need it**
-  - Settings > Privacy > Permission manager > Contacts
+- [ ] **Cabut akses Kontak untuk aplikasi yang tidak membutuhkannya**
+  - Pengaturan > Privasi > Manajer izin > Kontak
 
-- [ ] **Review Notification access** — only grant to trusted apps
-  - Settings > Privacy > Permission manager > Notifications
+- [ ] **Tinjau akses Notifikasi** — hanya berikan ke aplikasi tepercaya
+  - Pengaturan > Privasi > Manajer izin > Notifikasi
 
-- [ ] **Review "Display over other apps" permission** — remove from non-trusted apps
-  - Settings > Apps > Special app access > Display over other apps
+- [ ] **Tinjau izin "Tampilkan di atas aplikasi lain"** — hapus dari aplikasi yang tidak tepercaya
+  - Pengaturan > Aplikasi > Akses aplikasi khusus > Tampilkan di atas aplikasi lain
 
-- [ ] **Review "Install unknown apps" permission** — all should be disabled unless necessary
-  - Settings > Apps > Special app access > Install unknown apps
-
----
-
-## Network Security
-
-- [ ] **Disable "Connect to open networks" / auto-connect to public Wi-Fi**
-  - Settings > Network & internet > Wi-Fi > Wi-Fi preferences > Connect to public networks: Off
-
-- [ ] **Set Wi-Fi MAC address to randomized** (per-network) to prevent location tracking
-  - Settings > Network & internet > Wi-Fi > [Network] > Privacy > Use randomized MAC (Android 10+)
-
-- [ ] **Install and use a reputable VPN** for public Wi-Fi usage
-  - Options: Mullvad, ProtonVPN (no-log, audited providers)
-
-- [ ] **Enable Private DNS**
-  - Settings > Network & internet > Private DNS > Automatic or set to dns.google or 1dot1dot1dot1.cloudflare-dns.com
-
-- [ ] **Disable Bluetooth when not in use**
-  - Quick Settings or Settings > Bluetooth
+- [ ] **Tinjau izin "Instal aplikasi tidak dikenal"** — semua harus dinonaktifkan kecuali diperlukan
+  - Pengaturan > Aplikasi > Akses aplikasi khusus > Instal aplikasi tidak dikenal
 
 ---
 
-## Play Protect and App Security
+## Keamanan Jaringan
 
-- [ ] **Verify Play Protect is enabled and up to date**
-  - Play Store > Profile > Play Protect > Status should show "No harmful apps found"
+- [ ] **Nonaktifkan "Sambungkan ke jaringan terbuka" / sambungan otomatis ke Wi-Fi publik**
+  - Pengaturan > Jaringan & internet > Wi-Fi > Preferensi Wi-Fi > Sambung ke jaringan publik: Nonaktif
 
-- [ ] **Run a manual Play Protect scan**
-  - Play Store > Profile > Play Protect > Scan
+- [ ] **Atur alamat MAC Wi-Fi ke acak** (per jaringan) untuk mencegah pelacakan lokasi
+  - Pengaturan > Jaringan & internet > Wi-Fi > [Jaringan] > Privasi > Gunakan MAC acak (Android 10+)
 
-- [ ] **Enable "Improve harmful app detection"**
-  - Play Store > Profile > Play Protect > Settings > Improve harmful app detection
+- [ ] **Instal dan gunakan VPN bereputasi** untuk penggunaan Wi-Fi publik
+  - Pilihan: Mullvad, ProtonVPN (penyedia tanpa log, diaudit)
 
-- [ ] **Remove apps you don't use or recognize**
-  - Settings > Apps > See all apps > uninstall unused apps
+- [ ] **Aktifkan DNS Pribadi**
+  - Pengaturan > Jaringan & internet > DNS Pribadi > Otomatis atau atur ke dns.google atau 1dot1dot1dot1.cloudflare-dns.com
 
-- [ ] **Do not install apps from outside the Play Store** unless absolutely necessary
-
-- [ ] **Review apps that have Device Administrator access**
-  - Settings > Security > Device admin apps > Remove any you don't recognize
+- [ ] **Nonaktifkan Bluetooth saat tidak digunakan**
+  - Pengaturan Cepat atau Pengaturan > Bluetooth
 
 ---
 
-## Developer Options (Disable Unless You Are a Developer)
+## Play Protect dan Keamanan Aplikasi
 
-- [ ] **Disable USB debugging**
-  - Settings > System > Developer options > USB debugging: Off
-  - If Developer options is not visible, it is disabled by default (preferred)
+- [ ] **Verifikasi Play Protect diaktifkan dan terkini**
+  - Play Store > Profil > Play Protect > Status harus menampilkan "Tidak ada aplikasi berbahaya yang ditemukan"
 
-- [ ] **Disable "OEM unlocking"**
-  - Settings > System > Developer options > OEM unlocking: Off
-  - If enabled, allows bootloader unlock which bypasses FRP
+- [ ] **Jalankan pemindaian Play Protect manual**
+  - Play Store > Profil > Play Protect > Pindai
 
-- [ ] **Disable "Mock locations"**
-  - Settings > System > Developer options > Select mock location app: None
+- [ ] **Aktifkan "Tingkatkan deteksi aplikasi berbahaya"**
+  - Play Store > Profil > Play Protect > Pengaturan > Tingkatkan deteksi aplikasi berbahaya
 
-- [ ] **Disable Developer options entirely** if you don't need them
-  - Settings > System > Developer options > toggle Off (at top of Developer options screen)
+- [ ] **Hapus aplikasi yang tidak Anda gunakan atau kenali**
+  - Pengaturan > Aplikasi > Lihat semua aplikasi > uninstal aplikasi yang tidak digunakan
 
----
+- [ ] **Jangan instal aplikasi dari luar Play Store** kecuali benar-benar diperlukan
 
-## SIM and Factory Reset Protection
-
-- [ ] **Enable SIM PIN**
-  - Settings > Security > SIM card lock > Enable
-
-- [ ] **Set carrier account PIN / port-out lock**
-  - Contact carrier directly or via carrier app
-
-- [ ] **Verify Google Account is signed in** (activates FRP)
-  - Settings > Accounts > Google
-
-- [ ] **For Samsung: Enable Reactivation Lock**
-  - Settings > Biometrics and security > Find My Mobile > Reactivation lock: Enable
+- [ ] **Tinjau aplikasi yang memiliki akses Administrator Perangkat**
+  - Pengaturan > Keamanan > Aplikasi admin perangkat > Hapus yang tidak Anda kenali
 
 ---
 
-## Backup
+## Opsi Pengembang (Nonaktifkan Kecuali Anda Pengembang)
 
-- [ ] **Enable Google Backup**
-  - Settings > Google > Backup > Back up to Google Drive: Enable
+- [ ] **Nonaktifkan penelusuran USB**
+  - Pengaturan > Sistem > Opsi pengembang > Penelusuran USB: Nonaktif
+  - Jika Opsi pengembang tidak terlihat, itu dinonaktifkan secara default (diutamakan)
 
-- [ ] **Verify backup is current**
-  - Settings > Google > Backup > Last backup: check timestamp
+- [ ] **Nonaktifkan "Buka kunci OEM"**
+  - Pengaturan > Sistem > Opsi pengembang > Buka kunci OEM: Nonaktif
+  - Jika diaktifkan, memungkinkan buka kunci bootloader yang melewati FRP
 
-- [ ] **Enable Google Photos backup for photos and videos**
-  - Google Photos > Profile > Google Photos settings > Backup: Enable
+- [ ] **Nonaktifkan "Lokasi palsu"**
+  - Pengaturan > Sistem > Opsi pengembang > Pilih aplikasi lokasi palsu: Tidak ada
 
-- [ ] **For sensitive data: test restoration**
-  - Initiate a backup restore on a test device or factory-reset device to verify completeness
-
----
-
-## Physical Security
-
-- [ ] **Do not use the device where the screen is visible to strangers** when entering PIN
-- [ ] **Enable lock immediately after screen off** (not delayed)
-  - Settings > Security > Screen lock > Lock after screen timeout: Immediately
-- [ ] **Consider a privacy screen protector** to limit screen visibility to on-axis viewing
+- [ ] **Nonaktifkan Opsi pengembang sepenuhnya** jika Anda tidak membutuhkannya
+  - Pengaturan > Sistem > Opsi pengembang > aktifkan Nonaktif (di bagian atas layar Opsi pengembang)
 
 ---
 
-## Related Documents
+## SIM dan Perlindungan Reset Pabrik
 
-- [Android Hardening Guide](../hardening/android-hardening.md)
-- [Before Loss Prevention](before-loss-prevention.md)
-- [Emergency Checklist](emergency-checklist.md)
-- [SIM Security](../hardening/sim-security.md)
+- [ ] **Aktifkan PIN SIM**
+  - Pengaturan > Keamanan > Kunci kartu SIM > Aktifkan
+
+- [ ] **Atur PIN akun operator / kunci port-out**
+  - Hubungi operator langsung atau melalui aplikasi operator
+
+- [ ] **Verifikasi Akun Google masuk** (mengaktifkan FRP)
+  - Pengaturan > Akun > Google
+
+- [ ] **Untuk Samsung: Aktifkan Kunci Reaktivasi**
+  - Pengaturan > Biometrik dan keamanan > Find My Mobile > Kunci reaktivasi: Aktifkan
 
 ---
 
-*Last Updated: 2026-06-01*
+## Cadangan
+
+- [ ] **Aktifkan Google Backup**
+  - Pengaturan > Google > Cadangan > Cadangkan ke Google Drive: Aktifkan
+
+- [ ] **Verifikasi cadangan terkini**
+  - Pengaturan > Google > Cadangan > Cadangan terakhir: periksa stempel waktu
+
+- [ ] **Aktifkan cadangan Google Foto untuk foto dan video**
+  - Google Foto > Profil > Pengaturan Google Foto > Cadangan: Aktifkan
+
+- [ ] **Untuk data sensitif: uji pemulihan**
+  - Mulai pemulihan cadangan di perangkat uji atau perangkat yang telah direset untuk memverifikasi kelengkapan
+
+---
+
+## Keamanan Fisik
+
+- [ ] **Jangan gunakan perangkat di tempat layar terlihat oleh orang asing** saat memasukkan PIN
+- [ ] **Aktifkan kunci segera setelah layar mati** (tidak ditunda)
+  - Pengaturan > Keamanan > Kunci layar > Kunci setelah batas waktu layar: Segera
+- [ ] **Pertimbangkan pelindung layar privasi** untuk membatasi visibilitas layar hanya pada tampilan sumbu
+
+---
+
+## Dokumen Terkait
+
+- [Panduan Penguatan Android](../hardening/android-hardening.md)
+- [Sebelum Kehilangan — Pencegahan](before-loss-prevention.md)
+- [Daftar Periksa Darurat](emergency-checklist.md)
+- [Keamanan SIM](../hardening/sim-security.md)
+
+---
+
+*Terakhir Diperbarui: 2026-06-01*

@@ -1,185 +1,185 @@
-# Activation Lock — iOS
+# Kunci Aktivasi — iOS
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Overview
+## Ikhtisar
 
-**Activation Lock** is an iOS security feature that ties an iPhone to its associated Apple ID. When enabled, the device requires the owner's Apple ID email and password before it can be reactivated after a factory reset, erasure, or when being set up for the first time by a new owner.
+**Kunci Aktivasi** adalah fitur keamanan iOS yang mengikat iPhone ke Apple ID terkaitnya. Ketika diaktifkan, perangkat memerlukan alamat email dan kata sandi Apple ID pemilik sebelum dapat diaktifkan kembali setelah reset pabrik, penghapusan, atau ketika sedang diatur untuk pertama kali oleh pemilik baru.
 
-Activation Lock is **automatically enabled** whenever Find My is turned on. You do not need to manually configure it — it activates as a consequence of enabling Find My.
+Kunci Aktivasi **otomatis diaktifkan** setiap kali Find My dihidupkan. Anda tidak perlu mengonfigurasinya secara manual — ini aktif sebagai konsekuensi dari mengaktifkan Find My.
 
-*Reference: https://support.apple.com/en-us/108794*
+*Referensi: https://support.apple.com/en-us/108794*
 
 ---
 
-## How Activation Lock Works
+## Cara Kerja Kunci Aktivasi
 
-### Activation
+### Aktivasi
 
-Activation Lock activates automatically when:
-1. Find My is enabled on the device (Settings > [Your Name] > Find My > Find My iPhone: On)
-2. The device is signed in to an Apple ID
+Kunci Aktivasi aktif secara otomatis ketika:
+1. Find My diaktifkan di perangkat (Pengaturan > [Nama Anda] > Find My > Find My iPhone: Aktif)
+2. Perangkat masuk ke Apple ID
 
-No additional configuration is required.
+Tidak diperlukan konfigurasi tambahan.
 
-### What It Protects Against
+### Apa yang Dilindunginya
 
-When a thief attempts to reset and reuse a stolen iPhone:
+Ketika pencuri mencoba mereset dan menggunakan kembali iPhone yang dicuri:
 
 ```
-WITHOUT Activation Lock:
-  Thief steals iPhone
-  → Performs factory reset (Settings or iTunes/Finder)
-  → Sets up device with their own Apple ID
-  → Sells or uses device freely
+TANPA Kunci Aktivasi:
+  Pencuri mencuri iPhone
+  → Melakukan reset pabrik (Pengaturan atau iTunes/Finder)
+  → Mengatur perangkat dengan Apple ID mereka sendiri
+  → Menjual atau menggunakan perangkat dengan bebas
 
-WITH Activation Lock:
-  Thief steals iPhone
-  → Attempts factory reset
-  → Device reaches Activation Lock screen during setup
-  → Requires original Apple ID email + password
-  → Thief cannot proceed without credentials
-  → Device is unusable for resale or reuse
-  → Economic incentive for theft is significantly reduced
+DENGAN Kunci Aktivasi:
+  Pencuri mencuri iPhone
+  → Mencoba reset pabrik
+  → Perangkat mencapai layar Kunci Aktivasi saat penyiapan
+  → Memerlukan email Apple ID asli + kata sandi
+  → Pencuri tidak dapat melanjutkan tanpa kredensial
+  → Perangkat tidak dapat digunakan untuk dijual atau digunakan kembali
+  → Insentif ekonomi pencurian berkurang secara signifikan
 ```
 
-### The Activation Lock Screen
+### Layar Kunci Aktivasi
 
-A device with Activation Lock enabled displays this screen during setup:
+Perangkat dengan Kunci Aktivasi yang diaktifkan menampilkan layar ini saat penyiapan:
 
 ```
 ┌────────────────────────────────────────────┐
-│          Activation Lock                   │
+│             Kunci Aktivasi                 │
 │                                            │
-│   This iPhone is linked to an Apple ID    │
+│   iPhone ini ditautkan ke Apple ID        │
 │                                            │
-│   Email: [owner's Apple ID]                │
-│   Password: ________                       │
+│   Email: [Apple ID pemilik]                │
+│   Kata Sandi: ________                     │
 │                                            │
-│       [Unlock with Apple ID]               │
+│       [Buka Kunci dengan Apple ID]         │
 │                                            │
 └────────────────────────────────────────────┘
 ```
 
-Even after a complete erasure through iTunes/Finder on a computer, the Activation Lock screen appears during the device setup process.
+Bahkan setelah penghapusan lengkap melalui iTunes/Finder di komputer, layar Kunci Aktivasi muncul selama proses penyiapan perangkat.
 
 ---
 
-## Checking Activation Lock Status
+## Memeriksa Status Kunci Aktivasi
 
-### Before Buying a Used iPhone
+### Sebelum Membeli iPhone Bekas
 
-Before purchasing a used iPhone, verify it does not have an active Activation Lock:
+Sebelum membeli iPhone bekas, verifikasi tidak memiliki Kunci Aktivasi aktif:
 
-**Method 1: Check the device directly**
-- If the device boots to the Activation Lock screen, it is locked
-- The device cannot be used without the previous owner's Apple ID credentials
+**Metode 1: Periksa perangkat langsung**
+- Jika perangkat boot ke layar Kunci Aktivasi, perangkat terkunci
+- Perangkat tidak dapat digunakan tanpa kredensial Apple ID pemilik sebelumnya
 
-**Method 2: Check IMEI online**
-1. Get the device's IMEI (dial `*#06#` or check Settings > General > About)
-2. Go to: **https://checkcoverage.apple.com**
-3. Enter the IMEI or serial number
-4. This shows warranty status but does not directly show Activation Lock status
+**Metode 2: Periksa IMEI secara online**
+1. Dapatkan IMEI perangkat (tekan `*#06#` atau periksa Pengaturan > Umum > Tentang)
+2. Buka: **https://checkcoverage.apple.com**
+3. Masukkan IMEI atau nomor seri
+4. Ini menampilkan status garansi tetapi tidak langsung menampilkan status Kunci Aktivasi
 
-**Method 3: Apple Activation Lock Status Check (for MDM)**
-Apple provides an API for MDM administrators to check Activation Lock status by IMEI/serial.
+**Metode 3: Pemeriksaan Status Kunci Aktivasi Apple (untuk MDM)**
+Apple menyediakan API untuk administrator MDM untuk memeriksa status Kunci Aktivasi berdasarkan IMEI/seri.
 
-> **⚠️ WARNING:** Do not purchase a used iPhone that boots to the Activation Lock screen. The seller cannot legitimately unlock it without the original Apple ID. Any seller claiming they can remove Activation Lock remotely for a fee is running a scam.
-
----
-
-## Removing Activation Lock (Legitimate Methods)
-
-### Method 1: Remove via iCloud.com (Remote)
-
-If you no longer have physical access to the device:
-
-1. Go to **https://www.icloud.com/find**
-2. Sign in with the Apple ID linked to the device
-3. Select the device
-4. Click **Erase This Device** (if not already erased)
-5. After erasure completes, click **Remove from Account**
-
-This removes Activation Lock remotely, allowing the next person to set up the device.
-
-### Method 2: Sign Out on the Device
-
-Before selling or giving away your iPhone:
-
-1. Open **Settings**
-2. Tap your name (Apple ID)
-3. Scroll down and tap **Sign Out**
-4. Enter your Apple ID password
-5. Follow prompts to complete sign-out
-6. Then perform a factory reset via Settings > General > Transfer or Reset iPhone > Erase All Content and Settings
-
-### Method 3: At an Apple Store
-
-If you have lost access to your Apple ID and cannot sign in remotely:
-- Visit an Apple Store with **proof of purchase** (original receipt, invoice)
-- Apple can remove Activation Lock with verified ownership documentation
-- Without proof of purchase, Apple cannot remove Activation Lock
-
-> **💡 TIP:** Keep your original device purchase receipt in a secure location (email it to yourself, save it in a secure cloud folder). This is the only documentation that can prove ownership to Apple if you lose Apple ID access.
+> **⚠️ PERINGATAN:** Jangan beli iPhone bekas yang boot ke layar Kunci Aktivasi. Penjual tidak dapat secara sah membukanya tanpa Apple ID asli. Penjual mana pun yang mengklaim dapat menghapus Kunci Aktivasi dari jarak jauh dengan bayaran adalah penipuan.
 
 ---
 
-## Activation Lock and MDM (Enterprise)
+## Menghapus Kunci Aktivasi (Metode Sah)
 
-For corporate devices managed through **Apple Business Manager (ABM)** or **Apple School Manager (ASM)**:
+### Metode 1: Hapus melalui iCloud.com (Jarak Jauh)
 
-- Devices enrolled in ABM/ASM can have Activation Lock managed by the MDM administrator
-- Administrators can disable Activation Lock for organizational devices during enrollment
-- When a managed device is wiped, it can be re-enrolled without requiring the previous user's Apple ID
-- MDM can also generate a bypass code to unlock Activation Lock on managed devices
+Jika Anda tidak lagi memiliki akses fisik ke perangkat:
 
-*Reference: https://support.apple.com/guide/apple-business-manager/about-activation-lock*
+1. Buka **https://www.icloud.com/find**
+2. Masuk dengan Apple ID yang tertaut ke perangkat
+3. Pilih perangkat
+4. Klik **Hapus Perangkat Ini** (jika belum dihapus)
+5. Setelah penghapusan selesai, klik **Hapus dari Akun**
+
+Ini menghapus Kunci Aktivasi dari jarak jauh, memungkinkan orang berikutnya mengatur perangkat.
+
+### Metode 2: Keluar di Perangkat
+
+Sebelum menjual atau memberikan iPhone Anda:
+
+1. Buka **Pengaturan**
+2. Ketuk nama Anda (Apple ID)
+3. Gulir ke bawah dan ketuk **Keluar**
+4. Masukkan kata sandi Apple ID Anda
+5. Ikuti petunjuk untuk menyelesaikan keluar
+6. Kemudian lakukan reset pabrik melalui Pengaturan > Umum > Transfer atau Reset iPhone > Hapus Semua Konten dan Pengaturan
+
+### Metode 3: Di Apple Store
+
+Jika Anda telah kehilangan akses ke Apple ID dan tidak dapat masuk dari jarak jauh:
+- Kunjungi Apple Store dengan **bukti pembelian** (tanda terima asli, faktur)
+- Apple dapat menghapus Kunci Aktivasi dengan dokumentasi kepemilikan yang terverifikasi
+- Tanpa bukti pembelian, Apple tidak dapat menghapus Kunci Aktivasi
+
+> **💡 TIPS:** Simpan tanda terima pembelian perangkat asli Anda di lokasi yang aman (email ke diri sendiri, simpan di folder cloud aman). Ini adalah satu-satunya dokumentasi yang dapat membuktikan kepemilikan ke Apple jika Anda kehilangan akses Apple ID.
 
 ---
 
-## iOS 17.5 Repair State and Activation Lock
+## Kunci Aktivasi dan MDM (Enterprise)
 
-In **iOS 17.5**, Apple introduced **Repair State**:
-- iPhone can be sent for service without removing Activation Lock
-- Device remains trackable via Find My during repair
-- Repair technician cannot erase the device without the owner's Apple ID
-- Activation Lock persists throughout the repair process
+Untuk perangkat korporat yang dikelola melalui **Apple Business Manager (ABM)** atau **Apple School Manager (ASM)**:
 
-This prevents unauthorized data access during third-party or Apple repair.
+- Perangkat yang terdaftar di ABM/ASM dapat memiliki Kunci Aktivasi yang dikelola oleh administrator MDM
+- Administrator dapat menonaktifkan Kunci Aktivasi untuk perangkat organisasi selama pendaftaran
+- Ketika perangkat yang dikelola dihapus, perangkat dapat didaftarkan ulang tanpa memerlukan Apple ID pengguna sebelumnya
+- MDM juga dapat menghasilkan kode bypass untuk membuka Kunci Aktivasi pada perangkat yang dikelola
+
+*Referensi: https://support.apple.com/guide/apple-business-manager/about-activation-lock*
 
 ---
 
-## Activation Lock Does NOT Protect Against
+## Status Perbaikan iOS 17.5 dan Kunci Aktivasi
 
-| Threat | Activation Lock Protection? | Additional Defense Needed |
+Di **iOS 17.5**, Apple memperkenalkan **Status Perbaikan**:
+- iPhone dapat dikirim untuk servis tanpa menghapus Kunci Aktivasi
+- Perangkat tetap dapat dilacak melalui Find My selama perbaikan
+- Teknisi perbaikan tidak dapat menghapus perangkat tanpa Apple ID pemilik
+- Kunci Aktivasi bertahan sepanjang proses perbaikan
+
+Ini mencegah akses data yang tidak sah selama perbaikan pihak ketiga atau Apple.
+
+---
+
+## Kunci Aktivasi TIDAK Melindungi Terhadap
+
+| Ancaman | Perlindungan Kunci Aktivasi? | Pertahanan Tambahan yang Diperlukan |
 |---|---|---|
-| Data access from unlocked device | No | Strong PIN, Stolen Device Protection |
-| SIM card removal and reuse | No | SIM PIN |
-| iCloud data access via stolen credentials | No | Strong Apple ID password + 2FA |
-| Physical tampering (chips-off attack) | No | Full disk encryption (AES-256 on iOS) |
-| Selling the device at a loss | No | Activation Lock still reduces resale value |
+| Akses data dari perangkat yang tidak terkunci | Tidak | PIN kuat, Perlindungan Perangkat Dicuri |
+| Pelepasan dan penggunaan kartu SIM | Tidak | PIN SIM |
+| Akses data iCloud melalui kredensial yang dicuri | Tidak | Kata sandi Apple ID kuat + 2FA |
+| Gangguan fisik (serangan chips-off) | Tidak | Enkripsi disk penuh (AES-256 di iOS) |
+| Menjual perangkat dengan harga lebih rendah | Tidak | Kunci Aktivasi tetap mengurangi nilai jual kembali |
 
 ---
 
-## Checklist: Activation Lock Best Practices
+## Daftar Periksa: Praktik Terbaik Kunci Aktivasi
 
-- [ ] Find My is enabled on the device (automatically enables Activation Lock)
-- [ ] Apple ID has a strong password
-- [ ] Apple ID has two-factor authentication enabled
-- [ ] Apple ID password is stored in a secure password manager (not only on the device)
-- [ ] Original proof of purchase is saved securely
-- [ ] When selling device: Sign out of Apple ID before transferring
+- [ ] Find My diaktifkan di perangkat (otomatis mengaktifkan Kunci Aktivasi)
+- [ ] Apple ID memiliki kata sandi yang kuat
+- [ ] Apple ID memiliki autentikasi dua faktor yang diaktifkan
+- [ ] Kata sandi Apple ID disimpan di pengelola kata sandi aman (bukan hanya di perangkat)
+- [ ] Bukti pembelian asli disimpan dengan aman
+- [ ] Saat menjual perangkat: Keluar dari Apple ID sebelum mentransfer
 
 ---
 
-## Related Documents
+## Dokumen Terkait
 
 - [Find My](find-my.md)
-- [Lost Mode](lost-mode.md)
-- [Stolen Device Protection](stolen-device-protection.md)
-- [Apple ID Recovery](apple-id-recovery.md)
+- [Mode Hilang](lost-mode.md)
+- [Perlindungan Perangkat Dicuri](stolen-device-protection.md)
+- [Pemulihan Apple ID](apple-id-recovery.md)
 - [MDM Enterprise](../hardening/mdm-enterprise.md)
 
 ---
 
-*Last Updated: 2026-06-01 | Source: https://support.apple.com/en-us/108794*
+*Terakhir Diperbarui: 2026-06-01 | Sumber: https://support.apple.com/en-us/108794*

@@ -1,65 +1,65 @@
-# iOS Security & Loss Response
+# Keamanan iOS & Respons Kehilangan
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Overview
+## Ikhtisar
 
-This section covers iOS-specific security features, configurations, and loss response procedures for iPhone. Apple's iOS platform is designed with privacy and security as foundational principles, and it includes several powerful anti-theft features that, when properly configured, make a stolen iPhone significantly less useful to an attacker.
+Bagian ini mencakup fitur keamanan khusus iOS, konfigurasi, dan prosedur respons kehilangan untuk iPhone. Platform iOS Apple dirancang dengan privasi dan keamanan sebagai prinsip dasar, dan mencakup beberapa fitur anti-pencurian yang kuat yang, ketika dikonfigurasi dengan benar, membuat iPhone yang dicuri jauh kurang berguna bagi penyerang.
 
 ---
 
-## iOS Security Architecture
+## Arsitektur Keamanan iOS
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                      USER DATA LAYER                         │
-│          Apps, Photos, Health, Messages, Contacts            │
+│                    LAPISAN DATA PENGGUNA                      │
+│          Aplikasi, Foto, Kesehatan, Pesan, Kontak            │
 ├──────────────────────────────────────────────────────────────┤
-│                   APPLICATION LAYER                          │
-│           App Store, iCloud, Third-Party Apps                │
+│                   LAPISAN APLIKASI                           │
+│           App Store, iCloud, Aplikasi Pihak Ketiga           │
 ├──────────────────────────────────────────────────────────────┤
-│                   APPLE SERVICES LAYER                       │
-│   Find My, Stolen Device Protection, Apple ID, iCloud        │
+│                  LAPISAN LAYANAN APPLE                       │
+│   Find My, Perlindungan Perangkat Dicuri, Apple ID, iCloud   │
 ├──────────────────────────────────────────────────────────────┤
-│                      iOS LAYER                               │
-│   Secure Enclave, Data Protection Classes, Gatekeeper        │
+│                      LAPISAN iOS                             │
+│   Secure Enclave, Kelas Perlindungan Data, Gatekeeper        │
 ├──────────────────────────────────────────────────────────────┤
-│                    HARDWARE LAYER                            │
-│   Secure Enclave Processor (SEP), Face ID / Touch ID        │
+│                   LAPISAN PERANGKAT KERAS                    │
+│   Prosesor Secure Enclave (SEP), Face ID / Touch ID         │
 └──────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Section Contents
+## Isi Bagian Ini
 
-| Document | Description |
+| Dokumen | Deskripsi |
 |---|---|
-| [Find My](find-my.md) | Apple's device tracking and recovery platform |
-| [Lost Mode](lost-mode.md) | Locking and messaging a lost iPhone |
-| [Activation Lock](activation-lock.md) | Preventing unauthorized use after factory reset |
-| [Stolen Device Protection](stolen-device-protection.md) | iOS 17.3+ protection against passcode-observed theft |
-| [Apple ID Recovery](apple-id-recovery.md) | Regaining account access after loss |
+| [Find My](find-my.md) | Platform pelacakan dan pemulihan perangkat Apple |
+| [Mode Hilang](lost-mode.md) | Mengunci dan mengirim pesan ke iPhone yang hilang |
+| [Kunci Aktivasi](activation-lock.md) | Mencegah penggunaan tidak sah setelah reset pabrik |
+| [Perlindungan Perangkat Dicuri](stolen-device-protection.md) | Perlindungan iOS 17.3+ terhadap pencurian yang diamati kode sandinya |
+| [Pemulihan Apple ID](apple-id-recovery.md) | Mendapatkan kembali akses akun setelah kehilangan |
 
 ---
 
-## iOS Anti-Theft Features at a Glance
+## Fitur Anti-Pencurian iOS Sekilas
 
-| Feature | iOS Version | Description |
+| Fitur | Versi iOS | Deskripsi |
 |---|---|---|
-| Activation Lock | iOS 7+ | Requires Apple ID after factory reset when Find My is on |
-| Find My | iOS 8+ | Track, lock, and erase device remotely |
-| Lost Mode | iOS 6+ | Lock device and display contact info |
-| Stolen Device Protection | iOS 17.3+ | Biometric-only access; 1-hour delay for critical changes away from familiar locations |
-| Lockdown Mode | iOS 16+ | Extreme hardening for high-risk users (journalists, activists) |
+| Kunci Aktivasi | iOS 7+ | Memerlukan Apple ID setelah reset pabrik ketika Find My aktif |
+| Find My | iOS 8+ | Lacak, kunci, dan hapus perangkat dari jarak jauh |
+| Mode Hilang | iOS 6+ | Kunci perangkat dan tampilkan info kontak |
+| Perlindungan Perangkat Dicuri | iOS 17.3+ | Akses hanya biometrik; penundaan 1 jam untuk perubahan kritis di luar lokasi familiar |
+| Mode Penguncian | iOS 16+ | Penguatan ekstrem untuk pengguna berisiko tinggi (jurnalis, aktivis) |
 
 ---
 
-## Version Support Notes
+## Catatan Dukungan Versi
 
-> **⚠️ WARNING:** Devices that cannot be updated to at least iOS 16 no longer receive security patches. Apple regularly discovers and patches critical vulnerabilities. Running an outdated iOS version leaves you exposed to known exploits.
+> **⚠️ PERINGATAN:** Perangkat yang tidak dapat diperbarui ke setidaknya iOS 16 tidak lagi menerima patch keamanan. Apple secara rutin menemukan dan menambal kerentanan kritis. Menjalankan versi iOS yang kedaluwarsa membuat Anda rentan terhadap eksploitasi yang diketahui.
 
-| Device | Latest Supported iOS |
+| Perangkat | iOS Terbaru yang Didukung |
 |---|---|
 | iPhone 16 series | iOS 18+ |
 | iPhone 15 series | iOS 18+ |
@@ -69,31 +69,31 @@ This section covers iOS-specific security features, configurations, and loss res
 | iPhone 11 series | iOS 18+ |
 | iPhone XS / XS Max | iOS 18+ |
 | iPhone XR | iOS 18+ |
-| iPhone X | iOS 16 (end of support) |
-| iPhone 8 / 8 Plus | iOS 16 (end of support) |
-| iPhone 7 / 7 Plus | iOS 15 (end of support) |
+| iPhone X | iOS 16 (akhir dukungan) |
+| iPhone 8 / 8 Plus | iOS 16 (akhir dukungan) |
+| iPhone 7 / 7 Plus | iOS 15 (akhir dukungan) |
 
 ---
 
-## Quick Actions for Lost iPhone
+## Tindakan Cepat untuk iPhone yang Hilang
 
-1. Open **Find My** app on another Apple device, or go to **https://icloud.com/find**
-2. Sign in with your Apple ID
-3. Select the missing iPhone
-4. Tap **Mark as Lost** to enable Lost Mode
-5. Add a phone number and message to display on the lock screen
-6. If recovery is impossible: tap **Erase This Device**
+1. Buka aplikasi **Find My** di perangkat Apple lain, atau buka **https://icloud.com/find**
+2. Masuk dengan Apple ID Anda
+3. Pilih iPhone yang hilang
+4. Ketuk **Tandai sebagai Hilang** untuk mengaktifkan Mode Hilang
+5. Tambahkan nomor telepon dan pesan untuk ditampilkan di layar kunci
+6. Jika pemulihan tidak mungkin: ketuk **Hapus Perangkat Ini**
 
-For step-by-step instructions, see [First 5 Minutes](../incident-response/first-5-minutes.md).
-
----
-
-## Related Sections
-
-- [iOS Hardening Guide](../hardening/ios-hardening.md)
-- [iOS Hardening Checklist](../checklists/ios-hardening-checklist.md)
-- [SIM Security](../hardening/sim-security.md)
+Untuk instruksi langkah demi langkah, lihat [5 Menit Pertama](../incident-response/first-5-minutes.md).
 
 ---
 
-*Last Updated: 2026-06-01 | References: https://support.apple.com | https://developer.apple.com/security*
+## Bagian Terkait
+
+- [Panduan Penguatan iOS](../hardening/ios-hardening.md)
+- [Daftar Periksa Penguatan iOS](../checklists/ios-hardening-checklist.md)
+- [Keamanan SIM](../hardening/sim-security.md)
+
+---
+
+*Terakhir Diperbarui: 2026-06-01 | Referensi: https://support.apple.com | https://developer.apple.com/security*

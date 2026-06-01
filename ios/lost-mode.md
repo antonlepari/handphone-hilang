@@ -1,166 +1,167 @@
-# Lost Mode — iOS
+# Mode Hilang — iOS
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Overview
+## Ikhtisar
 
-**Lost Mode** is an iOS feature activated through Find My that locks your iPhone and displays a custom message with your contact information on the lock screen. It is designed to both protect the device's data and increase the chance of recovery by allowing a finder to contact you without unlocking the phone.
+**Mode Hilang** adalah fitur iOS yang diaktifkan melalui Find My yang mengunci iPhone Anda dan menampilkan pesan kustom beserta informasi kontak Anda di layar kunci. Fitur ini dirancang untuk melindungi data perangkat sekaligus meningkatkan kemungkinan pemulihan dengan memungkinkan penemu menghubungi Anda tanpa membuka kunci ponsel.
 
-Lost Mode is distinct from a remote erase — it preserves your data while protecting access to it.
+Mode Hilang berbeda dari penghapusan jarak jauh — ini menjaga data Anda tetap aman sambil melindungi aksesnya.
 
-*Reference: https://support.apple.com/en-us/105072*
+*Referensi: https://support.apple.com/en-us/105072*
 
 ---
 
-## What Lost Mode Does
+## Apa yang Dilakukan Mode Hilang
 
-When you activate Lost Mode on a missing iPhone:
+Ketika Anda mengaktifkan Mode Hilang pada iPhone yang hilang:
 
-| Action | Effect |
+| Tindakan | Efek |
 |---|---|
-| **Lock screen** | Device is immediately locked with your existing passcode |
-| **Custom message** | Your chosen message appears on the lock screen (e.g., "This iPhone is lost. Please call +1-555-XXX-XXXX") |
-| **Contact phone** | An optional phone number is displayed that anyone can call directly from the lock screen, without unlocking |
-| **Location tracking** | The device continuously reports its GPS location to Find My |
-| **Apple Pay / Wallet** | Disabled — cards, transit passes, car keys cannot be used |
-| **Accessory pairing** | New accessories (Bluetooth, USB) cannot be paired |
-| **Notifications** | Existing app notifications are hidden from the lock screen |
-| **Data protection** | All data remains on the device and is protected by the passcode |
+| **Kunci layar** | Perangkat segera dikunci dengan kode sandi yang ada |
+| **Pesan kustom** | Pesan pilihan Anda muncul di layar kunci (mis., "iPhone ini hilang. Hubungi +62-XXX-XXXX") |
+| **Telepon kontak** | Nomor telepon opsional ditampilkan yang dapat dihubungi siapa saja langsung dari layar kunci, tanpa membuka kunci |
+| **Pelacakan lokasi** | Perangkat terus melaporkan lokasi GPS ke Find My |
+| **Apple Pay / Dompet** | Dinonaktifkan — kartu, tiket transit, kunci mobil tidak dapat digunakan |
+| **Pemasangan aksesori** | Aksesori baru (Bluetooth, USB) tidak dapat dipasangkan |
+| **Notifikasi** | Notifikasi aplikasi yang ada tersembunyi dari layar kunci |
+| **Perlindungan data** | Semua data tetap ada di perangkat dan dilindungi oleh kode sandi |
 
-> **ℹ️ NOTE:** Lost Mode does **not** delete your data. It locks the device. Data remains intact and will be accessible again when you enter the correct passcode after recovery.
+> **ℹ️ CATATAN:** Mode Hilang **tidak** menghapus data Anda. Ini mengunci perangkat. Data tetap utuh dan dapat diakses kembali ketika Anda memasukkan kode sandi yang benar setelah pemulihan.
 
 ---
 
-## What the Finder or Thief Sees
+## Apa yang Dilihat Penemu atau Pencuri
 
-When someone picks up an iPhone in Lost Mode, they see:
+Ketika seseorang mengambil iPhone dalam Mode Hilang, mereka melihat:
 
 ```
 ┌─────────────────────────────────────────────┐
 │                                             │
-│                [Lock screen]                │
+│               [Layar Kunci]                 │
 │                                             │
 │   ┌─────────────────────────────────────┐   │
-│   │    This iPhone has been lost.       │   │
-│   │    Please call +1-555-XXXX          │   │
-│   │    if found.                        │   │
+│   │    iPhone ini telah hilang.         │   │
+│   │    Hubungi +62-XXX-XXXX             │   │
+│   │    jika ditemukan.                  │   │
 │   └─────────────────────────────────────┘   │
 │                                             │
-│   [Call] button (calls without unlocking)   │
+│   Tombol [Hubungi] (menelepon tanpa         │
+│   membuka kunci)                            │
 │                                             │
-│              Enter Passcode                 │
+│              Masukkan Kode Sandi            │
 └─────────────────────────────────────────────┘
 ```
 
-They cannot:
-- Access any apps or data
-- Use Apple Pay
-- Pair Bluetooth devices
-- Clear the Lost Mode message without your Apple ID
+Mereka tidak dapat:
+- Mengakses aplikasi atau data apa pun
+- Menggunakan Apple Pay
+- Memasangkan perangkat Bluetooth
+- Menghapus pesan Mode Hilang tanpa Apple ID Anda
 
 ---
 
-## How to Enable Lost Mode
+## Cara Mengaktifkan Mode Hilang
 
-### Via iCloud.com
+### Melalui iCloud.com
 
-1. Go to **https://www.icloud.com/find**
-2. Sign in with your Apple ID
-3. Click the missing device on the map or device list
-4. Click **Mark as Lost** (or **Activate** under the "Mark as Lost" section)
-5. Click **Continue**
-6. Enter a phone number where you can be reached
-7. Enter a message to display (optional — a default message is shown if left blank)
-8. Click **Activate**
+1. Buka **https://www.icloud.com/find**
+2. Masuk dengan Apple ID Anda
+3. Klik perangkat yang hilang pada peta atau daftar perangkat
+4. Klik **Tandai sebagai Hilang** (atau **Aktifkan** di bawah bagian "Tandai sebagai Hilang")
+5. Klik **Lanjutkan**
+6. Masukkan nomor telepon tempat Anda dapat dihubungi
+7. Masukkan pesan untuk ditampilkan (opsional — pesan default ditampilkan jika dibiarkan kosong)
+8. Klik **Aktifkan**
 
-### Via Find My App (Another Apple Device)
+### Melalui Aplikasi Find My (Perangkat Apple Lain)
 
-1. Open **Find My** app
-2. Tap **Devices** tab
-3. Tap your missing device
-4. Scroll down and tap **Mark as Lost**
-5. Tap **Continue**
-6. Enter a phone number and optional message
-7. Tap **Activate**
+1. Buka aplikasi **Find My**
+2. Ketuk tab **Perangkat**
+3. Ketuk perangkat yang hilang
+4. Gulir ke bawah dan ketuk **Tandai sebagai Hilang**
+5. Ketuk **Lanjutkan**
+6. Masukkan nomor telepon dan pesan opsional
+7. Ketuk **Aktifkan**
 
-![Lost Mode Activation](../images/ios-lost-mode-activation.png)
-*Figure 1: Activating Lost Mode via iCloud.com — click Mark as Lost, enter contact information*
-
----
-
-## Lost Mode and Location Tracking
-
-Once Lost Mode is activated, Find My will display:
-- **Real-time location** on the map (if device has internet connectivity)
-- **Last known location** with timestamp (if device is offline)
-- **Location history** showing movement over time
-
-You will receive a notification on other Apple devices when the lost iPhone is located.
+![Aktivasi Mode Hilang](../images/ios-lost-mode-activation.png)
+*Gambar 1: Mengaktifkan Mode Hilang melalui iCloud.com — klik Tandai sebagai Hilang, masukkan informasi kontak*
 
 ---
 
-## Turning Off Lost Mode
+## Mode Hilang dan Pelacakan Lokasi
 
-When you recover your device:
+Setelah Mode Hilang diaktifkan, Find My akan menampilkan:
+- **Lokasi real-time** di peta (jika perangkat memiliki konektivitas internet)
+- **Lokasi terakhir yang diketahui** dengan stempel waktu (jika perangkat offline)
+- **Riwayat lokasi** yang menunjukkan pergerakan dari waktu ke waktu
 
-1. Enter your device passcode on the iPhone — this automatically disables Lost Mode
-2. Or, go to Find My app / iCloud.com and select **Turn Off Mark as Lost**
-
----
-
-## Lost Mode After Battery Dies
-
-If the device battery dies while in Lost Mode:
-- Lost Mode remains active — the device does not automatically leave Lost Mode when battery is depleted
-- When the device is charged and turned on, it will still be in Lost Mode
-- "Send Last Location" (if enabled) will have recorded the last GPS location before shutdown
+Anda akan menerima notifikasi di perangkat Apple lain ketika iPhone yang hilang ditemukan.
 
 ---
 
-## Lost Mode vs. Remote Erase
+## Mematikan Mode Hilang
 
-Use this decision matrix to choose the appropriate action:
+Ketika Anda memulihkan perangkat:
+
+1. Masukkan kode sandi perangkat Anda di iPhone — ini secara otomatis menonaktifkan Mode Hilang
+2. Atau, buka aplikasi Find My / iCloud.com dan pilih **Matikan Tandai sebagai Hilang**
+
+---
+
+## Mode Hilang Setelah Baterai Habis
+
+Jika baterai perangkat habis saat dalam Mode Hilang:
+- Mode Hilang tetap aktif — perangkat tidak secara otomatis keluar dari Mode Hilang ketika baterai habis
+- Ketika perangkat diisi daya dan dihidupkan, perangkat akan tetap dalam Mode Hilang
+- "Kirim Lokasi Terakhir" (jika diaktifkan) akan merekam lokasi GPS terakhir sebelum mati
+
+---
+
+## Mode Hilang vs. Hapus Jarak Jauh
+
+Gunakan matriks keputusan ini untuk memilih tindakan yang tepat:
 
 ```
-DEVICE MISSING — WHICH ACTION?
+PERANGKAT HILANG — TINDAKAN MANA?
 
-Is recovery still possible?
-├── YES, device is nearby → Play Sound
-├── MAYBE, device is somewhere trackable → Mark as Lost
-└── NO, or data is highly sensitive → Erase Device
+Apakah pemulihan masih mungkin?
+├── YA, perangkat ada di dekatnya → Putar Suara
+├── MUNGKIN, perangkat berada di tempat yang dapat dilacak → Tandai sebagai Hilang
+└── TIDAK, atau data sangat sensitif → Hapus Perangkat
 
-Is this a corporate device?
-├── YES → Consult IT / MDM policy before erasing
-└── NO → Use personal judgment
+Apakah ini perangkat korporat?
+├── YA → Konsultasikan dengan IT / kebijakan MDM sebelum menghapus
+└── TIDAK → Gunakan penilaian pribadi
 
-Does the device contain irreplaceable data?
-├── YES (no backup) → Mark as Lost first; buy time
-└── NO (current backup exists) → Erase is safe option
+Apakah perangkat berisi data yang tidak tergantikan?
+├── YA (tidak ada cadangan) → Tandai sebagai Hilang terlebih dahulu; beli waktu
+└── TIDAK (cadangan terkini ada) → Penghapusan adalah pilihan yang aman
 ```
 
-> **⚠️ WARNING:** Once you erase a device, you can no longer track it via Find My. Use "Mark as Lost" first to monitor location, then erase if recovery becomes impossible.
+> **⚠️ PERINGATAN:** Setelah Anda menghapus perangkat, Anda tidak dapat lagi melacaknya melalui Find My. Gunakan "Tandai sebagai Hilang" terlebih dahulu untuk memantau lokasi, kemudian hapus jika pemulihan menjadi tidak mungkin.
 
 ---
 
-## Lost Mode Notifications
+## Notifikasi Mode Hilang
 
-You can configure notifications for when:
-- The device is located
-- The device battery is low
-- The device connects to a network
+Anda dapat mengonfigurasi notifikasi untuk:
+- Perangkat ditemukan
+- Baterai perangkat lemah
+- Perangkat terhubung ke jaringan
 
-These notifications help you monitor the device's status without repeatedly checking Find My.
+Notifikasi ini membantu Anda memantau status perangkat tanpa harus berulang kali memeriksa Find My.
 
 ---
 
-## Related Documents
+## Dokumen Terkait
 
 - [Find My](find-my.md)
-- [Activation Lock](activation-lock.md)
-- [Stolen Device Protection](stolen-device-protection.md)
-- [First 5 Minutes](../incident-response/first-5-minutes.md)
-- [Emergency Checklist](../checklists/emergency-checklist.md)
+- [Kunci Aktivasi](activation-lock.md)
+- [Perlindungan Perangkat Dicuri](stolen-device-protection.md)
+- [5 Menit Pertama](../incident-response/first-5-minutes.md)
+- [Daftar Periksa Darurat](../checklists/emergency-checklist.md)
 
 ---
 
-*Last Updated: 2026-06-01 | Source: https://support.apple.com/en-us/105072*
+*Terakhir Diperbarui: 2026-06-01 | Sumber: https://support.apple.com/en-us/105072*

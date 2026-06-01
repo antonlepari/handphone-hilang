@@ -1,147 +1,147 @@
-# Mobile Device Loss & Theft Response Playbook
+# Panduan Respons Kehilangan & Pencurian Perangkat Mobile
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Platform: Android](https://img.shields.io/badge/Platform-Android-green.svg)
 ![Platform: iOS](https://img.shields.io/badge/Platform-iOS-blue.svg)
-![Last Updated](https://img.shields.io/badge/Last%20Updated-2026--06--01-brightgreen)
-![OWASP](https://img.shields.io/badge/References-OWASP%20%7C%20NIST%20%7C%20CISA-red)
+![Terakhir Diperbarui](https://img.shields.io/badge/Terakhir%20Diperbarui-2026--06--01-brightgreen)
+![OWASP](https://img.shields.io/badge/Referensi-OWASP%20%7C%20NIST%20%7C%20CISA-red)
 
-> **The most comprehensive open-source playbook for responding to lost or stolen smartphones — covering mitigation, prevention, incident response, recovery, and security hardening for Android and iOS.**
+> **Panduan open-source paling lengkap untuk merespons smartphone yang hilang atau dicuri — mencakup mitigasi, pencegahan, respons insiden, pemulihan, dan penguatan keamanan untuk Android dan iOS.**
 
 ---
 
-## Who This Repository Is For
+## Untuk Siapa Repositori Ini
 
-| Audience | How to Use This Repository |
+| Pengguna | Cara Menggunakan Repositori Ini |
 |---|---|
-| **General Users** | Start with the [Emergency Checklist](checklists/emergency-checklist.md) and [Before Loss Prevention](checklists/before-loss-prevention.md) |
-| **Security Professionals** | See [Threat Models](threat-models/) and [Incident Response Playbooks](incident-response/) |
-| **SOC Analysts** | See [Corporate Device Response](incident-response/corporate-device-response.md) and [Risk Matrix](threat-models/risk-matrix.md) |
-| **Digital Forensics Practitioners** | See [Tools](tools/recommended-tools.md) and [Attack Scenarios](threat-models/attack-scenarios.md) |
-| **IT Administrators** | See [MDM & Enterprise](hardening/mdm-enterprise.md) and [Android/iOS Hardening Guides](hardening/) |
-| **Corporate Teams** | See [Incident Report Template](templates/incident-report-template.md) and [Corporate Device Response](incident-response/corporate-device-response.md) |
-| **Students & Researchers** | See [Threat Landscape](docs/threat-landscape.md), [References](references/), and [Terminology](docs/terminology.md) |
+| **Pengguna Umum** | Mulai dengan [Daftar Darurat](checklists/emergency-checklist.md) dan [Pencegahan Sebelum Kehilangan](checklists/before-loss-prevention.md) |
+| **Profesional Keamanan** | Lihat [Model Ancaman](threat-models/) dan [Playbook Respons Insiden](incident-response/) |
+| **Analis SOC** | Lihat [Respons Perangkat Korporat](incident-response/corporate-device-response.md) dan [Matriks Risiko](threat-models/risk-matrix.md) |
+| **Praktisi Forensik Digital** | Lihat [Alat](tools/recommended-tools.md) dan [Skenario Serangan](threat-models/attack-scenarios.md) |
+| **Administrator IT** | Lihat [MDM & Enterprise](hardening/mdm-enterprise.md) dan [Panduan Penguatan Android/iOS](hardening/) |
+| **Tim Korporat** | Lihat [Template Laporan Insiden](templates/incident-report-template.md) dan [Respons Perangkat Korporat](incident-response/corporate-device-response.md) |
+| **Mahasiswa & Peneliti** | Lihat [Lanskap Ancaman](docs/threat-landscape.md), [Referensi](references/), dan [Terminologi](docs/terminology.md) |
 
 ---
 
-## Quick-Start Emergency Checklist
+## Daftar Periksa Darurat — Mulai Cepat
 
-> **⚠️ WARNING:** If your device was just lost or stolen, take these 5 actions immediately — in order.
+> **⚠️ PERINGATAN:** Jika perangkat Anda baru saja hilang atau dicuri, lakukan 5 tindakan ini segera — secara berurutan.
 
-1. **Open Find My Device / Find My** on a computer or another phone and check the last known location
-2. **Enable Lost Mode / Remote Lock** to display your contact information and prevent unauthorized access
-3. **Log out of all active sessions** from your Google Account or Apple ID via a web browser
-4. **Call your mobile carrier** to suspend your SIM card and prevent unauthorized calls, SMS, and data usage
-5. **Change your most critical passwords** — email first, then banking — from a trusted device
+1. **Buka Find My Device / Find My** di komputer atau ponsel lain dan periksa lokasi terakhir yang diketahui
+2. **Aktifkan Mode Hilang / Kunci Jarak Jauh** untuk menampilkan informasi kontak Anda dan mencegah akses tidak sah
+3. **Keluar dari semua sesi aktif** dari Akun Google atau Apple ID Anda melalui browser web
+4. **Hubungi operator seluler Anda** untuk menangguhkan kartu SIM dan mencegah panggilan, SMS, dan penggunaan data yang tidak sah
+5. **Ubah kata sandi terpenting Anda** — email terlebih dahulu, lalu perbankan — dari perangkat tepercaya
 
-For the complete emergency procedure, see [Emergency Checklist](checklists/emergency-checklist.md) and [First 5 Minutes](incident-response/first-5-minutes.md).
-
----
-
-## Repository Purpose & Scope
-
-This repository documents everything you need to know about smartphone security loss events — before they happen, during the event, and after. It covers:
-
-- **Prevention**: Security hardening before a loss event occurs
-- **Incident Response**: Step-by-step procedures from the first 5 minutes through the first week
-- **Recovery**: Restoring accounts, data, and trust after device loss or theft
-- **Threat Intelligence**: Attack scenarios mapped to MITRE ATT&CK Mobile Matrix
-- **Enterprise Guidance**: Corporate device policy and MDM considerations
-- **Forensics Tools**: Professional tools for digital forensics practitioners
-
-This is a living document maintained with references to official vendor documentation (Apple, Google, Samsung), NIST, OWASP, CISA, ENISA, and MITRE ATT&CK.
+Untuk prosedur darurat lengkap, lihat [Daftar Periksa Darurat](checklists/emergency-checklist.md) dan [5 Menit Pertama](incident-response/first-5-minutes.md).
 
 ---
 
-## Table of Contents
+## Tujuan & Ruang Lingkup Repositori
 
-### Documentation
-- [Overview](docs/overview.md)
-- [Threat Landscape](docs/threat-landscape.md)
-- [Terminology](docs/terminology.md)
+Repositori ini mendokumentasikan semua yang perlu Anda ketahui tentang kejadian kehilangan smartphone — sebelum terjadi, saat kejadian, dan sesudahnya. Mencakup:
+
+- **Pencegahan**: Penguatan keamanan sebelum kejadian kehilangan terjadi
+- **Respons Insiden**: Prosedur langkah demi langkah dari 5 menit pertama hingga minggu pertama
+- **Pemulihan**: Memulihkan akun, data, dan kepercayaan setelah kehilangan atau pencurian perangkat
+- **Intelijen Ancaman**: Skenario serangan yang dipetakan ke MITRE ATT&CK Mobile Matrix
+- **Panduan Enterprise**: Kebijakan perangkat korporat dan pertimbangan MDM
+- **Alat Forensik**: Alat profesional untuk praktisi forensik digital
+
+Ini adalah dokumen yang terus berkembang, dikelola dengan referensi ke dokumentasi vendor resmi (Apple, Google, Samsung), NIST, OWASP, CISA, ENISA, dan MITRE ATT&CK.
+
+---
+
+## Daftar Isi
+
+### Dokumentasi
+- [Ikhtisar](docs/overview.md)
+- [Lanskap Ancaman](docs/threat-landscape.md)
+- [Terminologi](docs/terminology.md)
 
 ### Android
-- [Android Overview](android/README.md)
-- [Find Hub (formerly Find My Device)](android/find-my-device.md)
-- [Factory Reset Protection](android/factory-reset-protection.md)
-- [Google Account Security](android/google-account-security.md)
+- [Ikhtisar Android](android/README.md)
+- [Find Hub (sebelumnya Find My Device)](android/find-my-device.md)
+- [Perlindungan Reset Pabrik (FRP)](android/factory-reset-protection.md)
+- [Keamanan Akun Google](android/google-account-security.md)
 - [Play Protect](android/play-protect.md)
-- [Identity Check](android/identity-check.md)
+- [Pemeriksaan Identitas](android/identity-check.md)
 
 ### iOS
-- [iOS Overview](ios/README.md)
+- [Ikhtisar iOS](ios/README.md)
 - [Find My](ios/find-my.md)
-- [Lost Mode](ios/lost-mode.md)
-- [Activation Lock](ios/activation-lock.md)
-- [Stolen Device Protection](ios/stolen-device-protection.md)
-- [Apple ID Recovery](ios/apple-id-recovery.md)
+- [Mode Hilang](ios/lost-mode.md)
+- [Kunci Aktivasi](ios/activation-lock.md)
+- [Perlindungan Perangkat Dicuri](ios/stolen-device-protection.md)
+- [Pemulihan Apple ID](ios/apple-id-recovery.md)
 
-### Checklists
-- [Checklists Overview](checklists/README.md)
-- [Before Loss — Prevention Checklist](checklists/before-loss-prevention.md)
-- [Android Hardening Checklist](checklists/android-hardening-checklist.md)
-- [iOS Hardening Checklist](checklists/ios-hardening-checklist.md)
-- [Emergency Checklist](checklists/emergency-checklist.md)
+### Daftar Periksa
+- [Ikhtisar Daftar Periksa](checklists/README.md)
+- [Sebelum Kehilangan — Daftar Periksa Pencegahan](checklists/before-loss-prevention.md)
+- [Daftar Periksa Penguatan Android](checklists/android-hardening-checklist.md)
+- [Daftar Periksa Penguatan iOS](checklists/ios-hardening-checklist.md)
+- [Daftar Periksa Darurat](checklists/emergency-checklist.md)
 
-### Incident Response
-- [Incident Response Overview](incident-response/README.md)
-- [Playbook Overview & Flowchart](incident-response/playbook-overview.md)
-- [First 5 Minutes](incident-response/first-5-minutes.md)
-- [First 30 Minutes](incident-response/first-30-minutes.md)
-- [First Hour](incident-response/first-hour.md)
-- [First 24 Hours](incident-response/first-24-hours.md)
-- [First Week](incident-response/first-week.md)
-- [Corporate Device Response](incident-response/corporate-device-response.md)
+### Respons Insiden
+- [Ikhtisar Respons Insiden](incident-response/README.md)
+- [Ikhtisar Playbook & Diagram Alur](incident-response/playbook-overview.md)
+- [5 Menit Pertama](incident-response/first-5-minutes.md)
+- [30 Menit Pertama](incident-response/first-30-minutes.md)
+- [Jam Pertama](incident-response/first-hour.md)
+- [24 Jam Pertama](incident-response/first-24-hours.md)
+- [Minggu Pertama](incident-response/first-week.md)
+- [Respons Perangkat Korporat](incident-response/corporate-device-response.md)
 
-### Security Hardening
-- [Hardening Overview](hardening/README.md)
-- [Android Hardening Guide](hardening/android-hardening.md)
-- [iOS Hardening Guide](hardening/ios-hardening.md)
-- [SIM Security](hardening/sim-security.md)
+### Penguatan Keamanan
+- [Ikhtisar Penguatan](hardening/README.md)
+- [Panduan Penguatan Android](hardening/android-hardening.md)
+- [Panduan Penguatan iOS](hardening/ios-hardening.md)
+- [Keamanan SIM](hardening/sim-security.md)
 - [MDM & Enterprise](hardening/mdm-enterprise.md)
 
-### Threat Models
-- [Threat Models Overview](threat-models/README.md)
-- [Threat Model Overview](threat-models/threat-model-overview.md)
-- [Attack Scenarios](threat-models/attack-scenarios.md)
-- [Risk Matrix](threat-models/risk-matrix.md)
+### Model Ancaman
+- [Ikhtisar Model Ancaman](threat-models/README.md)
+- [Ikhtisar Model Ancaman](threat-models/threat-model-overview.md)
+- [Skenario Serangan](threat-models/attack-scenarios.md)
+- [Matriks Risiko](threat-models/risk-matrix.md)
 
-### Tools
-- [Tools Overview](tools/README.md)
-- [Recommended Tools](tools/recommended-tools.md)
+### Alat
+- [Ikhtisar Alat](tools/README.md)
+- [Alat yang Direkomendasikan](tools/recommended-tools.md)
 
-### References
-- [References Overview](references/README.md)
-- [Citations](references/citations.md)
+### Referensi
+- [Ikhtisar Referensi](references/README.md)
+- [Kutipan](references/citations.md)
 
-### Templates
-- [Templates Overview](templates/README.md)
-- [Incident Report Template](templates/incident-report-template.md)
-- [Police Report Template](templates/police-report-template.md)
-- [Carrier Notification Template](templates/carrier-notification-template.md)
-
----
-
-## Contributing
-
-Contributions are welcome. To contribute:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-contribution`
-3. Make your changes following the existing document structure
-4. Ensure all references are from official, authoritative sources
-5. Submit a pull request with a clear description
-
-Please do not add unverified statistics, vendor-biased claims, or links to unofficial/unreliable sources.
+### Template
+- [Ikhtisar Template](templates/README.md)
+- [Template Laporan Insiden](templates/incident-report-template.md)
+- [Template Laporan Polisi](templates/police-report-template.md)
+- [Template Notifikasi Operator](templates/carrier-notification-template.md)
 
 ---
 
-## License
+## Kontribusi
 
-This repository is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+Kontribusi sangat disambut. Untuk berkontribusi:
 
-You are free to use, modify, and distribute this content with attribution.
+1. Fork repositori ini
+2. Buat cabang fitur: `git checkout -b fitur/kontribusi-anda`
+3. Lakukan perubahan mengikuti struktur dokumen yang ada
+4. Pastikan semua referensi berasal dari sumber resmi dan otoritatif
+5. Kirim pull request dengan deskripsi yang jelas
+
+Jangan menambahkan statistik yang tidak terverifikasi, klaim yang bias terhadap vendor, atau tautan ke sumber tidak resmi/tidak andal.
 
 ---
 
-*Last Updated: 2026-06-01 | Maintained by the open-source security community*
+## Lisensi
+
+Repositori ini dilisensikan di bawah **Lisensi MIT**. Lihat [LICENSE](LICENSE) untuk detailnya.
+
+Anda bebas menggunakan, memodifikasi, dan mendistribusikan konten ini dengan atribusi.
+
+---
+
+*Terakhir Diperbarui: 2026-06-01 | Dikelola oleh komunitas keamanan open-source*

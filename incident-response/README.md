@@ -1,88 +1,88 @@
-# Incident Response
+# Respons Insiden
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Overview
+## Ikhtisar
 
-This section provides structured incident response procedures for lost or stolen mobile devices. Procedures are organized by time phase, allowing responders to identify the appropriate actions for their current stage of the incident.
+Bagian ini menyediakan prosedur respons insiden terstruktur untuk perangkat mobile yang hilang atau dicuri. Prosedur diorganisir berdasarkan fase waktu, memungkinkan responden untuk mengidentifikasi tindakan yang tepat untuk tahap insiden mereka saat ini.
 
 ---
 
-## Incident Response Structure
+## Struktur Respons Insiden
 
 ```mermaid
 flowchart LR
-    A[Device Missing] --> B[First 5 Minutes]
-    B --> C[First 30 Minutes]
-    C --> D[First Hour]
-    D --> E[First 24 Hours]
-    E --> F[First Week]
-    F --> G[Post-Incident Review]
+    A[Perangkat Hilang] --> B[5 Menit Pertama]
+    B --> C[30 Menit Pertama]
+    C --> D[Jam Pertama]
+    D --> E[24 Jam Pertama]
+    E --> F[Minggu Pertama]
+    F --> G[Tinjauan Pasca-Insiden]
 ```
 
 ---
 
-## Documents in This Section
+## Dokumen dalam Bagian Ini
 
-| Document | Time Phase | Key Actions |
+| Dokumen | Fase Waktu | Tindakan Kunci |
 |---|---|---|
-| [Playbook Overview](playbook-overview.md) | Full flow | Complete IR flowchart, decision trees |
-| [First 5 Minutes](first-5-minutes.md) | 0–5 min | Locate, lock, log out, alert |
-| [First 30 Minutes](first-30-minutes.md) | 5–30 min | Secure accounts, contact carrier, file report |
-| [First Hour](first-hour.md) | 30–60 min | IMEI reporting, remote wipe decision, insurance |
-| [First 24 Hours](first-24-hours.md) | 1–24 hrs | Full account audit, credit monitoring |
-| [First Week](first-week.md) | 1–7 days | New device setup, insurance claim, lessons learned |
-| [Corporate Device Response](corporate-device-response.md) | All phases | Enterprise-specific procedures |
+| [Ikhtisar Playbook](playbook-overview.md) | Alur penuh | Diagram alur IR lengkap, pohon keputusan |
+| [5 Menit Pertama](first-5-minutes.md) | 0–5 mnt | Lacak, kunci, keluar, beritahu |
+| [30 Menit Pertama](first-30-minutes.md) | 5–30 mnt | Amankan akun, hubungi operator, buat laporan |
+| [Jam Pertama](first-hour.md) | 30–60 mnt | Pelaporan IMEI, keputusan hapus jarak jauh, asuransi |
+| [24 Jam Pertama](first-24-hours.md) | 1–24 jam | Audit akun penuh, pemantauan kredit |
+| [Minggu Pertama](first-week.md) | 1–7 hari | Penyiapan perangkat baru, klaim asuransi, pelajaran dipetik |
+| [Respons Perangkat Korporat](corporate-device-response.md) | Semua fase | Prosedur khusus enterprise |
 
 ---
 
-## Critical Decision: To Wipe or Not to Wipe
+## Keputusan Kritis: Hapus atau Tidak Hapus?
 
-One of the most important decisions in a device loss incident is whether to perform a remote wipe. Use this framework:
+Salah satu keputusan terpenting dalam insiden kehilangan perangkat adalah apakah akan melakukan penghapusan jarak jauh. Gunakan kerangka kerja ini:
 
 ```
-REMOTE WIPE DECISION:
+KEPUTUSAN HAPUS JARAK JAUH:
 
-Does the device contain sensitive data?
-├── YES: Work emails, client data, credentials, personal finance?
-│   └── Is device recovery still possible?
-│       ├── YES: Lock first, monitor location, delay wipe
-│       └── NO: Wipe immediately
-└── NO: Standard personal content only
-    └── Is the device insured or replaceable?
-        ├── YES: Wipe and claim
-        └── NO: Lock and attempt recovery
+Apakah perangkat berisi data sensitif?
+├── YA: Email kerja, data klien, kredensial, keuangan pribadi?
+│   └── Apakah pemulihan perangkat masih mungkin?
+│       ├── YA: Kunci terlebih dahulu, pantau lokasi, tunda penghapusan
+│       └── TIDAK: Hapus segera
+└── TIDAK: Hanya konten pribadi standar
+    └── Apakah perangkat diasuransikan atau dapat diganti?
+        ├── YA: Hapus dan klaim
+        └── TIDAK: Kunci dan coba pemulihan
 
-Corporate devices:
-└── Follow MDM/IT policy — do NOT wipe without IT authorization
-    (Wiping may destroy forensic evidence needed for investigation)
+Perangkat korporat:
+└── Ikuti kebijakan MDM/IT — JANGAN hapus tanpa otorisasi IT
+    (Penghapusan dapat menghancurkan bukti forensik yang diperlukan untuk investigasi)
 ```
 
-For detailed decision guidance, see [First Hour — Remote Wipe Decision Matrix](first-hour.md).
+Untuk panduan keputusan terperinci, lihat [Jam Pertama — Matriks Keputusan Hapus Jarak Jauh](first-hour.md).
 
 ---
 
-## Terminology
+## Terminologi
 
-| Term | Definition |
+| Istilah | Definisi |
 |---|---|
-| **Containment** | Limiting the damage from the incident (remote lock, session revocation) |
-| **Eradication** | Removing the threat (remote wipe, IMEI blacklisting) |
-| **Recovery** | Restoring normal operations (new device, account verification) |
-| **Lessons Learned** | Post-incident review to prevent recurrence |
+| **Penahanan** | Membatasi kerusakan dari insiden (kunci jarak jauh, pencabutan sesi) |
+| **Pemberantasan** | Menghilangkan ancaman (hapus jarak jauh, pemblokiran IMEI) |
+| **Pemulihan** | Memulihkan operasi normal (perangkat baru, verifikasi akun) |
+| **Pelajaran yang Dipetik** | Tinjauan pasca-insiden untuk mencegah pengulangan |
 
 ---
 
-## Reporting Requirements
+## Persyaratan Pelaporan
 
-| Scenario | Required Notifications |
+| Skenario | Notifikasi yang Diperlukan |
 |---|---|
-| Personal device | None legally required, but inform bank, carrier, and insurance |
-| BYOD with work data | Notify employer IT/Security immediately |
-| Corporate-owned device | Notify IT Security, manager, and follow organizational IR plan |
-| Data breach (personal data of others) | May require regulatory notification (GDPR, CCPA) |
-| Healthcare data | HIPAA breach notification may apply |
+| Perangkat pribadi | Tidak diwajibkan secara hukum, tetapi beritahu bank, operator, dan asuransi |
+| BYOD dengan data kerja | Segera beritahu IT/Keamanan pemberi kerja |
+| Perangkat milik korporat | Beritahu IT Security, manajer, dan ikuti rencana IR organisasi |
+| Pelanggaran data (data pribadi orang lain) | Mungkin memerlukan notifikasi regulasi (GDPR, UU PDP Indonesia) |
+| Data layanan kesehatan | Notifikasi pelanggaran mungkin berlaku |
 
 ---
 
-*Last Updated: 2026-06-01*
+*Terakhir Diperbarui: 2026-06-01*

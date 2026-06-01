@@ -1,225 +1,229 @@
-# Terminology
+# Terminologi
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-This glossary defines key terms used throughout the Mobile Device Loss & Theft Response Playbook. Terms are listed alphabetically.
+Glosarium ini mendefinisikan istilah-istilah kunci yang digunakan di seluruh Panduan Respons Kehilangan & Pencurian Perangkat Mobile. Istilah dicantumkan secara alfabetis.
 
 ---
 
 ## A
 
-**Activation Lock**
-An Apple security feature that ties an iPhone, iPad, or Apple Watch to its associated Apple ID. Even after a factory reset, the device requires the original Apple ID credentials to be reactivated. Automatically enabled when Find My is turned on.
-*See: [Activation Lock](../ios/activation-lock.md)*
+**Activation Lock (Kunci Aktivasi)**
+Fitur keamanan Apple yang mengikat iPhone, iPad, atau Apple Watch ke Apple ID terkaitnya. Bahkan setelah reset pabrik, perangkat memerlukan kredensial Apple ID asli untuk diaktifkan kembali. Otomatis diaktifkan ketika Find My dihidupkan.
+*Lihat: [Kunci Aktivasi](../ios/activation-lock.md)*
 
 **ADB (Android Debug Bridge)**
-A command-line tool that allows communication with an Android device. Used in development and forensics. If USB debugging is enabled on a stolen device, ADB can be used to extract data.
-*Reference: https://developer.android.com/tools/adb*
+Alat baris perintah yang memungkinkan komunikasi dengan perangkat Android. Digunakan dalam pengembangan dan forensik. Jika USB debugging diaktifkan pada perangkat yang dicuri, ADB dapat digunakan untuk mengekstrak data.
+*Referensi: https://developer.android.com/tools/adb*
 
-**Authenticator App**
-A software application that generates time-based one-time passwords (TOTP) for two-factor authentication. Examples: Google Authenticator, Microsoft Authenticator, Authy. More secure than SMS-based 2FA for account recovery.
+**Aplikasi Autentikator**
+Aplikasi perangkat lunak yang menghasilkan kata sandi satu kali berbasis waktu (TOTP) untuk autentikasi dua faktor. Contoh: Google Authenticator, Microsoft Authenticator, Authy. Lebih aman dari 2FA berbasis SMS untuk pemulihan akun.
 
 ---
 
 ## B
 
-**Biometric Authentication**
-Authentication using physical characteristics — fingerprint (Touch ID), facial geometry (Face ID), or iris scan. Used on both Android and iOS devices for device unlock and sensitive action authorization.
+**Autentikasi Biometrik**
+Autentikasi menggunakan karakteristik fisik — sidik jari (Touch ID), geometri wajah (Face ID), atau pemindaian iris. Digunakan pada perangkat Android dan iOS untuk buka kunci perangkat dan otorisasi tindakan sensitif.
 
 **BYOD (Bring Your Own Device)**
-A policy allowing employees to use their personal smartphones for work purposes. Creates security challenges around data segregation, remote wipe authority, and MDM enrollment.
+Kebijakan yang memungkinkan karyawan menggunakan smartphone pribadi mereka untuk keperluan kerja. Menciptakan tantangan keamanan seputar pemisahan data, otoritas penghapusan jarak jauh, dan pendaftaran MDM.
 
 ---
 
 ## C
 
-**Carrier Account PIN**
-A unique PIN set with a mobile carrier to prevent unauthorized account changes, SIM swaps, or number port-outs. Distinct from the device PIN. Also called an "account passcode."
+**PIN Akun Operator**
+PIN unik yang ditetapkan dengan operator seluler untuk mencegah perubahan akun yang tidak sah, penggantian SIM, atau port-out nomor. Berbeda dari PIN perangkat. Juga disebut "kode sandi akun."
 
 **COPE (Corporate Owned, Personally Enabled)**
-A device ownership model where the organization owns the device but allows personal use. The organization retains full MDM control, including remote wipe.
+Model kepemilikan perangkat di mana organisasi memiliki perangkat tetapi mengizinkan penggunaan pribadi. Organisasi mempertahankan kontrol MDM penuh, termasuk penghapusan jarak jauh.
 
 **CYOD (Choose Your Own Device)**
-A model where employees select from a pre-approved list of devices purchased by the organization.
+Model di mana karyawan memilih dari daftar perangkat yang telah disetujui yang dibeli oleh organisasi.
 
 ---
 
 ## D
 
-**Data at Rest**
-Data stored on the device's internal storage or SD card. Modern Android (Android 10+) and iOS (iOS 8+) devices encrypt data at rest by default using AES-256 or equivalent.
+**Data Saat Diam (Data at Rest)**
+Data yang tersimpan di penyimpanan internal perangkat atau kartu SD. Perangkat Android modern (Android 10+) dan iOS (iOS 8+) mengenkripsi data saat diam secara default menggunakan AES-256 atau setara.
 
-**Data in Transit**
-Data transmitted over networks (Wi-Fi, cellular, Bluetooth). Should be protected using TLS/HTTPS.
+**Data Saat Transit (Data in Transit)**
+Data yang dikirim melalui jaringan (Wi-Fi, seluler, Bluetooth). Harus dilindungi menggunakan TLS/HTTPS.
 
 ---
 
 ## E
 
 **eSIM (Embedded SIM)**
-A SIM card that is embedded into the device hardware and cannot be physically removed. Provides enhanced protection against SIM theft-based attacks. Supports multiple carrier profiles.
+Kartu SIM yang tertanam ke dalam perangkat keras dan tidak dapat dilepas secara fisik. Memberikan perlindungan yang ditingkatkan terhadap serangan berbasis pencurian SIM. Mendukung beberapa profil operator.
 
-**Encryption**
-The process of encoding data so it can only be read with the correct decryption key. Both Android and iOS encrypt device storage by default when a passcode is set.
+**Enkripsi**
+Proses mengkodekan data sehingga hanya dapat dibaca dengan kunci dekripsi yang benar. Android dan iOS mengenkripsi penyimpanan perangkat secara default ketika kode sandi diatur.
 
 ---
 
 ## F
 
-**Factory Reset Protection (FRP)**
-An Android security feature (Android 5.1+) that requires the original Google account credentials after a factory reset performed via recovery mode or hardware buttons. Prevents a thief from wiping and reusing the device.
-*See: [Factory Reset Protection](../android/factory-reset-protection.md)*
+**Factory Reset Protection / FRP (Perlindungan Reset Pabrik)**
+Fitur keamanan Android (Android 5.1+) yang memerlukan kredensial akun Google asli setelah reset pabrik yang dilakukan melalui mode pemulihan atau tombol perangkat keras. Mencegah pencuri menghapus dan menggunakan kembali perangkat.
+*Lihat: [Perlindungan Reset Pabrik](../android/factory-reset-protection.md)*
 
 **Find Hub**
-Google's device tracking platform, formerly called "Find My Device." Renamed in May 2025. Uses a crowdsourced network of over one billion Android devices to locate lost phones, tablets, earbuds, and tags via Bluetooth even when offline.
-*See: [Find Hub](../android/find-my-device.md)*
+Platform pelacakan perangkat Google, sebelumnya disebut "Find My Device." Diganti namanya pada Mei 2025. Menggunakan jaringan kerumunan dari lebih dari satu miliar perangkat Android untuk menemukan ponsel, tablet, earbud, dan tag yang hilang melalui Bluetooth bahkan saat offline.
+*Lihat: [Find Hub](../android/find-my-device.md)*
 
 **Find My**
-Apple's device and item tracking platform for iPhone, iPad, Mac, Apple Watch, and AirTags. Uses end-to-end encrypted crowdsourced Bluetooth signals to locate devices offline.
-*See: [Find My](../ios/find-my.md)*
+Platform pelacakan perangkat dan item Apple untuk iPhone, iPad, Mac, Apple Watch, dan AirTag. Menggunakan sinyal Bluetooth berbasis kerumunan yang dienkripsi end-to-end untuk menemukan perangkat secara offline.
+*Lihat: [Find My](../ios/find-my.md)*
 
-**Forensic Extraction**
-The process of extracting digital evidence from a device using specialized tools. Relevant in both criminal investigations and incident response contexts.
+**Ekstraksi Forensik**
+Proses mengekstrak bukti digital dari perangkat menggunakan alat khusus. Relevan dalam konteks investigasi kriminal dan respons insiden.
 
 ---
 
 ## G
 
-**Google Account**
-The primary identity and authentication mechanism for Android devices. Controls access to Gmail, Google Drive, Play Store, Find Hub, and device backups.
+**Akun Google**
+Mekanisme identitas dan autentikasi utama untuk perangkat Android. Mengontrol akses ke Gmail, Google Drive, Play Store, Find Hub, dan cadangan perangkat.
 
 ---
 
 ## I
 
-**Identity Check**
-An Android security feature introduced in January 2025 (Android 15+, Pixel and Samsung Galaxy). Requires biometric authentication (fingerprint or face) — with no passcode fallback — to access sensitive settings when the device is away from trusted locations.
-*See: [Identity Check](../android/identity-check.md)*
+**Pemeriksaan Identitas (Identity Check)**
+Fitur keamanan Android yang diperkenalkan pada Januari 2025 (Android 15+, Pixel dan Samsung Galaxy). Memerlukan autentikasi biometrik (sidik jari atau wajah) — tanpa fallback kode sandi — untuk mengakses pengaturan sensitif ketika perangkat jauh dari lokasi tepercaya.
+*Lihat: [Pemeriksaan Identitas](../android/identity-check.md)*
 
 **IMEI (International Mobile Equipment Identity)**
-A unique 15-digit number assigned to every mobile device. Used to identify a specific device on a cellular network. Carriers can block a stolen device using its IMEI. Find this in Settings > About Phone, or by dialing `*#06#`.
+Nomor 15 digit unik yang ditetapkan untuk setiap perangkat mobile. Digunakan untuk mengidentifikasi perangkat tertentu di jaringan seluler. Operator dapat memblokir perangkat yang dicuri menggunakan IMEI-nya. Temukan ini di Pengaturan > Tentang Ponsel, atau dengan menekan `*#06#`.
 
 **IMSI (International Mobile Subscriber Identity)**
-A unique identifier stored on a SIM card that identifies the subscriber on a cellular network. Distinct from IMEI.
+Pengenal unik yang tersimpan di kartu SIM yang mengidentifikasi pelanggan di jaringan seluler. Berbeda dari IMEI.
 
-**Incident Response (IR)**
-A structured methodology for managing the aftermath of a security breach or compromise. In the context of device loss, IR covers containment, eradication, recovery, and lessons learned.
+**Respons Insiden (Incident Response / IR)**
+Metodologi terstruktur untuk mengelola dampak dari pelanggaran atau kompromi keamanan. Dalam konteks kehilangan perangkat, IR mencakup penahanan, pemberantasan, pemulihan, dan pelajaran yang dipetik.
 
 **IOC (Indicator of Compromise)**
-Forensic artifacts — file hashes, IP addresses, domains, behavioral patterns — that indicate a system has been compromised. Used by tools like MVT to detect spyware.
+Artefak forensik — hash file, alamat IP, domain, pola perilaku — yang menunjukkan sistem telah disusupi. Digunakan oleh alat seperti MVT untuk mendeteksi spyware.
+
+---
+
+## K
+
+**Kunci Pemulihan (Recovery Key)**
+Kunci 28 karakter yang dibuat saat mengaktifkan Perlindungan Data Lanjutan atau autentikasi dua faktor untuk Apple ID. Digunakan untuk mendapatkan kembali akses akun jika terkunci. Harus disimpan secara aman secara offline.
+
+**Kontak Pemulihan (Recovery Contact)**
+Orang tepercaya yang dapat memberikan kode pemulihan untuk membantu mendapatkan kembali akses ke Apple ID. Kontak tidak mendapatkan akses ke data akun.
 
 ---
 
 ## L
 
-**Lost Mode**
-An iOS feature that locks a device and displays a custom message (including contact information) on the lock screen. Enables location tracking for the device. Prevents Apple Pay use. Does not erase data.
-*See: [Lost Mode](../ios/lost-mode.md)*
+**Lost Mode (Mode Hilang)**
+Fitur iOS yang mengunci perangkat dan menampilkan pesan kustom (termasuk informasi kontak) di layar kunci. Mengaktifkan pelacakan lokasi untuk perangkat. Mencegah penggunaan Apple Pay. Tidak menghapus data.
+*Lihat: [Mode Hilang](../ios/lost-mode.md)*
 
 ---
 
 ## M
 
 **MDM (Mobile Device Management)**
-Software used by organizations to manage, configure, monitor, and remotely control mobile devices. Examples: Microsoft Intune, Jamf, VMware Workspace ONE.
-*See: [MDM Enterprise](../hardening/mdm-enterprise.md)*
+Perangkat lunak yang digunakan oleh organisasi untuk mengelola, mengonfigurasi, memantau, dan mengendalikan perangkat mobile dari jarak jauh. Contoh: Microsoft Intune, Jamf, VMware Workspace ONE.
+*Lihat: [MDM Enterprise](../hardening/mdm-enterprise.md)*
 
 **MITRE ATT&CK Mobile Matrix**
-A knowledge base of adversary tactics, techniques, and procedures (TTPs) specifically for mobile platforms (Android and iOS). Used to map threat scenarios to known attack patterns.
-*Reference: https://attack.mitre.org/matrices/mobile/*
+Basis pengetahuan tentang taktik, teknik, dan prosedur (TTP) musuh khusus untuk platform mobile (Android dan iOS). Digunakan untuk memetakan skenario ancaman ke pola serangan yang diketahui.
+*Referensi: https://attack.mitre.org/matrices/mobile/*
 
 **MVT (Mobile Verification Toolkit)**
-An open-source forensics tool developed by Amnesty International Security Lab to detect signs of device compromise, including spyware like Pegasus.
-*See: [Recommended Tools](../tools/recommended-tools.md)*
+Alat forensik open-source yang dikembangkan oleh Amnesty International Security Lab untuk mendeteksi tanda-tanda kompromi perangkat, termasuk spyware seperti Pegasus.
+*Lihat: [Alat yang Direkomendasikan](../tools/recommended-tools.md)*
 
 ---
 
 ## O
 
 **OTP (One-Time Password)**
-A temporary, single-use password used for authentication. Can be delivered via SMS, email, or generated by an authenticator app. SMS-based OTPs are vulnerable to SIM swap attacks.
+Kata sandi sementara dan sekali pakai yang digunakan untuk autentikasi. Dapat dikirim melalui SMS, email, atau dibuat oleh aplikasi autentikator. OTP berbasis SMS rentan terhadap serangan SIM swap.
 
 ---
 
 ## P
 
 **Passkey**
-A FIDO2-compliant authentication credential stored on a device. Replaces passwords with cryptographic key pairs. Cannot be phished, reused, or stolen via data breach. Supported on both Android and iOS.
+Kredensial autentikasi yang sesuai dengan FIDO2 yang tersimpan di perangkat. Menggantikan kata sandi dengan pasangan kunci kriptografi. Tidak dapat di-phishing, digunakan ulang, atau dicuri melalui pelanggaran data. Didukung pada Android dan iOS.
 
 **PIN (Personal Identification Number)**
-A numeric code used to unlock a device. Minimum 4 digits (not recommended), ideally 6 digits or more, or replaced with an alphanumeric passphrase.
+Kode numerik yang digunakan untuk membuka kunci perangkat. Minimum 4 digit (tidak direkomendasikan), idealnya 6 digit atau lebih, atau diganti dengan frasa sandi alfanumerik.
 
 **Play Protect**
-Google's built-in malware scanning service for Android. Scans apps at install time and continuously after installation. Analyzes over 200 billion apps daily across the Play Store and sideloaded apps.
-*See: [Play Protect](../android/play-protect.md)*
+Layanan pemindaian malware bawaan Google untuk Android. Memindai aplikasi saat instalasi dan terus-menerus setelah instalasi. Menganalisis lebih dari 200 miliar aplikasi setiap hari di seluruh Play Store dan aplikasi sideload.
+*Lihat: [Play Protect](../android/play-protect.md)*
 
-**Port Freeze / Port-Out Lock**
-A carrier security feature that prevents a phone number from being transferred (ported) to another carrier without the account owner's explicit approval. Key defense against SIM swap attacks.
+**Port Freeze / Port-Out Lock (Kunci Port)**
+Fitur keamanan operator yang mencegah nomor telepon ditransfer (port) ke operator lain tanpa persetujuan eksplisit pemilik akun. Pertahanan kunci terhadap serangan SIM swap.
 
 ---
 
 ## R
 
-**Remote Wipe**
-The ability to erase all data on a device remotely, typically via a cloud service (Find Hub or Find My) or MDM platform. Used as a last resort when device recovery is not possible and data protection is the priority.
-
-**Recovery Key (Apple)**
-A 28-character key generated when enabling Advanced Data Protection or two-factor authentication for Apple ID. Used to regain account access if locked out. Must be stored securely offline.
-
-**Recovery Contact (Apple)**
-A trusted person who can provide a recovery code to help regain access to an Apple ID. The contact does not gain access to the account's data.
+**Remote Wipe (Penghapusan Jarak Jauh)**
+Kemampuan untuk menghapus semua data di perangkat dari jarak jauh, biasanya melalui layanan cloud (Find Hub atau Find My) atau platform MDM. Digunakan sebagai upaya terakhir ketika pemulihan perangkat tidak mungkin dan perlindungan data menjadi prioritas.
 
 ---
 
 ## S
 
-**SIM Card (Subscriber Identity Module)**
-A small card that stores subscriber identity information and provides cellular connectivity. Physical SIMs can be removed from stolen devices; eSIMs cannot.
+**Kartu SIM (Subscriber Identity Module)**
+Kartu kecil yang menyimpan informasi identitas pelanggan dan menyediakan konektivitas seluler. SIM fisik dapat dilepas dari perangkat yang dicuri; eSIM tidak bisa.
 
-**SIM PIN**
-A separate PIN used to lock the SIM card itself. If enabled, the SIM PIN is required when the SIM is inserted into a new device or after a device restart. Distinct from the device lock PIN.
+**PIN SIM**
+PIN terpisah yang digunakan untuk mengunci kartu SIM itu sendiri. Jika diaktifkan, PIN SIM diperlukan ketika SIM dimasukkan ke perangkat baru atau setelah restart perangkat. Berbeda dari PIN kunci perangkat.
 
-**SIM Swap Attack**
-A social engineering attack where a criminal convinces a carrier to transfer a victim's phone number to a SIM card controlled by the attacker. Enables bypass of SMS-based 2FA.
-*See: [SIM Security](../hardening/sim-security.md)*
+**Serangan SIM Swap**
+Serangan rekayasa sosial di mana penjahat meyakinkan operator untuk mentransfer nomor telepon korban ke kartu SIM yang dikendalikan oleh penyerang. Memungkinkan bypass 2FA berbasis SMS.
+*Lihat: [Keamanan SIM](../hardening/sim-security.md)*
 
 **Spyware**
-Malware designed to monitor and exfiltrate data from a device without the owner's knowledge. Advanced examples include Pegasus (NSO Group), designed to target journalists and activists.
+Malware yang dirancang untuk memantau dan mengekstrak data dari perangkat tanpa sepengetahuan pemilik. Contoh lanjutan termasuk Pegasus (NSO Group), yang dirancang untuk menargetkan jurnalis dan aktivis.
 
-**Stolen Device Protection**
-An iOS 17.3+ security feature that adds biometric authentication requirements (with no passcode fallback) for sensitive actions when the iPhone is in an unfamiliar location. Also imposes a one-hour delay before certain critical security changes.
-*See: [Stolen Device Protection](../ios/stolen-device-protection.md)*
+**Stolen Device Protection (Perlindungan Perangkat Dicuri)**
+Fitur keamanan iOS 17.3+ yang menambahkan persyaratan autentikasi biometrik (tanpa fallback kode sandi) untuk tindakan sensitif ketika iPhone berada di lokasi yang tidak familiar. Juga memberlakukan periode tunggu satu jam sebelum perubahan keamanan kritis tertentu.
+*Lihat: [Perlindungan Perangkat Dicuri](../ios/stolen-device-protection.md)*
 
 ---
 
 ## T
 
-**Theft Detection Lock**
-An Android 10+ security feature that uses on-device AI (accelerometer, gyroscope, Wi-Fi, Bluetooth) to detect motion patterns consistent with a snatch theft and automatically lock the device screen.
+**Theft Detection Lock (Kunci Deteksi Pencurian)**
+Fitur keamanan Android 10+ yang menggunakan AI di perangkat (akselerometer, giroskop, Wi-Fi, Bluetooth) untuk mendeteksi pola gerakan yang konsisten dengan pencurian sambaran dan secara otomatis mengunci layar perangkat.
 
 **TOTP (Time-Based One-Time Password)**
-A 2FA mechanism that generates a new 6-8 digit code every 30 seconds using a shared secret and the current time. Used by authenticator apps. More secure than SMS OTPs.
+Mekanisme 2FA yang menghasilkan kode 6-8 digit baru setiap 30 detik menggunakan rahasia bersama dan waktu saat ini. Digunakan oleh aplikasi autentikator. Lebih aman dari OTP SMS.
 
-**Trusted Location**
-A location (home, office) registered in Android's Identity Check or iOS's Stolen Device Protection where relaxed security requirements apply. Outside trusted locations, stronger authentication is enforced.
+**Lokasi Tepercaya (Trusted Location)**
+Lokasi (rumah, kantor) yang terdaftar dalam Pemeriksaan Identitas Android atau Perlindungan Perangkat Dicuri iOS di mana persyaratan keamanan yang dilonggarkan berlaku. Di luar lokasi tepercaya, autentikasi yang lebih kuat diberlakukan.
 
 ---
 
 ## U
 
-**USB Debugging**
-An Android developer feature that allows a computer to send commands to an Android device via USB using ADB. Should be disabled on non-development devices, as it enables data extraction if left enabled.
+**USB Debugging (Penelusuran USB)**
+Fitur pengembang Android yang memungkinkan komputer mengirim perintah ke perangkat Android melalui USB menggunakan ADB. Harus dinonaktifkan di perangkat non-pengembangan, karena memungkinkan ekstraksi data jika dibiarkan aktif.
 
 **UWB (Ultra-Wideband)**
-A short-range wireless technology that provides centimeter-level location precision. Used in Apple's Find My with AirTags and in Android's Find Hub for precise item location. Available on newer Pixel and Samsung devices.
+Teknologi nirkabel jarak pendek yang memberikan presisi lokasi tingkat sentimeter. Digunakan di Apple's Find My dengan AirTag dan di Android's Find Hub untuk lokasi item yang tepat. Tersedia di perangkat Pixel dan Samsung yang lebih baru.
 
 ---
 
 ## V
 
 **VPN (Virtual Private Network)**
-An encrypted tunnel between a device and a server that protects internet traffic from interception. Recommended for use on public Wi-Fi networks.
+Terowongan terenkripsi antara perangkat dan server yang melindungi lalu lintas internet dari penyadapan. Direkomendasikan untuk digunakan di jaringan Wi-Fi publik.
 
 ---
 
-*Last Updated: 2026-06-01*
+*Terakhir Diperbarui: 2026-06-01*

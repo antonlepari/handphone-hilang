@@ -1,233 +1,229 @@
-# iOS Hardening Checklist
+# Daftar Periksa Penguatan iOS
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-This checklist covers 40+ configuration items for hardening an iPhone against loss, theft, and unauthorized access. Items are organized by category. iOS version requirements are noted where behavior differs.
+Daftar periksa ini mencakup 40+ item konfigurasi untuk memperkuat iPhone terhadap kehilangan, pencurian, dan akses tidak sah. Item diorganisir berdasarkan kategori. Persyaratan versi iOS dicatat di mana perilaku berbeda.
 
 ---
 
 ## Face ID / Touch ID
 
-- [ ] **Enroll Face ID or Touch ID**
-  - Settings > Face ID & Passcode (or Touch ID & Passcode)
+- [ ] **Daftarkan Face ID atau Touch ID**
+  - Pengaturan > Face ID & Kode Sandi (atau Touch ID & Kode Sandi)
 
-- [ ] **Enable Face ID / Touch ID for**: iPhone Unlock, iTunes & App Store, Apple Pay, Password AutoFill, Wallet & Apple Pay
-  - Settings > Face ID & Passcode > check all desired options
+- [ ] **Aktifkan Face ID / Touch ID untuk**: Buka Kunci iPhone, iTunes & App Store, Apple Pay, Isi Otomatis Kata Sandi, Dompet & Apple Pay
+  - Pengaturan > Face ID & Kode Sandi > centang semua opsi yang diinginkan
 
-- [ ] **Enable Stolen Device Protection (iOS 17.3+)**
-  - Settings > Face ID & Passcode > Stolen Device Protection > Turn On Protection
-  - See: [Stolen Device Protection](../ios/stolen-device-protection.md)
+- [ ] **Aktifkan Perlindungan Perangkat Dicuri (iOS 17.3+)**
+  - Pengaturan > Face ID & Kode Sandi > Perlindungan Perangkat Dicuri > Aktifkan Perlindungan
+  - Lihat: [Perlindungan Perangkat Dicuri](../ios/stolen-device-protection.md)
 
-- [ ] **Enable Significant Locations** (required for Stolen Device Protection)
-  - Settings > Privacy & Security > Location Services > System Services > Significant Locations: On
+- [ ] **Aktifkan Lokasi Signifikan** (diperlukan untuk Perlindungan Perangkat Dicuri)
+  - Pengaturan > Privasi & Keamanan > Layanan Lokasi > Layanan Sistem > Lokasi Signifikan: Aktif
 
-- [ ] **Do not use "Accessibility" attention features bypass** — ensure face attention detection is on
-  - Settings > Face ID & Passcode > Require Attention for Face ID: On
+- [ ] **Jangan gunakan bypass fitur perhatian "Aksesibilitas"** — pastikan deteksi perhatian wajah aktif
+  - Pengaturan > Face ID & Kode Sandi > Perlu Perhatian untuk Face ID: Aktif
 
 ---
 
-## Screen Lock and Passcode
+## Kunci Layar dan Kode Sandi
 
-- [ ] **Set a strong passcode (6+ digits or alphanumeric)**
-  - Settings > Face ID & Passcode > Change Passcode > Passcode Options > Custom Alphanumeric Code
+- [ ] **Atur kode sandi yang kuat (6+ digit atau alfanumerik)**
+  - Pengaturan > Face ID & Kode Sandi > Ubah Kode Sandi > Opsi Kode Sandi > Kode Alfanumerik Kustom
 
-- [ ] **Set Auto-Lock to 30 seconds**
-  - Settings > Display & Brightness > Auto-Lock > 30 Seconds
+- [ ] **Atur Kunci Otomatis ke 30 detik**
+  - Pengaturan > Layar & Kecerahan > Kunci Otomatis > 30 Detik
 
-- [ ] **Enable "Erase Data" after 10 failed passcode attempts**
-  - Settings > Face ID & Passcode > Erase Data: Toggle On
+- [ ] **Aktifkan "Hapus Data" setelah 10 upaya kode sandi yang gagal**
+  - Pengaturan > Face ID & Kode Sandi > Hapus Data: Aktifkan
 
-- [ ] **Disable access to certain features from lock screen** for sensitive items
-  - Settings > Face ID & Passcode > Allow Access When Locked:
-    - Today View: Off (if widgets show sensitive info)
-    - Notification Center: Off (optional — prevents reading notifications)
-    - Siri: Off (optional — prevents Siri lock screen queries)
-    - Return Missed Calls: evaluate based on personal preference
-    - USB Accessories: Off (prevents USB data access without unlock — requires "USB Accessories" to be Off)
+- [ ] **Nonaktifkan akses ke fitur tertentu dari layar kunci** untuk item sensitif
+  - Pengaturan > Face ID & Kode Sandi > Izinkan Akses Saat Terkunci:
+    - Tampilan Hari Ini: Nonaktif (jika widget menampilkan info sensitif)
+    - Pusat Notifikasi: Nonaktif (opsional — mencegah membaca notifikasi)
+    - Siri: Nonaktif (opsional — mencegah kueri layar kunci Siri)
+    - Aksesori USB: Nonaktif (mencegah akses data USB tanpa buka kunci)
 
-- [ ] **Disable USB Accessories access from lock screen**
-  - Settings > Face ID & Passcode > USB Accessories: Off
-  - Prevents data extraction via USB if device is locked for more than 1 hour
+- [ ] **Nonaktifkan akses Aksesori USB dari layar kunci**
+  - Pengaturan > Face ID & Kode Sandi > Aksesori USB: Nonaktif
+  - Mencegah ekstraksi data melalui USB jika perangkat terkunci lebih dari 1 jam
 
 ---
 
 ## Find My
 
-- [ ] **Enable Find My iPhone**
-  - Settings > [Your Name] > Find My > Find My iPhone: On
+- [ ] **Aktifkan Find My iPhone**
+  - Pengaturan > [Nama Anda] > Find My > Find My iPhone: Aktif
 
-- [ ] **Enable Offline Finding**
-  - Settings > [Your Name] > Find My > Find My iPhone > Enable Offline Finding: On
+- [ ] **Aktifkan Pencarian Offline**
+  - Pengaturan > [Nama Anda] > Find My > Find My iPhone > Aktifkan Pencarian Offline: Aktif
 
-- [ ] **Enable Send Last Location**
-  - Settings > [Your Name] > Find My > Find My iPhone > Send Last Location: On
+- [ ] **Aktifkan Kirim Lokasi Terakhir**
+  - Pengaturan > [Nama Anda] > Find My > Find My iPhone > Kirim Lokasi Terakhir: Aktif
 
-- [ ] **Verify Find My at https://icloud.com/find** from another device
-
----
-
-## Apple ID and iCloud Security
-
-- [ ] **Enable Two-Factor Authentication on Apple ID**
-  - Settings > [Your Name] > Sign-In & Security > Two-Factor Authentication: Turn On
-
-- [ ] **Set up a Recovery Contact**
-  - Settings > [Your Name] > Sign-In & Security > Account Recovery > Recovery Contact
-
-- [ ] **Generate and store a Recovery Key**
-  - Settings > [Your Name] > Sign-In & Security > Recovery Key
-  - Store key in a physically secure, offline location
-
-- [ ] **Review and remove unknown trusted devices from Apple ID**
-  - Settings > [Your Name] > scroll to Devices > review each
-
-- [ ] **Review trusted phone numbers** for 2FA
-  - Settings > [Your Name] > Sign-In & Security > Trusted Phone Numbers
-
-- [ ] **Enable iCloud Backup** (daily, automatic)
-  - Settings > [Your Name] > iCloud > iCloud Backup > Back Up Now / enable automatic
-
-- [ ] **Review which apps have iCloud access**
-  - Settings > [Your Name] > iCloud > [App list] — disable sync for sensitive apps if desired
+- [ ] **Verifikasi Find My di https://icloud.com/find** dari perangkat lain
 
 ---
 
-## App Permissions
+## Keamanan Apple ID dan iCloud
 
-- [ ] **Audit Location permissions for all apps**
-  - Settings > Privacy & Security > Location Services > review each app
-  - Change "Always" to "While Using" for apps that don't need background location
+- [ ] **Aktifkan Autentikasi Dua Faktor di Apple ID**
+  - Pengaturan > [Nama Anda] > Masuk & Keamanan > Autentikasi Dua Faktor: Aktifkan
 
-- [ ] **Review Microphone access**
-  - Settings > Privacy & Security > Microphone — remove access from unused apps
+- [ ] **Atur Kontak Pemulihan**
+  - Pengaturan > [Nama Anda] > Masuk & Keamanan > Pemulihan Akun > Kontak Pemulihan
 
-- [ ] **Review Camera access**
-  - Settings > Privacy & Security > Camera — remove access from unused apps
+- [ ] **Buat dan simpan Kunci Pemulihan**
+  - Pengaturan > [Nama Anda] > Masuk & Keamanan > Kunci Pemulihan
+  - Simpan kunci di lokasi yang aman secara fisik dan offline
 
-- [ ] **Review Contacts access**
-  - Settings > Privacy & Security > Contacts — limit to apps that genuinely need it
+- [ ] **Tinjau dan hapus perangkat tepercaya yang tidak dikenal dari Apple ID**
+  - Pengaturan > [Nama Anda] > gulir ke Perangkat > tinjau masing-masing
 
-- [ ] **Review Health data access**
-  - Settings > Privacy & Security > Health — limit to explicitly trusted health apps
+- [ ] **Tinjau nomor telepon tepercaya** untuk 2FA
+  - Pengaturan > [Nama Anda] > Masuk & Keamanan > Nomor Telepon Tepercaya
 
-- [ ] **Enable App Privacy Report** to monitor actual permission usage
-  - Settings > Privacy & Security > App Privacy Report: Turn On
+- [ ] **Aktifkan Cadangan iCloud** (harian, otomatis)
+  - Pengaturan > [Nama Anda] > iCloud > Cadangan iCloud > Cadangkan Sekarang / aktifkan otomatis
 
----
-
-## Network Security
-
-- [ ] **Enable "Limit IP Address Tracking"** in Wi-Fi settings
-  - Settings > Wi-Fi > [Network] > Limit IP Address Tracking: On
-
-- [ ] **Use Private Wi-Fi Address** for each network
-  - Settings > Wi-Fi > [Network] > Private Wi-Fi Address: On
-
-- [ ] **Disable "Auto-Join" for public/untrusted networks**
-  - Settings > Wi-Fi > [Network] > Auto-Join: Off for public networks
-
-- [ ] **Use a reputable VPN on untrusted networks**
-
-- [ ] **Enable iCloud Private Relay** (requires iCloud+ subscription)
-  - Settings > [Your Name] > iCloud > Private Relay: On
+- [ ] **Tinjau aplikasi mana yang memiliki akses iCloud**
+  - Pengaturan > [Nama Anda] > iCloud > [Daftar aplikasi] — nonaktifkan sinkronisasi untuk aplikasi sensitif jika diinginkan
 
 ---
 
-## Safari and Browser Security
+## Izin Aplikasi
 
-- [ ] **Enable "Fraudulent Website Warning"** in Safari
-  - Settings > Safari > Fraudulent Website Warning: On
+- [ ] **Audit izin Lokasi untuk semua aplikasi**
+  - Pengaturan > Privasi & Keamanan > Layanan Lokasi > tinjau setiap aplikasi
+  - Ubah "Selalu" ke "Saat Menggunakan" untuk aplikasi yang tidak membutuhkan lokasi latar belakang
 
-- [ ] **Enable "Prevent Cross-Site Tracking"**
-  - Settings > Safari > Prevent Cross-Site Tracking: On
+- [ ] **Tinjau akses Mikrofon**
+  - Pengaturan > Privasi & Keamanan > Mikrofon — hapus akses dari aplikasi yang tidak digunakan
 
-- [ ] **Enable "Hide IP Address" in Safari**
-  - Settings > Safari > Hide IP Address: From Trackers
+- [ ] **Tinjau akses Kamera**
+  - Pengaturan > Privasi & Keamanan > Kamera — hapus akses dari aplikasi yang tidak digunakan
 
-- [ ] **Block all cookies from trackers**
-  - Settings > Safari > Cross-Site Tracking Prevention is covered by "Prevent Cross-Site Tracking"
+- [ ] **Tinjau akses Kontak**
+  - Pengaturan > Privasi & Keamanan > Kontak — batasi ke aplikasi yang benar-benar membutuhkannya
 
-- [ ] **Enable Mail Privacy Protection** (iOS 15+)
-  - Settings > Mail > Privacy Protection > Protect Mail Activity: On
+- [ ] **Tinjau akses data Kesehatan**
+  - Pengaturan > Privasi & Keamanan > Kesehatan — batasi ke aplikasi kesehatan yang dipercaya secara eksplisit
 
----
-
-## Siri Privacy
-
-- [ ] **Disable "Allow Siri When Locked"** if you don't need lock-screen Siri
-  - Settings > Face ID & Passcode > Siri: Off
-
-- [ ] **Disable "Show Siri Suggestions"** for sensitive app categories
-  - Settings > Siri & Search > [App] > Show Siri Suggestions: Off
-
-- [ ] **Review "Hey Siri" — disable if not needed**
-  - Settings > Siri & Search > Listen for "Hey Siri": Off (prevents voice activation when device is on a table)
+- [ ] **Aktifkan Laporan Privasi Aplikasi** untuk memantau penggunaan izin aktual
+  - Pengaturan > Privasi & Keamanan > Laporan Privasi Aplikasi: Aktifkan
 
 ---
 
-## Screen Time and Restrictions
+## Keamanan Jaringan
 
-- [ ] **Enable Screen Time with a separate passcode** (different from device passcode)
-  - Settings > Screen Time > Use Screen Time Passcode
-  - This prevents thieves with the device passcode from disabling restrictions
+- [ ] **Aktifkan "Batasi Pelacakan Alamat IP"** di pengaturan Wi-Fi
+  - Pengaturan > Wi-Fi > [Jaringan] > Batasi Pelacakan Alamat IP: Aktif
 
-- [ ] **Enable "Account Changes" restriction** under Content & Privacy Restrictions
-  - Settings > Screen Time > Content & Privacy Restrictions > Account Changes: Don't Allow
-  - Prevents account email/password changes without Screen Time passcode
+- [ ] **Gunakan Alamat Wi-Fi Pribadi** untuk setiap jaringan
+  - Pengaturan > Wi-Fi > [Jaringan] > Alamat Wi-Fi Pribadi: Aktif
 
-- [ ] **Enable "Passcode Changes" restriction** (prevents changing device passcode)
-  - Settings > Screen Time > Content & Privacy Restrictions > Passcode Changes: Don't Allow
+- [ ] **Nonaktifkan "Gabung Otomatis"** untuk jaringan publik/tidak tepercaya
+  - Pengaturan > Wi-Fi > [Jaringan] > Gabung Otomatis: Nonaktif untuk jaringan publik
 
-- [ ] **Enable "Location Services" restriction**
-  - Settings > Screen Time > Content & Privacy Restrictions > Privacy > Location Services: Don't Allow Changes
+- [ ] **Gunakan VPN bereputasi di jaringan yang tidak tepercaya**
 
----
-
-## SIM Security
-
-- [ ] **Enable SIM PIN**
-  - Settings > Cellular > SIM PIN > Enable
-
-- [ ] **Set carrier account PIN and port-out lock** (see carrier-specific steps)
-  - See: [SIM Security](../hardening/sim-security.md)
+- [ ] **Aktifkan iCloud Private Relay** (memerlukan langganan iCloud+)
+  - Pengaturan > [Nama Anda] > iCloud > Private Relay: Aktif
 
 ---
 
-## Additional Hardening
+## Keamanan Safari dan Browser
 
-- [ ] **Update iOS to the latest version**
-  - Settings > General > Software Update
+- [ ] **Aktifkan "Peringatan Situs Web Penipuan"** di Safari
+  - Pengaturan > Safari > Peringatan Situs Web Penipuan: Aktif
 
-- [ ] **Enable automatic updates**
-  - Settings > General > Software Update > Automatic Updates: On
+- [ ] **Aktifkan "Cegah Pelacakan Lintas Situs"**
+  - Pengaturan > Safari > Cegah Pelacakan Lintas Situs: Aktif
 
-- [ ] **Review recently installed apps** for anything unfamiliar
-  - Settings > General > iPhone Storage > review apps and last used dates
+- [ ] **Aktifkan "Sembunyikan Alamat IP" di Safari**
+  - Pengaturan > Safari > Sembunyikan Alamat IP: Dari Pelacak
 
-- [ ] **Consider Lockdown Mode** for high-risk users (journalists, executives, activists)
-  - Settings > Privacy & Security > Lockdown Mode
-  - Dramatically restricts attack surface but limits some device functionality
-
----
-
-## Recovery Preparation
-
-- [ ] **Apple ID password memorized or in offline-accessible password manager**
-- [ ] **Recovery Key stored physically in secure location**
-- [ ] **Recovery Contact set up and confirmed**
-- [ ] **Device IMEI recorded** (Settings > General > About > IMEI)
-- [ ] **Original purchase receipt saved** (in secure email or physical copy)
+- [ ] **Aktifkan Perlindungan Privasi Mail** (iOS 15+)
+  - Pengaturan > Mail > Perlindungan Privasi > Lindungi Aktivitas Mail: Aktif
 
 ---
 
-## Related Documents
+## Privasi Siri
 
-- [iOS Hardening Guide](../hardening/ios-hardening.md)
-- [Before Loss Prevention](before-loss-prevention.md)
-- [Emergency Checklist](emergency-checklist.md)
-- [SIM Security](../hardening/sim-security.md)
-- [Stolen Device Protection](../ios/stolen-device-protection.md)
+- [ ] **Nonaktifkan "Izinkan Siri Saat Terkunci"** jika Anda tidak membutuhkan Siri layar kunci
+  - Pengaturan > Face ID & Kode Sandi > Siri: Nonaktif
+
+- [ ] **Nonaktifkan "Tampilkan Saran Siri"** untuk kategori aplikasi sensitif
+  - Pengaturan > Siri & Pencarian > [Aplikasi] > Tampilkan Saran Siri: Nonaktif
+
+- [ ] **Tinjau "Hey Siri" — nonaktifkan jika tidak diperlukan**
+  - Pengaturan > Siri & Pencarian > Dengarkan "Hey Siri": Nonaktif (mencegah aktivasi suara saat perangkat di atas meja)
 
 ---
 
-*Last Updated: 2026-06-01*
+## Screen Time dan Pembatasan
+
+- [ ] **Aktifkan Screen Time dengan kode sandi terpisah** (berbeda dari kode sandi perangkat)
+  - Pengaturan > Screen Time > Gunakan Kode Sandi Screen Time
+  - Ini mencegah pencuri dengan kode sandi perangkat menonaktifkan pembatasan
+
+- [ ] **Aktifkan pembatasan "Perubahan Akun"** di bawah Pembatasan Konten & Privasi
+  - Pengaturan > Screen Time > Pembatasan Konten & Privasi > Perubahan Akun: Jangan Izinkan
+  - Mencegah perubahan email/kata sandi akun tanpa kode sandi Screen Time
+
+- [ ] **Aktifkan pembatasan "Perubahan Kode Sandi"** (mencegah perubahan kode sandi perangkat)
+  - Pengaturan > Screen Time > Pembatasan Konten & Privasi > Perubahan Kode Sandi: Jangan Izinkan
+
+- [ ] **Aktifkan pembatasan "Layanan Lokasi"**
+  - Pengaturan > Screen Time > Pembatasan Konten & Privasi > Privasi > Layanan Lokasi: Jangan Izinkan Perubahan
+
+---
+
+## Keamanan SIM
+
+- [ ] **Aktifkan PIN SIM**
+  - Pengaturan > Seluler > PIN SIM > Aktifkan
+
+- [ ] **Atur PIN akun operator dan kunci port-out** (lihat langkah khusus operator)
+  - Lihat: [Keamanan SIM](../hardening/sim-security.md)
+
+---
+
+## Penguatan Tambahan
+
+- [ ] **Perbarui iOS ke versi terbaru**
+  - Pengaturan > Umum > Pembaruan Perangkat Lunak
+
+- [ ] **Aktifkan pembaruan otomatis**
+  - Pengaturan > Umum > Pembaruan Perangkat Lunak > Pembaruan Otomatis: Aktif
+
+- [ ] **Tinjau aplikasi yang baru diinstal** untuk yang tidak familiar
+  - Pengaturan > Umum > Penyimpanan iPhone > tinjau aplikasi dan tanggal terakhir digunakan
+
+- [ ] **Pertimbangkan Mode Penguncian** untuk pengguna berisiko tinggi (jurnalis, eksekutif, aktivis)
+  - Pengaturan > Privasi & Keamanan > Mode Penguncian
+  - Sangat membatasi permukaan serangan tetapi membatasi beberapa fungsi perangkat
+
+---
+
+## Persiapan Pemulihan
+
+- [ ] **Kata sandi Apple ID dihafal atau ada di pengelola kata sandi yang dapat diakses secara offline**
+- [ ] **Kunci Pemulihan disimpan secara fisik di lokasi yang aman**
+- [ ] **Kontak Pemulihan disiapkan dan dikonfirmasi**
+- [ ] **IMEI perangkat dicatat** (Pengaturan > Umum > Tentang > IMEI)
+- [ ] **Tanda terima pembelian asli disimpan** (di email aman atau salinan fisik)
+
+---
+
+## Dokumen Terkait
+
+- [Panduan Penguatan iOS](../hardening/ios-hardening.md)
+- [Sebelum Kehilangan — Pencegahan](before-loss-prevention.md)
+- [Daftar Periksa Darurat](emergency-checklist.md)
+- [Keamanan SIM](../hardening/sim-security.md)
+- [Perlindungan Perangkat Dicuri](../ios/stolen-device-protection.md)
+
+---
+
+*Terakhir Diperbarui: 2026-06-01*

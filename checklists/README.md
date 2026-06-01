@@ -1,64 +1,64 @@
-# Checklists
+# Daftar Periksa
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Overview
+## Ikhtisar
 
-This section contains practical, action-oriented checklists for every phase of mobile device security — from proactive prevention before a loss event through emergency response when one occurs.
+Bagian ini berisi daftar periksa yang praktis dan berorientasi tindakan untuk setiap fase keamanan perangkat mobile — dari pencegahan proaktif sebelum kejadian kehilangan hingga respons darurat saat kejadian terjadi.
 
 ---
 
-## Available Checklists
+## Daftar Periksa yang Tersedia
 
-| Checklist | Purpose | When to Use |
+| Daftar Periksa | Tujuan | Kapan Digunakan |
 |---|---|---|
-| [Before Loss — Prevention](before-loss-prevention.md) | Proactive security configuration | Now, before any loss event |
-| [Android Hardening Checklist](android-hardening-checklist.md) | 40+ item Android security configuration | Before loss; during device setup |
-| [iOS Hardening Checklist](ios-hardening-checklist.md) | 40+ item iOS security configuration | Before loss; during device setup |
-| [Emergency Checklist](emergency-checklist.md) | One-page quick reference during a loss event | Immediately when device goes missing |
+| [Sebelum Kehilangan — Pencegahan](before-loss-prevention.md) | Konfigurasi keamanan proaktif | Sekarang, sebelum kejadian kehilangan apa pun |
+| [Daftar Periksa Penguatan Android](android-hardening-checklist.md) | 40+ item konfigurasi keamanan Android | Sebelum kehilangan; saat penyiapan perangkat |
+| [Daftar Periksa Penguatan iOS](ios-hardening-checklist.md) | 40+ item konfigurasi keamanan iOS | Sebelum kehilangan; saat penyiapan perangkat |
+| [Daftar Periksa Darurat](emergency-checklist.md) | Referensi cepat satu halaman saat kejadian kehilangan | Segera saat perangkat hilang |
 
 ---
 
-## How to Use These Checklists
+## Cara Menggunakan Daftar Periksa Ini
 
-### GitHub Markdown Checkboxes
+### Kotak Centang Markdown GitHub
 
-All checklists use GitHub-flavored markdown checkboxes:
+Semua daftar periksa menggunakan kotak centang markdown berasa GitHub:
 
 ```markdown
-- [ ] Item not yet complete
-- [x] Item completed
+- [ ] Item yang belum selesai
+- [x] Item yang sudah selesai
 ```
 
-You can fork this repository and check off items as you complete them.
+Anda dapat fork repositori ini dan mencentang item saat menyelesaikannya.
 
-### Priority Order
+### Urutan Prioritas
 
-If you are starting from scratch:
+Jika Anda memulai dari awal:
 
-1. Start with **[Before Loss — Prevention](before-loss-prevention.md)** for universal steps
-2. Then complete the platform-specific hardening checklist (**Android** or **iOS**)
-3. Print or save **[Emergency Checklist](emergency-checklist.md)** for offline access
+1. Mulai dengan **[Sebelum Kehilangan — Pencegahan](before-loss-prevention.md)** untuk langkah-langkah universal
+2. Kemudian selesaikan daftar periksa penguatan khusus platform (**Android** atau **iOS**)
+3. Cetak atau simpan **[Daftar Periksa Darurat](emergency-checklist.md)** untuk akses offline
 
 ---
 
-## Quick Status Summary
+## Ringkasan Status Cepat
 
-Use this summary table to assess your current configuration:
+Gunakan tabel ringkasan ini untuk menilai konfigurasi Anda saat ini:
 
-| Category | Items | Check |
+| Kategori | Item | Periksa |
 |---|---|---|
-| Device is encrypted | Automatic on modern Android/iOS | ✓ or configure |
-| Strong PIN/passphrase set | 6+ digits or alphanumeric | Configure |
-| Find My Device / Find My enabled | Google or Apple tracking | Configure |
-| SIM PIN enabled | Carrier SIM lock | Configure |
-| 2FA on all critical accounts | Email, banking, Google/Apple ID | Configure |
-| Encrypted backup current | iCloud, Google Backup, or local | Configure |
-| IMEI documented | *#06# to find | Record now |
-| Password manager in use | Bitwarden, 1Password, etc. | Configure |
-| Recovery options secured | Backup codes, recovery contacts | Configure |
-| Remote wipe capability tested | Verified functional | Test |
+| Perangkat terenkripsi | Otomatis di Android/iOS modern | ✓ atau konfigurasikan |
+| PIN/frasa sandi kuat diatur | 6+ digit atau alfanumerik | Konfigurasikan |
+| Find My Device / Find My diaktifkan | Pelacakan Google atau Apple | Konfigurasikan |
+| PIN SIM diaktifkan | Kunci SIM operator | Konfigurasikan |
+| 2FA di semua akun kritis | Email, perbankan, Google/Apple ID | Konfigurasikan |
+| Cadangan terenkripsi terkini | iCloud, Google Backup, atau lokal | Konfigurasikan |
+| IMEI terdokumentasi | *#06# untuk menemukan | Catat sekarang |
+| Pengelola kata sandi digunakan | Bitwarden, 1Password, dll. | Konfigurasikan |
+| Opsi pemulihan diamankan | Kode cadangan, kontak pemulihan | Konfigurasikan |
+| Kemampuan penghapusan jarak jauh diuji | Terverifikasi berfungsi | Uji |
 
 ---
 
-*Last Updated: 2026-06-01*
+*Terakhir Diperbarui: 2026-06-01*

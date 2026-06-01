@@ -1,197 +1,197 @@
-# Find Hub (formerly Find My Device) — Android
+# Find Hub (sebelumnya Find My Device) — Android
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Overview
+## Ikhtisar
 
-**Find Hub** (renamed from "Find My Device" in May 2025) is Google's device tracking and recovery platform for Android. It uses a combination of GPS, Wi-Fi positioning, cellular triangulation, and a crowdsourced Bluetooth network of over one billion Android devices to locate lost or stolen phones, tablets, earbuds, and accessories.
+**Find Hub** (diganti namanya dari "Find My Device" pada Mei 2025) adalah platform pelacakan dan pemulihan perangkat Google untuk Android. Platform ini menggunakan kombinasi GPS, pemosisian Wi-Fi, triangulasi seluler, dan jaringan Bluetooth berbasis kerumunan dari lebih dari satu miliar perangkat Android untuk menemukan ponsel, tablet, earbud, dan aksesori yang hilang atau dicuri.
 
-> **ℹ️ NOTE:** The app was officially renamed from "Find My Device" to "Find Hub" in May 2025. Both names refer to the same service. All existing functionality was preserved during the rename.
+> **ℹ️ CATATAN:** Aplikasi ini secara resmi berganti nama dari "Find My Device" menjadi "Find Hub" pada Mei 2025. Kedua nama merujuk pada layanan yang sama. Semua fungsi yang ada dipertahankan selama penggantian nama.
 
-*Reference: https://android.com/articles/what-is-find-hub-and-how-to-use-it/*
-
----
-
-## Prerequisites
-
-Before Find Hub can help you recover your device, these must be configured **before** the loss:
-
-- [ ] Find Hub is enabled on the device
-- [ ] Device is signed in to a Google Account
-- [ ] Location permissions are enabled
-- [ ] Device has an active internet connection (or has been near other Android devices for offline location)
-- [ ] Device is powered on (or is a supported Pixel for post-power-off tracking)
-
-> **⚠️ WARNING:** If Find Hub is disabled before the device goes missing, you will not be able to track, lock, or erase it remotely. Enable it now.
+*Referensi: https://android.com/articles/what-is-find-hub-and-how-to-use-it/*
 
 ---
 
-## How to Enable Find Hub
+## Prasyarat
 
-### On Your Android Device
+Sebelum Find Hub dapat membantu Anda memulihkan perangkat, hal-hal berikut harus dikonfigurasi **sebelum** kehilangan:
 
-1. Open **Settings**
-2. Tap **Security** (or **Security & privacy** on some devices)
-3. Tap **Find My Device** or **Find Hub**
-4. Toggle **Use Find My Device** to **On**
-5. Confirm location is enabled: tap **Location** and ensure it is set to **On**
+- [ ] Find Hub diaktifkan pada perangkat
+- [ ] Perangkat masuk ke Akun Google
+- [ ] Izin lokasi diaktifkan
+- [ ] Perangkat memiliki koneksi internet aktif (atau telah berada di dekat perangkat Android lain untuk lokasi offline)
+- [ ] Perangkat dihidupkan (atau merupakan Pixel yang didukung untuk pelacakan pasca-mati)
 
-Alternatively: **Settings > Google > Find My Device > On**
-
-> **💡 TIP:** On Samsung devices, also enable Samsung's own Find My Mobile at: **Settings > Security and privacy > Find My Mobile**. Having both provides redundancy.
-
-![Find Hub Settings](../images/android-find-my-device.png)
-*Figure 1: Find Hub settings toggle on Android (Settings > Security > Find My Device)*
+> **⚠️ PERINGATAN:** Jika Find Hub dinonaktifkan sebelum perangkat hilang, Anda tidak akan dapat melacak, mengunci, atau menghapusnya dari jarak jauh. Aktifkan sekarang.
 
 ---
 
-## Accessing Find Hub Remotely
+## Cara Mengaktifkan Find Hub
 
-### Via Web Browser
+### Di Perangkat Android Anda
 
-1. Go to **https://myaccount.google.com/find-your-phone** or **https://android.com/find**
-2. Sign in with the Google Account linked to the missing device
-3. Select the device from the list
+1. Buka **Pengaturan**
+2. Ketuk **Keamanan** (atau **Keamanan & privasi** di beberapa perangkat)
+3. Ketuk **Find My Device** atau **Find Hub**
+4. Aktifkan **Gunakan Find My Device** ke **Aktif**
+5. Konfirmasi lokasi diaktifkan: ketuk **Lokasi** dan pastikan disetel ke **Aktif**
 
-### Via Find Hub App (Another Android Device)
+Atau: **Pengaturan > Google > Find My Device > Aktif**
 
-1. Install or open the **Find Hub** app (available on Google Play)
-2. Sign in as a **Guest** using the Google Account linked to the missing device
+> **💡 TIPS:** Di perangkat Samsung, aktifkan juga Find My Mobile Samsung di: **Pengaturan > Keamanan dan privasi > Find My Mobile**. Memiliki keduanya memberikan redundansi.
 
-### Via Google Home (Pixel)
-
-Some Pixel devices can be located via the Google Home app when signed in to the same Google Account.
-
----
-
-## Available Remote Actions
-
-Once you access your device in Find Hub, three primary actions are available:
-
-### 1. Play Sound
-
-Causes the device to ring at maximum volume for 5 minutes, even if it is on silent or vibrate. Useful when the device is lost nearby (dropped behind furniture, left in a car, etc.).
-
-- Does not require the device to be unlocked
-- Works over Wi-Fi or cellular
-
-### 2. Secure Device (Remote Lock)
-
-Locks the device with the screen lock PIN/password and optionally:
-- Displays a custom message on the lock screen (e.g., "This phone is lost. Call +1-555-XXX-XXXX")
-- Adds a phone number that can be called from the lock screen without unlocking
-- Signs the device out of the Google Account
-
-> **⚠️ WARNING:** Once "Secure Device" signs out the Google Account, Find Hub can no longer access the device. Use this action only after confirming recovery is not immediately possible, or use it **without** the "Sign out of Google Account" option first.
-
-### 3. Erase Device
-
-Performs a complete factory reset of the device, deleting all data including:
-- Photos and files
-- Installed apps
-- Account credentials
-- Google Wallet cards and keys
-
-> **⚠️ WARNING:** Erasing the device is **irreversible**. Once erased, you cannot track the device unless it was set up with a Google Account after the erase (in which case Factory Reset Protection will engage). Use this only when:
-> - Recovery of the device is confirmed impossible
-> - The device contains sensitive data that must not be accessed by an attacker
-> - You have a current backup of your data
+![Pengaturan Find Hub](../images/android-find-my-device.png)
+*Gambar 1: Sakelar pengaturan Find Hub di Android (Pengaturan > Keamanan > Find My Device)*
 
 ---
 
-## Offline Device Tracking
+## Mengakses Find Hub dari Jarak Jauh
 
-Find Hub supports locating devices even when they are offline (no Wi-Fi or cellular):
+### Melalui Browser Web
 
-### How It Works
+1. Buka **https://myaccount.google.com/find-your-phone** atau **https://android.com/find**
+2. Masuk dengan Akun Google yang terhubung ke perangkat yang hilang
+3. Pilih perangkat dari daftar
 
-Android devices in the Find Hub network periodically broadcast an encrypted Bluetooth signal. Other nearby Android devices — even those belonging to strangers — silently detect this signal and report the encrypted location to Google. Only the device owner can decrypt and view this location.
+### Melalui Aplikasi Find Hub (Perangkat Android Lain)
 
-### Enabling Offline Location Sharing
+1. Instal atau buka aplikasi **Find Hub** (tersedia di Google Play)
+2. Masuk sebagai **Tamu** menggunakan Akun Google yang terhubung ke perangkat yang hilang
 
-1. Open the **Find Hub** app on your device
-2. Tap your device name
-3. Go to **Settings**
-4. Enable **Store location** or **Find offline devices**
-5. Select **With network in all areas** for maximum coverage, or **With network in high-traffic areas only** for a privacy-preserving option
+### Melalui Google Home (Pixel)
 
-### Post-Power-Off Location (Pixel 8 and Newer)
-
-Google Pixel 8, 8a, and subsequent Pixel models can be located for **several hours after the battery has been depleted**, provided the "find offline devices" setting was previously enabled.
+Beberapa perangkat Pixel dapat ditemukan melalui aplikasi Google Home saat masuk ke Akun Google yang sama.
 
 ---
 
-## 2025 Feature Additions
+## Tindakan Jarak Jauh yang Tersedia
 
-Google expanded Find Hub capabilities in 2025 with:
+Setelah Anda mengakses perangkat di Find Hub, tiga tindakan utama tersedia:
 
-**Ultra-Wideband (UWB) Support**
-Provides centimeter-level precision for locating items when in close proximity. Supported on compatible Pixel and Motorola devices with UWB hardware.
+### 1. Putar Suara
 
-**Satellite Connectivity**
-Allows device location reporting via satellite when cellular and Wi-Fi are unavailable. Rolling out through 2025.
+Menyebabkan perangkat berbunyi dengan volume maksimum selama 5 menit, bahkan jika dalam mode senyap atau getar. Berguna ketika perangkat hilang di dekatnya (jatuh di balik furnitur, tertinggal di mobil, dll.).
 
-**Airline Baggage Integration**
-Bluetooth tracker tags can share location with select airlines (Aer Lingus, British Airways, Cathay Pacific, Iberia, Singapore Airlines) to locate checked luggage.
+- Tidak memerlukan perangkat untuk dibuka kuncinya
+- Berfungsi melalui Wi-Fi atau seluler
 
-**Third-Party Tracker Support**
-Compatible with Chipolo, Pebblebee, Motorola tags, and luggage from brands like Mokobara, July, and Peak.
+### 2. Amankan Perangkat (Kunci Jarak Jauh)
 
-*Source: Google Blog, May 2025 — https://security.googleblog.com*
+Mengunci perangkat dengan PIN/kata sandi kunci layar dan secara opsional:
+- Menampilkan pesan kustom di layar kunci (mis., "Ponsel ini hilang. Hubungi +62-XXX-XXXX")
+- Menambahkan nomor telepon yang dapat dihubungi dari layar kunci tanpa membuka kunci
+- Keluar dari perangkat dari Akun Google
 
----
+> **⚠️ PERINGATAN:** Setelah "Amankan Perangkat" mengeluarkan Akun Google, Find Hub tidak lagi dapat mengakses perangkat. Gunakan tindakan ini hanya setelah mengonfirmasi pemulihan tidak segera mungkin, atau gunakan **tanpa** opsi "Keluar dari Akun Google" terlebih dahulu.
 
-## Security and Privacy
+### 3. Hapus Perangkat
 
-- All location data in Find Hub is **end-to-end encrypted**
-- Only the account owner can view the device's location
-- Crowdsourced location signals are encrypted; participating devices in the network cannot read the location data they relay
+Melakukan reset pabrik lengkap pada perangkat, menghapus semua data termasuk:
+- Foto dan file
+- Aplikasi yang terinstal
+- Kredensial akun
+- Kartu dan kunci Google Wallet
 
----
-
-## Theft Protection Features (Android 10+)
-
-In addition to Find Hub, Android includes on-device theft protection:
-
-### Theft Detection Lock
-
-Uses on-device AI (accelerometer, gyroscope, Wi-Fi, and Bluetooth) to detect motion patterns consistent with a snatch theft — sudden jerks, rapid movement, running, cycling. If detected, the screen automatically locks before the thief can disable tracking.
-
-*Reference: https://security.googleblog.com/2024/10/android-theft-protection.html*
-
-### Offline Device Lock
-
-If the device goes offline (internet disabled) while unlocked after being stolen, it automatically locks its screen after a short period. This prevents a thief from disabling Find Hub tracking by turning off Wi-Fi.
-
-### Remote Lock (Without Internet)
-
-Android 10+ allows locking the device even without an internet connection using a stored PIN or via an SMS-based challenge.
+> **⚠️ PERINGATAN:** Menghapus perangkat bersifat **permanen**. Setelah dihapus, Anda tidak dapat melacak perangkat kecuali diatur dengan Akun Google setelah penghapusan (dalam hal ini Perlindungan Reset Pabrik akan aktif). Gunakan ini hanya ketika:
+> - Pemulihan perangkat dikonfirmasi tidak mungkin
+> - Perangkat berisi data sensitif yang tidak boleh diakses oleh penyerang
+> - Anda memiliki cadangan data terkini
 
 ---
 
-## Step-by-Step: What To Do Right Now
+## Pelacakan Perangkat Offline
+
+Find Hub mendukung menemukan perangkat bahkan saat offline (tanpa Wi-Fi atau seluler):
+
+### Cara Kerjanya
+
+Perangkat Android dalam jaringan Find Hub secara berkala menyiarkan sinyal Bluetooth terenkripsi. Perangkat Android terdekat lainnya — bahkan milik orang asing — diam-diam mendeteksi sinyal ini dan melaporkan lokasi terenkripsi ke Google. Hanya pemilik perangkat yang dapat mendekripsi dan melihat lokasi ini.
+
+### Mengaktifkan Berbagi Lokasi Offline
+
+1. Buka aplikasi **Find Hub** di perangkat Anda
+2. Ketuk nama perangkat Anda
+3. Buka **Pengaturan**
+4. Aktifkan **Simpan lokasi** atau **Temukan perangkat offline**
+5. Pilih **Dengan jaringan di semua area** untuk cakupan maksimum, atau **Dengan jaringan di area ramai saja** untuk opsi yang lebih menjaga privasi
+
+### Lokasi Pasca-Mati (Pixel 8 dan Lebih Baru)
+
+Google Pixel 8, 8a, dan model Pixel berikutnya dapat ditemukan selama **beberapa jam setelah baterai habis**, asalkan pengaturan "temukan perangkat offline" sebelumnya telah diaktifkan.
+
+---
+
+## Tambahan Fitur 2025
+
+Google memperluas kemampuan Find Hub pada 2025 dengan:
+
+**Dukungan Ultra-Wideband (UWB)**
+Memberikan presisi tingkat sentimeter untuk menemukan item saat berada dalam jarak dekat. Didukung pada perangkat Pixel dan Motorola yang kompatibel dengan perangkat keras UWB.
+
+**Konektivitas Satelit**
+Memungkinkan pelaporan lokasi perangkat melalui satelit ketika seluler dan Wi-Fi tidak tersedia. Diluncurkan secara bertahap sepanjang 2025.
+
+**Integrasi Bagasi Maskapai**
+Tag pelacak Bluetooth dapat berbagi lokasi dengan maskapai pilihan (Aer Lingus, British Airways, Cathay Pacific, Iberia, Singapore Airlines) untuk menemukan bagasi yang diperiksa.
+
+**Dukungan Pelacak Pihak Ketiga**
+Kompatibel dengan Chipolo, Pebblebee, tag Motorola, dan koper dari merek seperti Mokobara, July, dan Peak.
+
+*Sumber: Blog Google, Mei 2025 — https://security.googleblog.com*
+
+---
+
+## Keamanan dan Privasi
+
+- Semua data lokasi di Find Hub **dienkripsi end-to-end**
+- Hanya pemilik akun yang dapat melihat lokasi perangkat
+- Sinyal lokasi berbasis kerumunan dienkripsi; perangkat yang berpartisipasi dalam jaringan tidak dapat membaca data lokasi yang mereka relai
+
+---
+
+## Fitur Perlindungan Pencurian (Android 10+)
+
+Selain Find Hub, Android menyertakan perlindungan pencurian di perangkat:
+
+### Kunci Deteksi Pencurian
+
+Menggunakan AI di perangkat (akselerometer, giroskop, Wi-Fi, dan Bluetooth) untuk mendeteksi pola gerakan yang konsisten dengan pencurian sambaran — sentakan tiba-tiba, gerakan cepat, berlari, bersepeda. Jika terdeteksi, layar otomatis terkunci sebelum pencuri dapat menonaktifkan pelacakan.
+
+*Referensi: https://security.googleblog.com/2024/10/android-theft-protection.html*
+
+### Kunci Perangkat Offline
+
+Jika perangkat offline (internet dinonaktifkan) saat tidak terkunci setelah dicuri, perangkat secara otomatis mengunci layarnya setelah periode singkat. Ini mencegah pencuri menonaktifkan pelacakan Find Hub dengan mematikan Wi-Fi.
+
+### Kunci Jarak Jauh (Tanpa Internet)
+
+Android 10+ memungkinkan penguncian perangkat bahkan tanpa koneksi internet menggunakan PIN tersimpan atau melalui tantangan berbasis SMS.
+
+---
+
+## Langkah demi Langkah: Yang Harus Dilakukan Sekarang
 
 ```
-DEVICE MISSING? Follow these steps:
+PERANGKAT HILANG? Ikuti langkah berikut:
 
-Step 1: Go to https://android.com/find
-Step 2: Sign in with your Google Account
-Step 3: Select your device
-Step 4: Choose "Play Sound" — if nearby
-Step 5: Choose "Secure Device" — to lock and display contact info
-Step 6: (If recovery impossible) — Choose "Erase Device"
+Langkah 1: Buka https://android.com/find
+Langkah 2: Masuk dengan Akun Google Anda
+Langkah 3: Pilih perangkat Anda
+Langkah 4: Pilih "Putar Suara" — jika ada di dekatnya
+Langkah 5: Pilih "Amankan Perangkat" — untuk mengunci dan menampilkan info kontak
+Langkah 6: (Jika pemulihan tidak mungkin) — Pilih "Hapus Perangkat"
 ```
 
 ---
 
-## Related Documents
+## Dokumen Terkait
 
-- [Factory Reset Protection](factory-reset-protection.md)
-- [Google Account Security](google-account-security.md)
-- [Identity Check](identity-check.md)
-- [First 5 Minutes](../incident-response/first-5-minutes.md)
-- [Emergency Checklist](../checklists/emergency-checklist.md)
+- [Perlindungan Reset Pabrik](factory-reset-protection.md)
+- [Keamanan Akun Google](google-account-security.md)
+- [Pemeriksaan Identitas](identity-check.md)
+- [5 Menit Pertama](../incident-response/first-5-minutes.md)
+- [Daftar Periksa Darurat](../checklists/emergency-checklist.md)
 
 ---
 
-*Last Updated: 2026-06-01 | Source: https://support.google.com/android | https://android.com/articles/what-is-find-hub-and-how-to-use-it/*
+*Terakhir Diperbarui: 2026-06-01 | Sumber: https://support.google.com/android | https://android.com/articles/what-is-find-hub-and-how-to-use-it/*

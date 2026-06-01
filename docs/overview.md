@@ -1,35 +1,35 @@
-# Overview
+# Ikhtisar
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Purpose
+## Tujuan
 
-This document provides an introduction to the Mobile Device Loss & Theft Response Playbook — a comprehensive, open-source reference for individuals, security professionals, IT administrators, and corporate teams dealing with lost or stolen smartphones.
+Dokumen ini memberikan pengenalan tentang Panduan Respons Kehilangan & Pencurian Perangkat Mobile — referensi open-source yang komprehensif untuk individu, profesional keamanan, administrator IT, dan tim korporat yang berurusan dengan smartphone yang hilang atau dicuri.
 
-Smartphones are no longer just communication devices. They are credential vaults, payment terminals, identity documents, and access keys to corporate systems. The loss of a smartphone — whether accidental or through theft — represents a multi-dimensional security incident that demands structured, time-sensitive response.
-
----
-
-## Scope
-
-This playbook covers:
-
-- **Devices in scope**: Android smartphones (Android 10 and later), iPhones (iOS 15 and later)
-- **User types in scope**: Personal users, bring-your-own-device (BYOD) employees, corporate-managed device users
-- **Scenarios in scope**: Accidental loss, opportunistic theft, targeted theft, device seizure, SIM swap attacks
-- **Out of scope**: Tablet-only incidents (though much guidance applies), jailbroken/rooted devices in enterprise context
+Smartphone bukan lagi sekadar perangkat komunikasi. Mereka adalah brankas kredensial, terminal pembayaran, dokumen identitas, dan kunci akses ke sistem korporat. Kehilangan smartphone — baik secara tidak sengaja maupun melalui pencurian — merupakan insiden keamanan multi-dimensi yang membutuhkan respons terstruktur dan sensitif terhadap waktu.
 
 ---
 
-## How to Read This Playbook
+## Ruang Lingkup
+
+Panduan ini mencakup:
+
+- **Perangkat dalam lingkup**: Smartphone Android (Android 10 dan lebih baru), iPhone (iOS 15 dan lebih baru)
+- **Jenis pengguna dalam lingkup**: Pengguna pribadi, karyawan bring-your-own-device (BYOD), pengguna perangkat yang dikelola perusahaan
+- **Skenario dalam lingkup**: Kehilangan tidak sengaja, pencurian oportunistik, pencurian bertarget, penyitaan perangkat, serangan SIM swap
+- **Di luar lingkup**: Insiden khusus tablet (meskipun banyak panduan berlaku), perangkat yang di-jailbreak/rooted dalam konteks enterprise
+
+---
+
+## Cara Membaca Panduan Ini
 
 ```
 ┌───────────────────────────────────────────────────────────────────────────┐
-│                     MOBILE DEVICE LOSS PLAYBOOK                           │
+│                   PANDUAN KEHILANGAN PERANGKAT MOBILE                     │
 ├──────────────────┬──────────────────────────┬─────────────────────────────┤
-│   BEFORE LOSS    │     DURING INCIDENT      │       AFTER LOSS            │
+│  SEBELUM HILANG  │     SELAMA INSIDEN       │       SETELAH HILANG        │
 │                  │                          │                             │
-│  Checklists/     │  incident-response/      │  incident-response/         │
+│  checklists/     │  incident-response/      │  incident-response/         │
 │  before-loss     │  first-5-minutes.md      │  first-24-hours.md          │
 │  android/        │  first-30-minutes.md     │  first-week.md              │
 │  ios/            │  first-hour.md           │  templates/                 │
@@ -37,61 +37,61 @@ This playbook covers:
 └──────────────────┴──────────────────────────┴─────────────────────────────┘
 ```
 
-### If Your Device Was Just Lost or Stolen
+### Jika Perangkat Anda Baru Saja Hilang atau Dicuri
 
-Go directly to [Emergency Checklist](../checklists/emergency-checklist.md) or [First 5 Minutes](../incident-response/first-5-minutes.md).
+Langsung ke [Daftar Periksa Darurat](../checklists/emergency-checklist.md) atau [5 Menit Pertama](../incident-response/first-5-minutes.md).
 
-### If You Want to Prevent Future Loss
+### Jika Anda Ingin Mencegah Kehilangan di Masa Depan
 
-Read [Before Loss Prevention](../checklists/before-loss-prevention.md), then the platform-specific hardening guide for [Android](../hardening/android-hardening.md) or [iOS](../hardening/ios-hardening.md).
+Baca [Sebelum Kehilangan — Pencegahan](../checklists/before-loss-prevention.md), kemudian panduan penguatan khusus platform untuk [Android](../hardening/android-hardening.md) atau [iOS](../hardening/ios-hardening.md).
 
-### If You Are Responding to a Corporate Device Incident
+### Jika Anda Merespons Insiden Perangkat Korporat
 
-See [Corporate Device Response](../incident-response/corporate-device-response.md) and [MDM Enterprise](../hardening/mdm-enterprise.md).
+Lihat [Respons Perangkat Korporat](../incident-response/corporate-device-response.md) dan [MDM Enterprise](../hardening/mdm-enterprise.md).
 
-### If You Are a Security Researcher or Forensics Practitioner
+### Jika Anda Peneliti Keamanan atau Praktisi Forensik
 
-See [Threat Landscape](threat-landscape.md), [Attack Scenarios](../threat-models/attack-scenarios.md), and [Recommended Tools](../tools/recommended-tools.md).
+Lihat [Lanskap Ancaman](threat-landscape.md), [Skenario Serangan](../threat-models/attack-scenarios.md), dan [Alat yang Direkomendasikan](../tools/recommended-tools.md).
 
 ---
 
-## Key Concepts
+## Konsep Kunci
 
-### The Two Phases of Device Security
+### Dua Fase Keamanan Perangkat
 
-**Pre-incident hardening** is the most effective mitigation. A properly hardened device — with a strong PIN, biometric authentication, Find My enabled, SIM PIN set, and 2FA on all accounts — dramatically reduces the risk and impact of theft.
+**Penguatan pra-insiden** adalah mitigasi yang paling efektif. Perangkat yang diperkuat dengan benar — dengan PIN kuat, autentikasi biometrik, Find My diaktifkan, PIN SIM diatur, dan 2FA di semua akun — secara dramatis mengurangi risiko dan dampak pencurian.
 
-**Post-incident response** is time-critical. The first 5–30 minutes after a loss event are the most important window for containment. Delayed response exponentially increases the chance of unauthorized account access, financial fraud, and data exfiltration.
+**Respons pasca-insiden** sangat sensitif terhadap waktu. 5–30 menit pertama setelah kejadian kehilangan adalah jendela paling penting untuk penahanan. Respons yang tertunda secara eksponensial meningkatkan kemungkinan akses akun yang tidak sah, penipuan keuangan, dan eksfiltrasi data.
 
-### Platform Differences
+### Perbedaan Platform
 
-Android and iOS take different architectural approaches to device security:
+Android dan iOS mengambil pendekatan arsitektur yang berbeda terhadap keamanan perangkat:
 
-| Feature | Android | iOS |
+| Fitur | Android | iOS |
 |---|---|---|
-| Device tracking | Find Hub (Google) | Find My (Apple) |
-| Remote lock | Find Hub / Theft Protection | Find My / Lost Mode |
-| Remote wipe | Find Hub | Find My |
-| Anti-theft AI | Theft Detection Lock (Android 10+) | Stolen Device Protection (iOS 17.3+) |
-| Account protection | Google Account security | Apple ID security |
-| Activation lock | Factory Reset Protection (FRP) | Activation Lock |
-| Biometric fallback block | Identity Check (Android 15+) | Stolen Device Protection |
+| Pelacakan perangkat | Find Hub (Google) | Find My (Apple) |
+| Kunci jarak jauh | Find Hub / Perlindungan Pencurian | Find My / Mode Hilang |
+| Hapus jarak jauh | Find Hub | Find My |
+| AI anti-pencurian | Kunci Deteksi Pencurian (Android 10+) | Perlindungan Perangkat Dicuri (iOS 17.3+) |
+| Perlindungan akun | Keamanan Akun Google | Keamanan Apple ID |
+| Kunci aktivasi | Perlindungan Reset Pabrik (FRP) | Kunci Aktivasi |
+| Blokir fallback biometrik | Pemeriksaan Identitas (Android 15+) | Perlindungan Perangkat Dicuri |
 
 ---
 
-## Reference Standards
+## Standar Referensi
 
-This playbook references:
+Panduan ini merujuk pada:
 
-- **NIST SP 800-124r2** — Guidelines for Managing the Security of Mobile Devices in the Enterprise (2023)
-- **OWASP MASTG** — Mobile Application Security Testing Guide
-- **OWASP MASVS** — Mobile Application Security Verification Standard
-- **CISA** — Mobile Device Security guidance and alerts
-- **ENISA** — Smartphone Security Recommendations
-- **MITRE ATT&CK Mobile Matrix** — Threat technique library
+- **NIST SP 800-124r2** — Pedoman untuk Mengelola Keamanan Perangkat Mobile di Enterprise (2023)
+- **OWASP MASTG** — Panduan Pengujian Keamanan Aplikasi Mobile
+- **OWASP MASVS** — Standar Verifikasi Keamanan Aplikasi Mobile
+- **CISA** — Panduan dan peringatan Keamanan Perangkat Mobile
+- **ENISA** — Rekomendasi Keamanan Smartphone
+- **MITRE ATT&CK Mobile Matrix** — Pustaka teknik ancaman
 
-See [Citations](../references/citations.md) for full references.
+Lihat [Kutipan](../references/citations.md) untuk referensi lengkap.
 
 ---
 
-*Last Updated: 2026-06-01*
+*Terakhir Diperbarui: 2026-06-01*

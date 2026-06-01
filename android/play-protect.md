@@ -1,157 +1,157 @@
 # Google Play Protect
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Overview
+## Ikhtisar
 
-**Google Play Protect** is Android's built-in malware protection service. It is included with Google Play Services and operates continuously on every Android device that has the Google Play Store installed. Play Protect scans apps installed from the Play Store and from third-party sources (sideloaded apps), monitors device behavior for malicious activity, and provides Safe Browsing protection in Chrome and other apps.
+**Google Play Protect** adalah layanan perlindungan malware bawaan Android. Ini disertakan dengan Google Play Services dan beroperasi secara terus-menerus di setiap perangkat Android yang memiliki Google Play Store terinstal. Play Protect memindai aplikasi yang diinstal dari Play Store dan dari sumber pihak ketiga (aplikasi sideload), memantau perilaku perangkat untuk aktivitas berbahaya, dan menyediakan perlindungan Penjelajahan Aman di Chrome dan aplikasi lainnya.
 
-*Reference: https://support.google.com/googleplay/answer/2812853*
+*Referensi: https://support.google.com/googleplay/answer/2812853*
 
 ---
 
-## What Play Protect Does
+## Apa yang Dilakukan Play Protect
 
-### App Scanning
+### Pemindaian Aplikasi
 
-Play Protect analyzes apps before and after installation:
+Play Protect menganalisis aplikasi sebelum dan setelah instalasi:
 
-- **Pre-install scan**: Apps submitted to the Google Play Store are scanned by automated systems and human reviewers before being made available to download
-- **On-device scan**: Apps are scanned when installed from any source (Play Store, APK sideload, third-party stores)
-- **Continuous background scan**: Already-installed apps are re-scanned regularly to detect newly identified threats
+- **Pemindaian pra-instalasi**: Aplikasi yang dikirimkan ke Google Play Store dipindai oleh sistem otomatis dan peninjau manusia sebelum tersedia untuk diunduh
+- **Pemindaian di perangkat**: Aplikasi dipindai saat diinstal dari sumber mana pun (Play Store, sideload APK, toko pihak ketiga)
+- **Pemindaian latar belakang berkelanjutan**: Aplikasi yang sudah terinstal dipindai ulang secara berkala untuk mendeteksi ancaman yang baru diidentifikasi
 
-Play Protect analyzes over **200 billion apps** daily across the Android ecosystem.
+Play Protect menganalisis lebih dari **200 miliar aplikasi** setiap hari di seluruh ekosistem Android.
 
-### Harmful App Detection Categories
+### Kategori Deteksi Aplikasi Berbahaya
 
-Play Protect detects and acts on apps in these threat categories:
+Play Protect mendeteksi dan bertindak pada aplikasi dalam kategori ancaman berikut:
 
-| Category | Description |
+| Kategori | Deskripsi |
 |---|---|
-| **Stalkerware** | Apps that covertly track location, calls, messages without consent |
-| **Banking Trojans** | Apps that overlay banking app screens to steal credentials |
-| **Spyware** | Apps that exfiltrate personal data, contacts, messages |
-| **Ransomware** | Apps that lock the device or encrypt files and demand payment |
-| **Potentially Harmful Apps (PHA)** | Apps with suspicious permissions or behaviors |
-| **Unwanted Software** | Adware, apps that collect excessive data |
+| **Stalkerware** | Aplikasi yang secara diam-diam melacak lokasi, panggilan, pesan tanpa persetujuan |
+| **Trojan Perbankan** | Aplikasi yang melapisi layar aplikasi perbankan untuk mencuri kredensial |
+| **Spyware** | Aplikasi yang mengekstrak data pribadi, kontak, pesan |
+| **Ransomware** | Aplikasi yang mengunci perangkat atau mengenkripsi file dan meminta pembayaran |
+| **Aplikasi Berpotensi Berbahaya (PHA)** | Aplikasi dengan izin atau perilaku mencurigakan |
+| **Perangkat Lunak Tidak Diinginkan** | Adware, aplikasi yang mengumpulkan data berlebihan |
 
-### Device Behavior Monitoring
+### Pemantauan Perilaku Perangkat
 
-Play Protect monitors device-level behaviors beyond individual apps:
-- Unusual network activity
-- Abnormal battery drain from unknown processes
-- Suspicious permissions usage patterns
+Play Protect memantau perilaku tingkat perangkat di luar aplikasi individual:
+- Aktivitas jaringan yang tidak biasa
+- Pengeringan baterai yang tidak normal dari proses yang tidak dikenal
+- Pola penggunaan izin yang mencurigakan
 
-### Safe Browsing
+### Penjelajahan Aman
 
-Play Protect integrates with Google Safe Browsing to warn users when they attempt to visit known malicious websites in Chrome and other apps that use the Safe Browsing API.
-
----
-
-## How to Check Play Protect Status
-
-### On Android (Any Version)
-
-1. Open the **Play Store** app
-2. Tap your **profile icon** (top right)
-3. Tap **Play Protect**
-4. Review the status:
-   - "No harmful apps found" — device is clean (last scan)
-   - Last scan time and date
-   - Options to run a manual scan
-
-### Via Settings
-
-Some Android versions: **Settings > Security > Google Play Protect**
+Play Protect terintegrasi dengan Google Safe Browsing untuk memperingatkan pengguna saat mereka mencoba mengunjungi situs web berbahaya yang dikenal di Chrome dan aplikasi lain yang menggunakan Safe Browsing API.
 
 ---
 
-## Running a Manual Scan
+## Cara Memeriksa Status Play Protect
 
-1. Open **Play Store** > Profile > **Play Protect**
-2. Tap **Scan**
-3. Wait for the scan to complete
-4. Review any flagged items
+### Di Android (Versi Apa Pun)
 
-> **💡 TIP:** Run a manual Play Protect scan immediately after installing any app from outside the Google Play Store.
+1. Buka aplikasi **Play Store**
+2. Ketuk **ikon profil** (kanan atas)
+3. Ketuk **Play Protect**
+4. Tinjau status:
+   - "Tidak ada aplikasi berbahaya yang ditemukan" — perangkat bersih (pemindaian terakhir)
+   - Waktu dan tanggal pemindaian terakhir
+   - Opsi untuk menjalankan pemindaian manual
+
+### Melalui Pengaturan
+
+Beberapa versi Android: **Pengaturan > Keamanan > Google Play Protect**
 
 ---
 
-## Play Protect and Lost/Stolen Devices
+## Menjalankan Pemindaian Manual
 
-### Relevance to Theft Scenarios
+1. Buka **Play Store** > Profil > **Play Protect**
+2. Ketuk **Pindai**
+3. Tunggu pemindaian selesai
+4. Tinjau item yang ditandai
 
-Play Protect is most relevant to device loss/theft in these scenarios:
+> **💡 TIPS:** Jalankan pemindaian Play Protect manual segera setelah menginstal aplikasi apa pun dari luar Google Play Store.
 
-**Scenario 1: Device Recovered After Being Left Unattended**
-If the device was accessible to an attacker who installed malware or spyware, a Play Protect scan should be run immediately upon recovery to detect any installed threats.
+---
 
-**Scenario 2: Pre-existing Malware Before Theft**
-If spyware was installed before the theft (e.g., stalkerware installed by someone with previous physical access), it may have been relaying location or communications data to an attacker. Play Protect would detect known stalkerware signatures.
+## Play Protect dan Perangkat Hilang/Dicuri
 
-**Scenario 3: Post-recovery Verification**
-After recovering a device or setting up a new device, running Play Protect ensures no malicious apps are present.
+### Relevansi dengan Skenario Pencurian
 
-### What to Check After Recovery
+Play Protect paling relevan untuk kehilangan/pencurian perangkat dalam skenario berikut:
+
+**Skenario 1: Perangkat Dipulihkan Setelah Ditinggalkan Tanpa Pengawasan**
+Jika perangkat dapat diakses oleh penyerang yang menginstal malware atau spyware, pemindaian Play Protect harus segera dijalankan saat pemulihan untuk mendeteksi ancaman yang terinstal.
+
+**Skenario 2: Malware yang Ada Sebelum Pencurian**
+Jika spyware diinstal sebelum pencurian (mis., stalkerware yang diinstal oleh seseorang dengan akses fisik sebelumnya), mungkin telah menyampaikan lokasi atau data komunikasi ke penyerang. Play Protect akan mendeteksi tanda tangan stalkerware yang dikenal.
+
+**Skenario 3: Verifikasi Pasca-Pemulihan**
+Setelah memulihkan perangkat yang hilang/dicuri atau menyiapkan perangkat baru, menjalankan Play Protect memastikan tidak ada aplikasi berbahaya yang ada.
+
+### Yang Harus Diperiksa Setelah Pemulihan
 
 ```
-After recovering a lost/stolen device:
+Setelah memulihkan perangkat yang hilang/dicuri:
 
-1. Play Store > Profile > Play Protect > Scan
-2. Review any flagged apps
-3. If stalkerware or spyware detected:
-   - Do NOT simply uninstall — the attacker may be alerted
-   - Perform a full factory reset instead
-   - Change all passwords from a clean device
-4. Check installed apps: Settings > Apps > See all apps
-   - Look for apps you did not install
-   - Look for apps with unusual permission grants (location, microphone, contacts)
+1. Play Store > Profil > Play Protect > Pindai
+2. Tinjau aplikasi yang ditandai
+3. Jika stalkerware atau spyware terdeteksi:
+   - JANGAN langsung uninstal — penyerang mungkin mendapat peringatan
+   - Lakukan reset pabrik penuh sebagai gantinya
+   - Ubah semua kata sandi dari perangkat yang bersih
+4. Periksa aplikasi yang terinstal: Pengaturan > Aplikasi > Lihat semua aplikasi
+   - Cari aplikasi yang tidak Anda instal
+   - Cari aplikasi dengan pemberian izin tidak biasa (lokasi, mikrofon, kontak)
 ```
 
 ---
 
-## Enabling Enhanced Scanning
+## Mengaktifkan Pemindaian yang Ditingkatkan
 
-### For Sideloaded Apps (APKs)
+### Untuk Aplikasi Sideload (APK)
 
-By default, Play Protect may not fully scan apps installed from outside the Play Store. Enable enhanced scanning:
+Secara default, Play Protect mungkin tidak memindai sepenuhnya aplikasi yang diinstal dari luar Play Store. Aktifkan pemindaian yang ditingkatkan:
 
-1. Go to **Settings > Security** (or **Security & Privacy**)
-2. Tap **More security settings** (or similar, varies by manufacturer)
-3. Enable **Scan apps with Play Protect**
-4. Enable **Improve harmful app detection** to allow unknown apps to be sent to Google for review
+1. Buka **Pengaturan > Keamanan** (atau **Keamanan & Privasi**)
+2. Ketuk **Pengaturan keamanan lainnya** (atau serupa, bervariasi per produsen)
+3. Aktifkan **Pindai aplikasi dengan Play Protect**
+4. Aktifkan **Tingkatkan deteksi aplikasi berbahaya** untuk mengizinkan aplikasi yang tidak dikenal dikirim ke Google untuk ditinjau
 
-> **⚠️ WARNING:** Installing APKs from unofficial sources (not the Google Play Store) dramatically increases risk. Only install apps from the Play Store or from sources you explicitly trust (e.g., F-Droid for open-source apps). If you must install an APK, verify the SHA256 hash against the publisher's official website.
+> **⚠️ PERINGATAN:** Menginstal APK dari sumber tidak resmi (bukan Google Play Store) secara dramatis meningkatkan risiko. Hanya instal aplikasi dari Play Store atau dari sumber yang Anda percayai secara eksplisit (mis., F-Droid untuk aplikasi open-source). Jika Anda harus menginstal APK, verifikasi hash SHA256 terhadap situs web resmi penerbit.
 
 ---
 
-## Play Protect Limitations
+## Keterbatasan Play Protect
 
-Play Protect is a strong baseline but is not infallible:
+Play Protect adalah landasan yang kuat tetapi tidak sempurna:
 
-| Limitation | Details |
+| Keterbatasan | Detail |
 |---|---|
-| **Zero-day threats** | Novel malware unknown to Google's database may not be detected immediately |
-| **Advanced spyware** | Nation-state spyware (e.g., Pegasus) may evade Play Protect detection; use MVT for forensic analysis |
-| **System apps** | Pre-installed bloatware or manufacturer apps are not scanned the same way as downloaded apps |
-| **Offline operation** | Scanning accuracy is reduced without internet connectivity for signature updates |
+| **Ancaman zero-day** | Malware baru yang tidak dikenal oleh basis data Google mungkin tidak langsung terdeteksi |
+| **Spyware tingkat lanjut** | Spyware negara-bangsa (mis., Pegasus) mungkin lolos dari deteksi Play Protect; gunakan MVT untuk analisis forensik |
+| **Aplikasi sistem** | Bloatware yang sudah terinstal atau aplikasi produsen tidak dipindai dengan cara yang sama seperti aplikasi yang diunduh |
+| **Operasi offline** | Akurasi pemindaian berkurang tanpa konektivitas internet untuk pembaruan tanda tangan |
 
-For advanced forensic analysis of potential spyware, see [Mobile Verification Toolkit (MVT)](../tools/recommended-tools.md).
-
----
-
-## Play Protect and Work Profiles
-
-On devices with a **work profile** managed by MDM (e.g., Android Enterprise), Play Protect operates in both the personal and work profile containers. The MDM administrator may have separate malware scanning policies configured.
+Untuk analisis forensik lanjutan dari potensi spyware, lihat [Mobile Verification Toolkit (MVT)](../tools/recommended-tools.md).
 
 ---
 
-## Related Documents
+## Play Protect dan Profil Kerja
 
-- [Android Hardening Guide](../hardening/android-hardening.md)
-- [Identity Check](identity-check.md)
-- [Recommended Tools — MVT](../tools/recommended-tools.md)
+Di perangkat dengan **profil kerja** yang dikelola oleh MDM (mis., Android Enterprise), Play Protect beroperasi di dalam kontainer profil pribadi dan kerja. Administrator MDM mungkin memiliki kebijakan pemindaian malware terpisah yang dikonfigurasi.
 
 ---
 
-*Last Updated: 2026-06-01 | Source: https://support.google.com/googleplay/answer/2812853*
+## Dokumen Terkait
+
+- [Panduan Penguatan Android](../hardening/android-hardening.md)
+- [Pemeriksaan Identitas](identity-check.md)
+- [Alat yang Direkomendasikan — MVT](../tools/recommended-tools.md)
+
+---
+
+*Terakhir Diperbarui: 2026-06-01 | Sumber: https://support.google.com/googleplay/answer/2812853*

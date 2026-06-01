@@ -1,166 +1,166 @@
-# Stolen Device Protection — iOS 17.3+
+# Perlindungan Perangkat Dicuri — iOS 17.3+
 
-> Last Updated: 2026-06-01
+> Terakhir Diperbarui: 2026-06-01
 
-## Overview
+## Ikhtisar
 
-**Stolen Device Protection** is an iOS security feature introduced in **iOS 17.3** (January 2024) that adds biometric authentication requirements — with no passcode fallback — for certain sensitive actions when your iPhone is in an unfamiliar location. For some critical security changes, a mandatory **one-hour waiting period** is also imposed.
+**Perlindungan Perangkat Dicuri** adalah fitur keamanan iOS yang diperkenalkan di **iOS 17.3** (Januari 2024) yang menambahkan persyaratan autentikasi biometrik — tanpa fallback kode sandi — untuk tindakan sensitif tertentu ketika iPhone Anda berada di lokasi yang tidak familiar. Untuk beberapa perubahan keamanan kritis, **periode tunggu wajib satu jam** juga diberlakukan.
 
-This feature was designed in response to a documented attack pattern where thieves observe iPhone owners entering their passcode in public (shoulder surfing), steal the device, and then use the passcode to take over the Apple ID, disable Find My, and drain financial accounts before the victim can respond.
+Fitur ini dirancang sebagai respons terhadap pola serangan yang terdokumentasi di mana pencuri mengamati pemilik iPhone memasukkan kode sandi di tempat umum (shoulder surfing), mencuri perangkat, dan kemudian menggunakan kode sandi untuk mengambil alih Apple ID, menonaktifkan Find My, dan menguras akun keuangan sebelum korban dapat merespons.
 
-*Reference: https://support.apple.com/en-us/120340*
-
----
-
-## The Attack Pattern This Addresses
-
-The Wall Street Journal reported in 2023 on a series of iPhone thefts enabled by passcode observation. The attack chain was:
-
-1. Thief observes victim entering passcode (over-the-shoulder in bar, cafe, public transport)
-2. Thief steals the iPhone (pickpocket, snatch)
-3. Using the observed passcode, thief:
-   - Changes Apple ID password (Settings > Apple ID > Password & Security)
-   - Disables Find My, preventing remote tracking
-   - Adds their own face/fingerprint as biometrics, locking out the victim
-   - Accesses saved passwords in iCloud Keychain
-   - Transfers money from banking apps
-   - Requests trusted device code sent to the stolen phone (completing Apple ID account takeover)
-
-Stolen Device Protection breaks multiple steps in this chain by requiring biometric authentication that a thief does not possess.
+*Referensi: https://support.apple.com/en-us/120340*
 
 ---
 
-## How It Works
+## Pola Serangan yang Diatasi
 
-### Biometric-Only Actions (No Passcode Fallback)
+The Wall Street Journal melaporkan pada 2023 tentang serangkaian pencurian iPhone yang dimungkinkan oleh pengamatan kode sandi. Rantai serangan tersebut adalah:
 
-When Stolen Device Protection is enabled and the iPhone is in an **unfamiliar location**, the following actions require **Face ID or Touch ID** with no passcode alternative:
+1. Pencuri mengamati korban memasukkan kode sandi (dari atas bahu di bar, kafe, transportasi umum)
+2. Pencuri mencuri iPhone (copet, sambaran)
+3. Menggunakan kode sandi yang diamati, pencuri:
+   - Mengubah kata sandi Apple ID (Pengaturan > Apple ID > Kata Sandi & Keamanan)
+   - Menonaktifkan Find My, mencegah pelacakan jarak jauh
+   - Menambahkan wajah/sidik jari mereka sendiri sebagai biometrik, mengunci korban
+   - Mengakses kata sandi yang tersimpan di iCloud Keychain
+   - Mentransfer uang dari aplikasi perbankan
+   - Meminta kode perangkat tepercaya yang dikirim ke ponsel yang dicuri (menyelesaikan pengambilalihan akun Apple ID)
 
-| Protected Action | Why It Matters |
+Perlindungan Perangkat Dicuri memutus beberapa langkah dalam rantai ini dengan memerlukan autentikasi biometrik yang tidak dimiliki pencuri.
+
+---
+
+## Cara Kerjanya
+
+### Tindakan Hanya Biometrik (Tanpa Fallback Kode Sandi)
+
+Ketika Perlindungan Perangkat Dicuri diaktifkan dan iPhone berada di **lokasi yang tidak familiar**, tindakan berikut memerlukan **Face ID atau Touch ID** tanpa alternatif kode sandi:
+
+| Tindakan yang Dilindungi | Mengapa Penting |
 |---|---|
-| View/use stored passwords in iCloud Keychain | Prevents credential theft |
-| Use saved payment methods (non-Apple Pay) | Prevents financial access |
-| Apply for a new Apple Card | Prevents fraud |
-| View Apple Card virtual card number | Prevents card fraud |
-| Turn off Lost Mode | Prevents thief from canceling tracking |
-| Erase All Content and Settings | Prevents device wipe to bypass tracking |
-| Use iPhone to reset Apple ID password on new device | Prevents account takeover |
-| Create or access Recovery Key | Prevents permanent account lockout of victim |
-| Change trusted phone number | Prevents account recovery mechanism change |
+| Lihat/gunakan kata sandi tersimpan di iCloud Keychain | Mencegah pencurian kredensial |
+| Gunakan metode pembayaran tersimpan (non-Apple Pay) | Mencegah akses keuangan |
+| Ajukan permohonan Apple Card baru | Mencegah penipuan |
+| Lihat nomor kartu virtual Apple Card | Mencegah penipuan kartu |
+| Matikan Mode Hilang | Mencegah pencuri membatalkan pelacakan |
+| Hapus Semua Konten dan Pengaturan | Mencegah penghapusan perangkat untuk bypass pelacakan |
+| Gunakan iPhone untuk mereset kata sandi Apple ID di perangkat baru | Mencegah pengambilalihan akun |
+| Buat atau akses Kunci Pemulihan | Mencegah penguncian permanen akun korban |
+| Ubah nomor telepon tepercaya | Mencegah perubahan mekanisme pemulihan akun |
 
-### Security Delay (One-Hour Wait)
+### Penundaan Keamanan (Tunggu Satu Jam)
 
-For the most critical account security changes, a mandatory **one-hour wait period** is imposed, followed by a second Face ID or Touch ID confirmation:
+Untuk perubahan keamanan akun yang paling kritis, **periode tunggu wajib satu jam** diberlakukan, diikuti oleh konfirmasi Face ID atau Touch ID kedua:
 
-| Action Subject to Delay | Why the Delay Matters |
+| Tindakan yang Dikenai Penundaan | Mengapa Penundaan Penting |
 |---|---|
-| Change Apple ID password | Buys time for victim to respond and remotely lock the device |
-| Sign out of Apple ID | Prevents immediate account disconnection |
-| Update Apple Account security settings | Prevents rapid account lockdown against the victim |
-| Add or remove recovery keys | Preserves account recovery options for victim |
-| Add or remove trusted phone numbers | Prevents changing account recovery mechanisms |
-| Change iPhone passcode | Prevents locking the victim out of their own device |
-| Change Face ID or Touch ID | Prevents attacker from enrolling their own biometrics |
-| Turn off Find My | Preserves victim's ability to track and remotely erase |
-| Turn off Stolen Device Protection itself | Self-protection |
+| Ubah kata sandi Apple ID | Memberi waktu bagi korban untuk merespons dan mengunci perangkat dari jarak jauh |
+| Keluar dari Apple ID | Mencegah pemutusan akun segera |
+| Perbarui pengaturan keamanan Akun Apple | Mencegah penguncian akun cepat terhadap korban |
+| Tambah atau hapus kunci pemulihan | Menjaga opsi pemulihan akun untuk korban |
+| Tambah atau hapus nomor telepon tepercaya | Mencegah perubahan mekanisme pemulihan akun |
+| Ubah kode sandi iPhone | Mencegah penguncian korban dari perangkat mereka sendiri |
+| Ubah Face ID atau Touch ID | Mencegah penyerang mendaftarkan biometrik mereka sendiri |
+| Matikan Find My | Menjaga kemampuan korban untuk melacak dan menghapus jarak jauh |
+| Matikan Perlindungan Perangkat Dicuri | Perlindungan diri |
 
-The one-hour delay means that even if a thief has biometrics (e.g., in a coerced scenario), the victim has at least one hour to use another Apple device to lock or erase the stolen iPhone via Find My.
-
----
-
-## Requirements
-
-To enable Stolen Device Protection, the following must already be configured:
-
-- [ ] iPhone is running **iOS 17.3 or later**
-- [ ] **Two-factor authentication** is enabled for Apple ID
-- [ ] **Device passcode** is configured
-- [ ] **Face ID or Touch ID** is enrolled
-- [ ] **Find My** is turned on
-- [ ] **Significant Locations** (Location Services) is enabled
-  - Go to: Settings > Privacy & Security > Location Services > System Services > Significant Locations
-
-> **⚠️ WARNING:** Significant Locations must be enabled for the feature to determine "familiar" vs. "unfamiliar" locations. This data is stored encrypted on-device and not shared with Apple.
+Penundaan satu jam berarti bahwa bahkan jika pencuri memiliki biometrik (mis., dalam skenario yang dipaksakan), korban memiliki setidaknya satu jam untuk menggunakan perangkat Apple lain untuk mengunci atau menghapus iPhone yang dicuri melalui Find My.
 
 ---
 
-## How to Enable Stolen Device Protection
+## Persyaratan
 
-1. Open **Settings**
-2. Tap **Face ID & Passcode** (or **Touch ID & Passcode**)
-3. Enter your device passcode
-4. Scroll down to **Stolen Device Protection**
-5. Tap **Turn On Protection**
+Untuk mengaktifkan Perlindungan Perangkat Dicuri, hal-hal berikut harus sudah dikonfigurasi:
 
-![Stolen Device Protection Settings](../images/ios-stolen-device-protection.png)
-*Figure 1: Stolen Device Protection toggle in Settings > Face ID & Passcode*
+- [ ] iPhone menjalankan **iOS 17.3 atau lebih baru**
+- [ ] **Autentikasi dua faktor** diaktifkan untuk Apple ID
+- [ ] **Kode sandi perangkat** dikonfigurasi
+- [ ] **Face ID atau Touch ID** terdaftar
+- [ ] **Find My** dihidupkan
+- [ ] **Lokasi Signifikan** (Layanan Lokasi) diaktifkan
+  - Buka: Pengaturan > Privasi & Keamanan > Layanan Lokasi > Layanan Sistem > Lokasi Signifikan
+
+> **⚠️ PERINGATAN:** Lokasi Signifikan harus diaktifkan agar fitur dapat menentukan lokasi "familiar" vs. "tidak familiar". Data ini disimpan terenkripsi di perangkat dan tidak dibagikan dengan Apple.
 
 ---
 
-## Familiar vs. Unfamiliar Locations
+## Cara Mengaktifkan Perlindungan Perangkat Dicuri
 
-### How Familiar Locations Are Determined
+1. Buka **Pengaturan**
+2. Ketuk **Face ID & Kode Sandi** (atau **Touch ID & Kode Sandi**)
+3. Masukkan kode sandi perangkat Anda
+4. Gulir ke bawah ke **Perlindungan Perangkat Dicuri**
+5. Ketuk **Aktifkan Perlindungan**
 
-iOS uses **Significant Locations** (under Location Services > System Services) to learn frequently visited places:
-- Your home address
-- Your workplace
-- Places you visit regularly
+![Pengaturan Perlindungan Perangkat Dicuri](../images/ios-stolen-device-protection.png)
+*Gambar 1: Sakelar Perlindungan Perangkat Dicuri di Pengaturan > Face ID & Kode Sandi*
 
-This data is processed on-device using machine learning and is never sent to Apple's servers.
+---
 
-### When Protections Apply
+## Lokasi Familiar vs. Tidak Familiar
 
-| Location | Biometric Requirement | Security Delay |
+### Bagaimana Lokasi Familiar Ditentukan
+
+iOS menggunakan **Lokasi Signifikan** (di bawah Layanan Lokasi > Layanan Sistem) untuk mempelajari tempat yang sering dikunjungi:
+- Alamat rumah Anda
+- Tempat kerja Anda
+- Tempat yang Anda kunjungi secara teratur
+
+Data ini diproses di perangkat menggunakan pembelajaran mesin dan tidak pernah dikirim ke server Apple.
+
+### Kapan Perlindungan Berlaku
+
+| Lokasi | Persyaratan Biometrik | Penundaan Keamanan |
 |---|---|---|
-| Familiar location (home, work) | Passcode allowed as fallback | Not imposed |
-| Unfamiliar location (all other places) | Biometrics required, no passcode fallback | Imposed for critical changes |
+| Lokasi familiar (rumah, kerja) | Kode sandi diizinkan sebagai fallback | Tidak diberlakukan |
+| Lokasi tidak familiar (semua tempat lain) | Biometrik diperlukan, tanpa fallback kode sandi | Diberlakukan untuk perubahan kritis |
 
 ---
 
-## Comparison: iOS vs. Android Anti-Theft Biometric Protection
+## Perbandingan: Perlindungan Biometrik Anti-Pencurian iOS vs. Android
 
-| Feature | Stolen Device Protection (iOS 17.3+) | Identity Check (Android 15+) |
+| Fitur | Perlindungan Perangkat Dicuri (iOS 17.3+) | Pemeriksaan Identitas (Android 15+) |
 |---|---|---|
-| Biometric-only sensitive actions | Yes | Yes |
-| No passcode fallback away from home | Yes | Yes |
-| One-hour security delay | Yes | No (as of 2025) |
-| Requires Significant Locations | Yes | Yes (trusted locations) |
-| Requires Find My / Find Hub enabled | Yes | Yes |
-| Available on all devices | iOS 17.3+, all supported iPhones | Android 15, Pixel + Samsung |
+| Tindakan sensitif hanya biometrik | Ya | Ya |
+| Tanpa fallback kode sandi di luar rumah | Ya | Ya |
+| Penundaan keamanan satu jam | Ya | Tidak (per 2025) |
+| Memerlukan Lokasi Signifikan | Ya | Ya (lokasi tepercaya) |
+| Memerlukan Find My / Find Hub aktif | Ya | Ya |
+| Tersedia di semua perangkat | iOS 17.3+, semua iPhone yang didukung | Android 15, Pixel + Samsung |
 
 ---
 
-## Limitations
+## Keterbatasan
 
-| Consideration | Details |
+| Pertimbangan | Detail |
 |---|---|
-| **Coercion scenarios** | Does not protect against physical coercion ("unlock with your face") |
-| **Familiar location accuracy** | In early use, Significant Locations may not have learned all familiar places |
-| **One-hour delay inconvenience** | If you are at an unfamiliar location and legitimately need to change these settings, you must wait an hour |
-| **Lockdown Mode compatibility** | Lockdown Mode (iOS 16+) provides separate extreme hardening; both can be used together |
+| **Skenario paksaan** | Tidak melindungi dari paksaan fisik ("buka kunci dengan wajah Anda") |
+| **Akurasi lokasi familiar** | Di awal penggunaan, Lokasi Signifikan mungkin belum mempelajari semua tempat familiar |
+| **Ketidaknyamanan penundaan satu jam** | Jika Anda berada di lokasi yang tidak familiar dan secara sah perlu mengubah pengaturan ini, Anda harus menunggu satu jam |
+| **Kompatibilitas Mode Penguncian** | Mode Penguncian (iOS 16+) memberikan penguatan ekstrem terpisah; keduanya dapat digunakan bersama |
 
 ---
 
-## Checklist: Stolen Device Protection Configuration
+## Daftar Periksa: Konfigurasi Perlindungan Perangkat Dicuri
 
-- [ ] iOS 17.3 or later installed
-- [ ] Stolen Device Protection: **Enabled** (Settings > Face ID & Passcode > Stolen Device Protection)
-- [ ] Face ID / Touch ID: **Enrolled**
-- [ ] Find My: **Enabled**
-- [ ] Significant Locations: **Enabled** (Settings > Privacy & Security > Location Services > System Services > Significant Locations)
-- [ ] Two-factor authentication on Apple ID: **Enabled**
+- [ ] iOS 17.3 atau lebih baru terinstal
+- [ ] Perlindungan Perangkat Dicuri: **Diaktifkan** (Pengaturan > Face ID & Kode Sandi > Perlindungan Perangkat Dicuri)
+- [ ] Face ID / Touch ID: **Terdaftar**
+- [ ] Find My: **Diaktifkan**
+- [ ] Lokasi Signifikan: **Diaktifkan** (Pengaturan > Privasi & Keamanan > Layanan Lokasi > Layanan Sistem > Lokasi Signifikan)
+- [ ] Autentikasi dua faktor di Apple ID: **Diaktifkan**
 
 ---
 
-## Related Documents
+## Dokumen Terkait
 
 - [Find My](find-my.md)
-- [Lost Mode](lost-mode.md)
-- [Activation Lock](activation-lock.md)
-- [Apple ID Recovery](apple-id-recovery.md)
-- [iOS Hardening Guide](../hardening/ios-hardening.md)
-- [Android Identity Check (comparison)](../android/identity-check.md)
+- [Mode Hilang](lost-mode.md)
+- [Kunci Aktivasi](activation-lock.md)
+- [Pemulihan Apple ID](apple-id-recovery.md)
+- [Panduan Penguatan iOS](../hardening/ios-hardening.md)
+- [Pemeriksaan Identitas Android (perbandingan)](../android/identity-check.md)
 
 ---
 
-*Last Updated: 2026-06-01 | Source: https://support.apple.com/en-us/120340*
+*Terakhir Diperbarui: 2026-06-01 | Sumber: https://support.apple.com/en-us/120340*
